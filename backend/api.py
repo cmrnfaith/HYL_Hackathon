@@ -128,10 +128,36 @@ def create_event():
     else:
         return Response(status=400)
 
-# Update event
-# Delete event
-# Get event
-# search for specific event (will be based on a query)
+"""
+Gets all the events.
+"""
+@app.route("/events/<string:host_name>", methods=["GET"])
+def get_all_host_events(host_name:str):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_all_events_from_host_db(db_conn, "events", host_name)
+
+    for event in data:
+        result["result"].append(
+            {
+                "eventID": event[0],
+                "name": event[1],
+                "date": event[2],
+                "location": event[3],
+                "price": event[4],
+                "attire": event[5],
+                "membership": event[6],
+                "duration": event[7],
+                "private": event[8],
+                "faculty": event[9],
+                "description": event[10],
+                "eventType": event[11],
+                "hostID": event[12],
+            }
+        )
+
+    return result
 
 
 # ========================================================

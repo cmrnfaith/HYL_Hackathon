@@ -76,6 +76,30 @@ def delete_event_from_db(conn:mysql.connector.connect, table_name:str, hostID:st
         raise e
     return
 
+def get_all_events_db(conn:mysql.connector.connect, table_name:str, host_name:str)->List:
+    """
+    Gets all the events from a host in the database.
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        host_name: The host name to check for, for events
+    Returns:
+        list: Every event by a specific host in the database
+    """
+    cur = conn.cursor()
+    try:
+        sql = f'SELECT * FROM {table_name} WHERE hostName = %s'
+        val = (host_name)
+        cur.execute(sql, val)
+
+    except Exception as e:
+        conn.rollback()
+        raise e
+
+    results = cur.fetchall()
+    cur.close()
+    return results
 
 # =============================================================================
 # Database Functions for the Host Table
