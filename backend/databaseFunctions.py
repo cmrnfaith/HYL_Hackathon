@@ -2,6 +2,9 @@ from typing import List, Tuple
 import datetime
 import mysql.connector
 
+# =============================================================================
+# Database Functions for the Event Table
+# =============================================================================
 def get_all_events_db(conn:mysql.connector.connect, table_name:str)->List:
     """
     Gets all the events from the database.
@@ -22,6 +25,25 @@ def get_all_events_db(conn:mysql.connector.connect, table_name:str)->List:
     results = cur.fetchall()
     cur.close()
     return results
+
+def insert_event_db(conn:mysql.connector.connect, table_name:str, event_data:dict):
+    cur = conn.cursor()
+    try:
+        sql = f"INSERT INTO {table_name} (name, dateTime, location, price, attire, membership, duration, private, faculty, description, eventType, hostID) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        val = (event_data["name"], event_data["date"], event_data["location"], event_data["price"], event_data["attire"], event_data["membership"], event_data["duration"], event_data["private"], event_data["faculty"], event_data["description"], event_data["eventType"], event_data["hostID"])
+
+        cur.execute(sql, val)
+        conn.commit()
+        cur.close()
+    except Exception as e:
+        conn.rollback()
+        raise e
+    return
+
+
+# =============================================================================
+# Database Functions for the Host Table
+# =============================================================================
 
 def insert_host_into_db(conn:mysql.connector.connect, table_name:str, host_name:str, username:str, hashed_password:str):
     """
@@ -52,22 +74,6 @@ def insert_host_into_db(conn:mysql.connector.connect, table_name:str, host_name:
     results = cur.fetchall()
     cur.close()
     return results
-
-def insert_event_db(conn:mysql.connector.connect, table_name:str, event_data:dict):
-    cur = conn.cursor()
-    try:
-        sql = f"INSERT INTO {table_name} (name, dateTime, location, price, attire, membership, duration, private, faculty, description, eventType, hostID) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        val = (event_data["name"], event_data["date"], event_data["location"], event_data["price"], event_data["attire"], event_data["membership"], event_data["duration"], event_data["private"], event_data["faculty"], event_data["description"], event_data["eventType"], event_data["hostID"])
-
-        cur.execute(sql, val)
-        conn.commit()
-        cur.close()
-    except Exception as e:
-        conn.rollback()
-        raise e
-    return
-
-
 
 def update_host_in_db(conn:mysql.connector.connect, table_name:str, host_name:str, username:str, hashed_password:str):
     """
