@@ -1,5 +1,6 @@
 import json
 from datetime import datetime as dt
+import hashlib
 
 import numpy as np
 from flask.wrappers import Response
@@ -10,7 +11,7 @@ from flask_login import current_user, login_user, login_required
 
 import mysql.connector
 
-from databaseFunctions import get_all_events_DB
+from databaseFunctions import get_all_events_db, insert_host_into_db, delete_host_from_db, update_host_in_db
 
 MYSQL_HOST = '10.0.0.101'
 MYSQL_USER = 'root'
@@ -33,7 +34,7 @@ def get_all_events():
     db_conn = get_db_connection()
 
     result = {"result": []}
-    data = get_all_events_DB(db_conn, "events")
+    data = get_all_events_db(db_conn, "events")
 
     for event in data:
         print(f"The time from event data is {event[3]}")
@@ -84,8 +85,46 @@ def create_event():
 # ========================================================
 # Host APIs
 # ========================================================
+@app.route("/host", methods=["POST", "DELETE"])
+def create_host():
+    db_conn = get_db_connection()
 
+    if request.method == "POST":
+        data = request.json
 
+        hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
+
+        try:
+            insert_host_into_db(db_conn,"host", data["host_name"], data["username"], hashed_password)
+        except Exception as e:
+            return Response(status=409)
+
+    elif request.method == "DELETE":
+        data = request.json
+
+        delete_host_from_db(db_conn, "host", data["username"])
+
+    return Response(status=200)
+
+@app.route("/host", methods=["PUT"])
+@login_required
+def modify_user():
+    db_conn = get_db_connection()
+
+    if request.method == "PUT":
+        data = request.json
+
+        hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
+
+        update_host_in_db(db_conn, "host", data["host_name"], data["username"], hashed_password)
+
+        return Response(status=200)
+
+@app.route("/api/logout/", methods=["POST"])
+@login_required
+def logout():
+    logout_user()
+    return Response(status=200)
 
 # create user
 # login
