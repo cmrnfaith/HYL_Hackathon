@@ -1,17 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+//=============React Elements=============//
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//=============Components=============//
+import Homepage from "./Home/Homepage";
+import ScrollToTop from "./utilities/ScrollToTop";
+import PrivateRoute from "./OtherComponents/PrivateRoute";
+import Example from "./Example/Example";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+import NotFound from "./NotFound/NotFound";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const loginStatus = true;
+
+function withProps(Component, props) {
+  return function (matchProps) {
+    return <Component {...props} {...matchProps} />;
+  };
+}
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Header className="header" loginStatus={loginStatus} />
+      {/* Used to ensure each page loads at the top */}
+      <ScrollToTop />
+
+      <Switch className="content">
+        {/* Normal Navagation Routes */}
+        <Route exact path="/" component={Homepage} />
+
+        <Route exact path="/example" component={Example} />
+        <Route exact path="/example2" component={Example} />
+
+        <Route path="*" exact={true} component={NotFound} />
+      </Switch>
+      <Footer className="footer" />
+    </BrowserRouter>
+  );
+};
+ReactDOM.render(<App />, document.getElementById("root"));

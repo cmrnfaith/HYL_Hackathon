@@ -1,13 +1,45 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Quicksand:wght@300;400;500;600;700&family=Titillium+Web:ital,wght@0,200;0,300;0,600;1,200&family=Zen+Antique&display=swap");
+
+:root {
+  /* colors */
+  --body-color: rgb(42, 46, 57);
+  --background-color-new: linear-gradient(
+    90deg,
+    rgb(107, 94, 71),
+    rgb(71, 91, 107)
+  );
+
+  /* text colors */
+  --primary-heading-color: #c7a25e;
+  --text-color: white;
+}
+
+#root {
+  /* fonts */
+  /* font-family: "quicksand"; */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* main styles */
+  /* background-color: var(--body-color); */
+  background: var(--background-color-new);
+  color: var(--text-color);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.example-page-container {
+  padding-top: var(--padding-top-for-navbar);
+  padding: 10px;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color-new);
 }
