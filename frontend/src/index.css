@@ -8,10 +8,13 @@ body {
   /* colors */
   --body-color: rgb(42, 46, 57);
   --background-color-new: white;
+  --background-light: #dfd9c8;
   --white: white;
   --ucalgary-red: #cf0722;
   --ucalgary-red-hover: #7e0212;
   --ucalgary-yellow: #ffcd00;
+  --ucalgary-yellow-light: #fff8dd;
+
   --ucalgary-header: white;
 
   /* text colors */
@@ -104,7 +107,7 @@ button:hover {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .create-event-container {
@@ -113,19 +116,24 @@ button:hover {
   padding: 2rem 2rem;
   border-radius: 5px;
   position: relative;
-  border: 1px solid blue;
 }
 
 .create-event-container .title {
   font-size: 2rem;
   font-weight: 500;
+  position: relative;
+  margin-bottom: 3rem;
 }
 
 .create-event-container .title:after {
+  transform: translateX(-50%);
   content: "";
-  color: red;
-  height: 1px;
-  width: 20px;
+  background: red;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 200%;
 }
 
 .create-event-container .create-event-form {
@@ -138,20 +146,14 @@ button:hover {
 }
 
 .create-event-container .input-box {
-  width: 50%;
+  width: 30%;
   margin-bottom: 2rem;
   position: relative;
 }
 
-.create-event-container .details {
+.create-event-container .input-label {
   font-weight: 600;
   font-size: 1.3rem;
-}
-
-.create-event-container .slider-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
 }
 
 .create-event-container .form-subtitle {
@@ -161,12 +163,8 @@ button:hover {
   color: #00000099;
 }
 
-.create-event-container .slider-input {
-  padding: 0;
-}
-
 .create-event-container input,
-.create-event-container select {
+.create-event-container textarea {
   margin-top: 5px;
   width: 100%;
   height: 3rem;
@@ -179,7 +177,17 @@ button:hover {
   transition: all 0.4s ease;
 }
 
-.create-event-container input:focus {
+.create-event-container textarea {
+  height: 10rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.create-event-container input:focus,
+.create-event-container textarea:focus {
   border-color: #341e0f;
 }
 
@@ -288,6 +296,173 @@ button:hover {
   justify-content: center;
   align-items: center;
   background: var(--background-color-new);
+}
+
+/* =========================== */
+/* === Login Window Styles === */
+
+.login-page-container {
+  padding-top: var(--padding-top-for-navbar);
+  padding: 10px;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-light);
+  color: black;
+}
+
+.login-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: white;
+  padding: 4rem 10rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login-container .title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.login-container .subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.login-container .invalid-credentials {
+  font-size: 1.3rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: #ff000022;
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-container input {
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 1.3rem;
+  border-bottom-width: 2px;
+  margin-bottom: 1rem;
+  transition: all 0.4s ease;
+}
+
+.login-container input:focus {
+  border-color: #341e0f;
+}
+
+.login-container .button input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  background: var(--button-color);
+
+  padding: 0;
+  width: 20%;
+}
+
+/* =========================== */
+/* === Sign up page styles === */
+
+/* https://www.youtube.com/watch?v=okbByPWS1Xc&ab_channel=CodingLab */
+
+.sign-up-page-container {
+  padding-top: var(--padding-top-for-navbar);
+  padding: 10px;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-light);
+  color: black;
+}
+
+.sign-up-container {
+  max-width: 700px;
+  width: 100%;
+  background-color: var(--white);
+  padding: 3rem 5rem;
+  border-radius: 10px;
+}
+
+.sign-up-container .title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.sign-up-container .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.sign-up-container .input-box {
+  width: calc(100% / 2 - 20px);
+  margin-bottom: 1rem;
+}
+
+.sign-up-container .host-box {
+  width: calc(100%);
+  margin-bottom: 1rem;
+}
+
+.sign-up-container .host-box input {
+  margin-right: 0;
+}
+
+.sign-up-container .details {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.sign-up-container input,
+.sign-up-container select {
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 1.3rem;
+  border-bottom-width: 2px;
+  transition: all 0.4s ease;
+}
+
+.sign-up-container input:focus {
+  border-color: #341e0f;
+}
+
+.sign-up-container .button {
+  margin: 3rem 0;
+  height: 100%;
+  width: 100%;
+}
+
+.sign-up-container .button input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  background: var(--button-color);
 }
 
 /* ===================== */
