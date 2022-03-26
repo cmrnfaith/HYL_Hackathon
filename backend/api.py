@@ -65,12 +65,12 @@ def create_event():
     if request.method == "POST":
         data = request.json
         
-    # try:
-    db_conn = get_db_connection()
-    insert_event_db(db_conn, "events", data)
+    try:
+        db_conn = get_db_connection()
+        insert_event_db(db_conn, "events", data)
         
-    # except Exception as e:
-    #     return Response(status=409)
+    except Exception as e:
+        return Response(status=409)
     
     return Response(status=200)
 
