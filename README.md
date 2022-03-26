@@ -1,6 +1,7 @@
 # Team Excessive Alpha HYL_Hackathon
 # [(React) Application](https://github.com/cmrnfaith/HYL_Hackathon)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ba98fcc3-3cc3-4e47-ab14-6cb12a983385/deploy-status)](https://app.netlify.com/sites/u-hub/deploys)
 
 ![GitHub](https://img.shields.io/github/license/cmrnfaith/HYL_Hackathon?style=plastic)
 
