@@ -74,23 +74,25 @@ Inserts an event
 """
 @app.route("/events", methods=["POST", "DELETE"])
 def create_event():
+    db_conn = get_db_connection()
     if request.method == "POST":
         data = request.json
         try:
-            db_conn = get_db_connection()
             insert_event_db(db_conn, "events", data)
-            
         except Exception as e:
             return Response(status=409)
-
         return Response(status=200)
 
     elif request.method == "DELETE":
         data = request.json
         try:
-            delete_event_from_db(db_conn, "event", data["hostID"])
+            delete_event_from_db(db_conn, "events", data["eventID"])
         except Exception as e:
             return Response(status=409)
+        return Response(status=200)
+    
+    else:
+        return Response(status=400)
 
 # Update event
 # Delete event

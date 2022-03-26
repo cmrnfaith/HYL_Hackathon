@@ -1,3 +1,4 @@
+from tkinter import E
 from typing import List, Tuple
 import datetime
 import mysql.connector
@@ -32,6 +33,19 @@ def insert_event_db(conn:mysql.connector.connect, table_name:str, event_data:dic
         sql = f"INSERT INTO {table_name} (name, dateTime, location, price, attire, membership, duration, private, faculty, description, eventType, hostID) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         val = (event_data["name"], event_data["date"], event_data["location"], event_data["price"], event_data["attire"], event_data["membership"], event_data["duration"], event_data["private"], event_data["faculty"], event_data["description"], event_data["eventType"], event_data["hostID"])
 
+        cur.execute(sql, val)
+        conn.commit()
+        cur.close()
+    except Exception as e:
+        conn.rollback()
+        raise e
+    return
+
+def delete_event_from_db(conn:mysql.connector.connect, table_name:str, hostID:str):
+    cur = conn.cursor()
+    try:
+        sql = f"DELETE FROM {table_name} WHERE eventID = %s;"
+        val = (hostID,)
         cur.execute(sql, val)
         conn.commit()
         cur.close()
