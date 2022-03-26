@@ -30,7 +30,7 @@ const EventPage = () => {
   return (
     <div className="events-page-container">
       <div className="events-container">
-        <EventList events={events}>
+        <EventList events={events} />
       </div>
     </div>
   );
