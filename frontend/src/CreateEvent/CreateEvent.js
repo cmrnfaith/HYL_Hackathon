@@ -46,34 +46,34 @@ const CreateEvent = () => {
         Accept: "applcation/json",
       },
       credentials: "include",
-      // body: JSON.stringify({
-      //   name: eventName,
-      //   dateTime: eventDate,
-      //   location: eventLocation,
-      //   price: eventPrice,
-      //   attire: "casual",
-      //   membership: "0",
-      //   duration: eventDuration,
-      //   private: "0",
-      //   faculty: eventFaculty,
-      //   description: eventDescription,
-      //   eventType: eventType,
-      //   hostID: "1",
-      // }),
       body: JSON.stringify({
-        name: "BSD TEST",
-        date: "2022-08-01 16:20:00",
-        location: "Sawatszy Household",
-        price: "10",
+        name: eventName,
+        dateTime: "2022-08-01 16:20:00",
+        location: eventLocation,
+        price: eventPrice,
         attire: "casual",
         membership: "0",
-        duration: "2",
+        duration: eventDuration,
         private: "0",
-        faculty: "Engineering",
-        description: "A great time for some boys",
-        eventType: "Party",
+        faculty: eventFaculty,
+        description: eventDescription,
+        eventType: eventType,
         hostID: "1",
       }),
+      // body: JSON.stringify({
+      //   name: "BSD TEST",
+      //   date: "2022-08-01 16:20:00",
+      //   location: "Sawatszy Household",
+      //   price: "10",
+      //   attire: "casual",
+      //   membership: "0",
+      //   duration: "2",
+      //   private: "0",
+      //   faculty: "Engineering",
+      //   description: "A great time for some boys",
+      //   eventType: "Party",
+      //   hostID: "1",
+      // }),
     })
       .then(async (res) => {
         if (res.status === 200) {
@@ -104,7 +104,7 @@ const CreateEvent = () => {
               type="text"
               placeholder="BSD"
               onChange={(e) => setEventName(e.target.value)}
-              // required
+              required
             />
           </div>
 
@@ -114,7 +114,7 @@ const CreateEvent = () => {
               value={eventDescription}
               placeholder="BSD is gonna be lit"
               onChange={(e) => setEventDescription(e.target.value)}
-              // required
+              required
             ></textarea>
           </div>
 
@@ -125,13 +125,13 @@ const CreateEvent = () => {
               type="date"
               min={today}
               onChange={(e) => setEventDate(e.target.value)}
-              // required
+              required
             />
             <input
               value={eventTime}
               type="time"
               onChange={(e) => setEventTime(e.target.value)}
-              // required
+              required
             />
           </div>
 
@@ -142,7 +142,7 @@ const CreateEvent = () => {
               min="0"
               type="number"
               onChange={(e) => setEventDuration(e.target.value)}
-              // required
+              required
             />
           </div>
 
@@ -153,7 +153,7 @@ const CreateEvent = () => {
               placeholder="Nuthouse"
               type="text"
               onChange={(e) => setEventLocation(e.target.value)}
-              // required
+              required
             />
           </div>
 
@@ -162,7 +162,7 @@ const CreateEvent = () => {
             <select
               value={eventType}
               onChange={(e) => setEventType(e.target.value)}
-              // required
+              required
             >
               <option value="Sports">Sporting - Dinos</option>
               <option value="University">University</option>
@@ -177,7 +177,7 @@ const CreateEvent = () => {
             <select
               value={eventFaculty}
               onChange={(e) => setEventFaculty(e.target.value)}
-              // required
+              required
             >
               <option value="Engineering">Engineering</option>
               <option value="Business">Business</option>
@@ -194,7 +194,7 @@ const CreateEvent = () => {
               placeholder="Event Price"
               type="number"
               onChange={(e) => setEventPrice(e.target.value)}
-              // required
+              required
             />
           </div>
 
