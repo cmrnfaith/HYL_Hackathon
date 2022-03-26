@@ -125,7 +125,6 @@ def create_host():
     return Response(status=200)
 
 @app.route("/host", methods=["PUT"])
-# @login_required
 def modify_host():
     db_conn = get_db_connection()
 
@@ -138,13 +137,12 @@ def modify_host():
 
         return Response(status=200)
 
-@app.route("/logout/", methods=["POST"])
-@login_required
+@app.route("/logout", methods=["POST"])
 def logout():
     logout_user()
     return Response(status=200)
 
-@app.route("/host/login/", methods=["POST"])
+@app.route("/host/login", methods=["POST"])
 def login():
     db_conn = get_db_connection()
 
@@ -160,11 +158,8 @@ def login():
 
             if hashed_password == data[3]:
                 loaded_user = load_user(data[2])  # Loading the current user
-
-                login_user(loaded_user, remember=True, force=True)  # Logging in the user with flask_login to keep track of which user is active
+                #login_user(loaded_user, remember=True, force=True)  # Logging in the user with flask_login to keep track of which user is active
                 result = {"result": []}
-
-                session["username"] = data[2]
 
                 result["result"].append(
                     {   
