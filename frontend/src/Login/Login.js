@@ -48,7 +48,9 @@ const Login = ({ updateLoginStatus, updateLocalUser }) => {
     <div className="login-page-container">
       <div className="login-container">
         <div className="title">Welcome Back!</div>
-        <div className="subtitle">Thank you for using our event service</div>
+        <div className="subtitle">
+          Thank you for using our event hosting service
+        </div>
         {showInvalid && (
           <div className="invalid-credentials">
             The login credentials you entered are invalid.

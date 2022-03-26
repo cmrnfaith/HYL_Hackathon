@@ -91,30 +91,32 @@ const SignUp = () => {
       <div className="sign-up-container">
         <div className="title">Please enter in your information below</div>
         <form className="user-details" onSubmit={onSubmit}>
-          <div className="input-box">
-            <span className="details">First Name</span>
-            <input
-              type="text"
-              placeholder="First Name (e.g John)"
-              onChange={(e) => setFirstName(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className="input-box">
-            <span className="details">Last Name</span>
-            <input
-              type="text"
-              placeholder="Last Name (e.g Doe)"
-              onChange={(e) => setLastName(e.target.value)}
-              required
-            />
-          </div>
-
-          <div className="input-box">
+          <div className="host-box">
             <span className="details">Will you be hosting events?</span>
             <input type="checkbox" onChange={(e) => setHost(!host)} />
           </div>
+          {!host && (
+            <div className="input-box">
+              <span className="details">First Name</span>
+              <input
+                type="text"
+                placeholder="First Name (e.g John)"
+                onChange={(e) => setFirstName(e.target.value)}
+                required
+              />
+            </div>
+          )}
+          {!host && (
+            <div className="input-box">
+              <span className="details">Last Name</span>
+              <input
+                type="text"
+                placeholder="Last Name (e.g Doe)"
+                onChange={(e) => setLastName(e.target.value)}
+                required
+              />
+            </div>
+          )}
 
           {host && (
             <div className="input-box">
@@ -459,14 +461,16 @@ const SignUp = () => {
             </select>
           </div>
 
-          <div className="input-box">
-            <span className="details">Date of Birth</span>
-            <input
-              type="date"
-              onChange={(e) => setDateOfBirth(e.target.value)}
-              required
-            />
-          </div>
+          {!host && (
+            <div className="input-box">
+              <span className="details">Date of Birth</span>
+              <input
+                type="date"
+                onChange={(e) => setDateOfBirth(e.target.value)}
+                required
+              />
+            </div>
+          )}
 
           <div className="input-box">
             <span className="details">Password</span>
