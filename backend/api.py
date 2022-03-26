@@ -36,11 +36,19 @@ def get_all_events():
         result["result"].append(
             {
                 "eventID": event[0],
-                "": event[1],
-                "": event[2],
-                "": event[3],
-                "": event[4],
-                "": event[5],
+                "name": event[1],
+                "date": event[2],
+                "time": event[3],
+                "location": event[4],
+                "price": event[5],
+                "attire": event[6],
+                "membership": event[7],
+                "duration": event[8],
+                "private": event[9],
+                "faculty": event[10],
+                "description": event[11],
+                "eventType": event[12],
+                "hostID": event[13],
             }
         )
 
