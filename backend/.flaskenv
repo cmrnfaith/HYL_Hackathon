@@ -1,0 +1,4 @@
+FLASK_APP=main.py
+FLASK_ENV=dev
+FLASK_DEBUG=True
+FLASK_TESTING=True
