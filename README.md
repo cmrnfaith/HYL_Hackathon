@@ -1,6 +1,7 @@
 # Team Excessive Alpha HYL_Hackathon
 # [(React) Application](https://github.com/cmrnfaith/HYL_Hackathon)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ba98fcc3-3cc3-4e47-ab14-6cb12a983385/deploy-status)](https://app.netlify.com/sites/u-hub/deploys)
 
 ![GitHub](https://img.shields.io/github/license/cmrnfaith/HYL_Hackathon?style=plastic)
 
@@ -50,7 +51,7 @@ This is the website development branch for our project. This project will use py
 
 #### Screenshot Example #2
 
-![Screenshot #2](docs/Strategies.png?raw=true "Screenshot of the Strategies")
+![Screenshot #2](docs/example1.png?raw=true "Example 1")
 
-### Link to the application running: [Production Version](https://www.google.com)
+### Link to the application running: [Production Version](https://u-hub.netlify.app/)
 
