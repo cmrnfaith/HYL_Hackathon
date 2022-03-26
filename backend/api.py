@@ -59,7 +59,7 @@ def get_all_events():
     return result
 
 """
-Inserts an event
+Inserts or Deletes an event
 """
 @app.route("/events", methods=["POST", "DELETE"])
 def create_event():
