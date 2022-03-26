@@ -22,11 +22,12 @@ export const defaultUser = [
     username: "",
     password: "",
     country: "",
-    is_admin: "",
     date_of_birth: "",
     first_name: "",
     last_name: "",
     email: "",
+    host: false,
+    host_name: "",
   },
 ];
 
@@ -72,6 +73,10 @@ const App = () => {
         <Route exact path="/example" component={Example} />
         <Route exact path="/example2" component={Example} />
         <Route path="/signup" component={SignUp} />
+        <Route
+          path="/login"
+          component={withProps(Login, { updateLoginStatus, updateLocalUser })}
+        />
 
         <PrivateRoute
           redirect_url="/login"

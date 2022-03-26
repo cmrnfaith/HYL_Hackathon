@@ -12,11 +12,12 @@ const Logout = ({ loginStatus, updateLoginStatus, updateLocalUser }) => {
         username: "",
         password: "",
         country: "",
-        is_admin: "",
         date_of_birth: "",
         first_name: "",
         last_name: "",
         email: "",
+        host: false,
+        host_name: "",
       });
 
       fetch("/api/logout/", {

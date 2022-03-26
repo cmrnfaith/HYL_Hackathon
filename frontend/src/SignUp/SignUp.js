@@ -6,6 +6,8 @@ const SignUp = () => {
 
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
+  const [host_name, setHostName] = useState("");
+  const [host, setHost] = useState(false);
   const [email, setEmail] = useState("");
   const [date_of_birth, setDateOfBirth] = useState("");
   const [country, setCountry] = useState("");
@@ -29,22 +31,26 @@ const SignUp = () => {
     setUsername("");
     setEmail("");
     setCountry("");
+    setHostName("");
+    setHost(false);
     setDateOfBirth("");
     setPassword("");
     setConfirmPassword("");
   };
 
   const submitSignUpRequest = () => {
-    // console.log({
-    //   first_name,
-    //   last_name,
-    //   username,
-    //   email,
-    //   country,
-    //   date_of_birth,
-    //   password,
-    //   confirmPassword,
-    // });
+    console.log({
+      first_name,
+      last_name,
+      username,
+      host_name,
+      host,
+      email,
+      country,
+      date_of_birth,
+      password,
+      confirmPassword,
+    });
     var url = "/api/user/";
 
     fetch(url, {
@@ -58,6 +64,8 @@ const SignUp = () => {
         username,
         password,
         country,
+        host_name,
+        host,
         date_of_birth,
         first_name,
         last_name,
@@ -68,7 +76,7 @@ const SignUp = () => {
         if (res.status === 200) {
           history.push("/login");
         } else if (res.status === 401) {
-          console.log("User already exists. Please log in.");
+          // confirm_password.textContent = "User already exists. Please log in.";
         } else {
           console.log("error logging in");
         }
@@ -102,6 +110,22 @@ const SignUp = () => {
               required
             />
           </div>
+
+          <div className="input-box">
+            <span className="details">Will you be hosting events?</span>
+            <input type="checkbox" onChange={(e) => setHost(!host)} />
+          </div>
+
+          {host && (
+            <div className="input-box">
+              <span className="details">Host Name</span>
+              <input
+                type="text"
+                placeholder="Host Name (e.g Haskayne)"
+                onChange={(e) => setHostName(e.target.value)}
+              />
+            </div>
+          )}
 
           <div className="input-box">
             <span className="details">Username</span>
