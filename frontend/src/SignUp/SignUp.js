@@ -6,7 +6,7 @@ const SignUp = () => {
 
   const [first_name, setFirstName] = useState("");
   const [last_name, setLastName] = useState("");
-  const [host, setHost] = useState(false);
+  const [is_host, setHost] = useState(false);
   const [email, setEmail] = useState("");
   const [date_of_birth, setDateOfBirth] = useState("");
   const [country, setCountry] = useState("");
@@ -41,7 +41,7 @@ const SignUp = () => {
       first_name,
       last_name,
       username,
-      host,
+      is_host,
       email,
       country,
       date_of_birth,
@@ -61,7 +61,7 @@ const SignUp = () => {
         username,
         password,
         country,
-        host,
+        is_host,
         date_of_birth,
         first_name,
         last_name,
@@ -89,9 +89,9 @@ const SignUp = () => {
         <form className="user-details" onSubmit={onSubmit}>
           <div className="host-box">
             <span className="details">Will you be hosting events?</span>
-            <input type="checkbox" onChange={(e) => setHost(!host)} />
+            <input type="checkbox" onChange={(e) => setHost(!is_host)} />
           </div>
-          {!host && (
+          {!is_host && (
             <div className="input-box">
               <span className="details">First Name</span>
               <input
@@ -102,7 +102,7 @@ const SignUp = () => {
               />
             </div>
           )}
-          {!host && (
+          {!is_host && (
             <div className="input-box">
               <span className="details">Last Name</span>
               <input
@@ -113,7 +113,7 @@ const SignUp = () => {
               />
             </div>
           )}
-          {host && (
+          {is_host && (
             <div className="input-box">
               <span className="details">Host Name</span>
               <input
@@ -123,7 +123,7 @@ const SignUp = () => {
               />
             </div>
           )}
-          {!host && (
+          {!is_host && (
             <div className="input-box">
               <span className="details">Username</span>
               <input
@@ -143,7 +143,7 @@ const SignUp = () => {
               required
             />
           </div>
-          {!host && (
+          {!is_host && (
             <div className="input-box">
               <span className="details">Country</span>
               <select
@@ -466,7 +466,7 @@ const SignUp = () => {
               </select>
             </div>
           )}
-          {!host && (
+          {!is_host && (
             <div className="input-box">
               <span className="details">Date of Birth</span>
               <input

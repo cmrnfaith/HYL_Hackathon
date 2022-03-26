@@ -27,7 +27,7 @@ export const defaultUser = [
     first_name: "",
     last_name: "",
     email: "",
-    host: false,
+    is_host: false,
   },
 ];
 

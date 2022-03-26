@@ -16,7 +16,7 @@ const Logout = ({ loginStatus, updateLoginStatus, updateLocalUser }) => {
         first_name: "",
         last_name: "",
         email: "",
-        host: false,
+        is_host: false,
       });
 
       fetch("/logout", {
