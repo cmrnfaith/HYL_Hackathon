@@ -7,7 +7,7 @@ body {
 :root {
   /* colors */
   --body-color: rgb(42, 46, 57);
-  --background-color-new: white;
+  --background-color-new: #fff8dd;
   --background-light: #dfd9c8;
   --white: white;
   --ucalgary-red: #cf0722;
@@ -128,7 +128,7 @@ button:hover {
 .create-event-container .title:after {
   transform: translateX(-50%);
   content: "";
-  background: red;
+  background: var(--ucalgary-yellow);
   position: absolute;
   bottom: -30%;
   left: 50%;
@@ -207,95 +207,41 @@ button:hover {
   background: var(--button-color);
 }
 
-/* ======================= */
-/* === Create Transfer === */
-
-.create-transfer-container {
-  width: 100%;
-  background-color: white;
-  padding: 2rem 2rem;
-  border-radius: 5px;
-}
-
-.create-transfer-container .title {
-  font-size: 3rem;
-  font-weight: 500;
-}
-
-.create-transfer-container .subtitle {
-  margin-top: 2rem;
-  font-size: 2rem;
-  font-weight: 500;
-}
-
-.create-transfer-container .strategy-details {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin: 20px 0 12px 0;
-}
-
-.create-transfer-container .input-box {
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-.create-transfer-container .details {
-  font-weight: 600;
-  display: block;
-  margin-bottom: 5px;
-  font-size: 1.3rem;
-}
-
-.create-transfer-container input,
-.create-transfer-container select {
-  width: 100%;
-  height: 3rem;
-  outline: none;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding-left: 15px;
-  font-size: 1.3rem;
-  border-bottom-width: 2px;
-  transition: all 0.4s ease;
-}
-
-.create-transfer-container select {
-  margin-bottom: 20px;
-}
-
-.create-transfer-container input:focus {
-  border-color: #341e0f;
-}
-
-.create-transfer-container .button {
-  margin: 3rem 0;
-  height: 100%;
-  width: 100%;
-}
-
-.create-transfer-container .button input {
-  outline: none;
-  border: none;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: white;
-  background: var(--button-color);
-}
-
 /* =================== */
 /* === Events Page === */
 
 .events-page-container {
-  padding-top: var(--padding-top-for-navbar);
-  padding: 10px;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
   background: var(--background-color-new);
+  padding-top: var(--padding-top-for-navbar);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.events-container {
+  padding-top: var(--padding-top-for-navbar);
+  /* width: var(--inner-width); */
+  padding: 2rem 2rem;
+  border-radius: 5px;
+  position: relative;
+}
+
+.events-container .title {
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.events-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-yellow);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 200%;
 }
 
 /* =========================== */

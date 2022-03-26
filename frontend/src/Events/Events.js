@@ -1,6 +1,7 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Events = () => {
+  const [events, setEvents] = useState([]);
   useEffect(() => {
     var url = "/events";
     fetch(url, {
@@ -26,7 +27,11 @@ const Events = () => {
   }, []);
   return (
     <div className="events-page-container">
-      <h1>Events Page</h1>
+      <div className="events-container">
+        <h1 className="title">Events</h1>
+        {events.map((event) =>
+        )}
+      </div>
     </div>
   );
 };
