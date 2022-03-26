@@ -39,11 +39,12 @@ def insert_host_into_db(conn:mysql.connector.connect, table_name:str, host_name:
     cur = conn.cursor()
 
     try:
-        cur.execute("INSERT INTO public.\"%s\"(\"hostName", "Username\", \"Password\") VALUES (%s, %s, %s);",
-        vars=(table_name, host_name, username, hashed_password,))
-
+        sql = f"INSERT INTO {table_name} (hostName, username, hashedPassword) VALUES (%s, %s, %s)"
+        val = (host_name, username, hashed_password)
+        cur.execute(sql, val)
         print(f"executing into {table_name}: {(table_name, username, hashed_password)}")
         conn.commit()
+
     except mysql.connector.DataError as e:
         conn.rollback()
         raise Exception(f"Username value at {username} for table {table_name} already exists.")
