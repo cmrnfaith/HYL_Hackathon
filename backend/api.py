@@ -43,23 +43,24 @@ def get_all_events():
                 "eventID": event[0],
                 "name": event[1],
                 "date": event[2],
-                "time": str(event[3]),
-                "location": event[4],
-                "price": event[5],
-                "attire": event[6],
-                "membership": event[7],
-                "duration": event[8],
-                "private": event[9],
-                "faculty": event[10],
-                "description": event[11],
-                "eventType": event[12],
-                "hostID": event[13],
+                "location": event[3],
+                "price": event[4],
+                "attire": event[5],
+                "membership": event[6],
+                "duration": event[7],
+                "private": event[8],
+                "faculty": event[9],
+                "description": event[10],
+                "eventType": event[11],
+                "hostID": event[12],
             }
         )
 
     return result
 
-# Create event
+"""
+Inserts an event
+"""
 @app.route("/events", methods=["POST"])
 def create_event():
     if request.method == "POST":
