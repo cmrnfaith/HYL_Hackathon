@@ -26,7 +26,7 @@ def get_db_connection():
 @login_manager.user_loader
 def load_user(user_id):
     db_conn = get_db_connection()
-    user_info = get_host(db_conn, "user", user_id)
+    user_info = get_user(db_conn, "user", user_id)
 
     if len(user_info) == 1:
         return User(user_info[0][1], user_info[0][2], True)
@@ -173,11 +173,11 @@ def create_user():
 
         hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
 
-        try:
-            insert_user_into_db(db_conn,"user", data["username"], hashed_password, data["email"],data["firstName"],data["lastName"] \
+        # try:
+        insert_user_into_db(db_conn,"user", data["username"], hashed_password, data["email"],data["firstName"], data["lastName"], \
                                 data["dateOfBirth"], data["country"], data["studentID"], data["isHost"])
-        except Exception as e:
-            return Response(status=409)
+        # except Exception as e:
+        #     return Response(status=409)
 
     elif request.method == "DELETE":
         data = request.json
@@ -195,7 +195,7 @@ def modify_host():
 
         hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
 
-        update_host_in_db(db_conn, "user", data["username"], data["username"], hashed_password)
+        update_user_in_db(db_conn, "user", data["username"], data["username"], hashed_password)
 
         return Response(status=200)
 
@@ -213,7 +213,7 @@ def login():
 
         hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
 
-        data = get_host(db_conn, "user", data["username"])
+        data = get_user(db_conn, "user", data["username"])
 
         if len(data) == 1:
             data = data[0]
