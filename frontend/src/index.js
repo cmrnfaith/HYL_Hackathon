@@ -1,5 +1,5 @@
 //=============React Elements=============//
-import React, { useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
@@ -7,7 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 //=============Components=============//
 import Homepage from "./Home/Homepage";
 import ScrollToTop from "./utilities/ScrollToTop";
-import PrivateRoute from "./OtherComponents/PrivateRoute";
+// import PrivateRoute from "./OtherComponents/PrivateRoute";
 import Events from "./Events/Events";
 import Example from "./Example/Example";
 import Header from "./Header/Header";
@@ -15,12 +15,6 @@ import Footer from "./Footer/Footer";
 import NotFound from "./NotFound/NotFound";
 
 const loginStatus = true;
-
-function withProps(Component, props) {
-  return function (matchProps) {
-    return <Component {...props} {...matchProps} />;
-  };
-}
 
 const App = () => {
   return (
