@@ -47,7 +47,7 @@ This is the website development branch for our project. This project will use py
 
 #### Screenshot Example #1
 
-![Screenshot #1](docs/example1.png?raw=true "Example 1")
+![Screenshot #1](docs/Example1.png?raw=true "Example 1")
 
 #### Screenshot Example #2
 
