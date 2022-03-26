@@ -98,6 +98,16 @@ button:hover {
   background-color: var(--white);
 }
 
+/* ================ */
+/* === Homepage === */
+.example-page-container {
+  background: var(--background-color-new);
+  padding-top: var(--padding-top-for-navbar);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
 /* ==================== */
 /* === Create Event === */
 

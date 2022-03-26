@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import EventList from "./EventList";
 
-const Events = () => {
+const EventPage = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
     var url = "/events";
@@ -14,8 +15,9 @@ const Events = () => {
     })
       .then(async (res) => {
         if (res.status === 200) {
-          var result = await res.json();
-          console.log(result);
+          var response = await res.json();
+          console.log(response);
+          setEvents(response.result);
         } else if (res.status === 401) {
         } else {
           console.log("error fetching events");
@@ -28,12 +30,10 @@ const Events = () => {
   return (
     <div className="events-page-container">
       <div className="events-container">
-        <h1 className="title">Events</h1>
-        {events.map((event) =>
-        )}
+        <EventList events={events}>
       </div>
     </div>
   );
 };
 
-export default Events;
+export default EventPage;
