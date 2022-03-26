@@ -95,6 +95,7 @@ def update_host_in_db(conn:mysql.connector.connect, table_name:str, host_name:st
 
     print(f"executing into {table_name}: {(host_name, username, hashed_password, username)}")
     conn.commit()
+    cur.close()
     return
 
 def delete_host_from_db(conn:mysql.connector.connect, table_name:str, username:str):
@@ -115,4 +116,5 @@ def delete_host_from_db(conn:mysql.connector.connect, table_name:str, username:s
 
     print(f"executing into {table_name}: {(username)}")
     conn.commit()
+    cur.close()
     return
