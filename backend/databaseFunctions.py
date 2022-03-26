@@ -2,11 +2,6 @@ from typing import List, Tuple
 import datetime
 import mysql.connector
 
-cursor = myDb.cursor()
-# cursor.execute(sql)
-# df = pd.DataFrame(cursor.fetchall())
-cursor.close()
-
 def get_all_events(conn:mysql.connector.connect, table_name:str)->List:
     """Gets the user that matches the username passed in.
     Args:
@@ -19,6 +14,6 @@ def get_all_events(conn:mysql.connector.connect, table_name:str)->List:
     cur.execute(f'SELECT * FROM {table_name}')
 
     results = cur.fetchall()
-    cursor.close()
+    cur.close()
 
     return results
