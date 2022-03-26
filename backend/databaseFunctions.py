@@ -40,7 +40,7 @@ def get_event_db(conn:mysql.connector.connect, table_name:str, eventID:int)->Lis
     """
     cur = conn.cursor()
     try:
-        cur.execute(f'SELECT * FROM {table_name}')
+        cur.execute(f'SELECT * FROM {table_name} WHERE eventID = {eventID}')
     except Exception as e:
         conn.rollback()
         raise e
