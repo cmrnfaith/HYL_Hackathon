@@ -52,8 +52,8 @@ def get_event_db(conn:mysql.connector.connect, table_name:str, eventID:int)->Lis
 def insert_event_db(conn:mysql.connector.connect, table_name:str, event_data:dict):
     cur = conn.cursor()
     try:
-        sql = f"INSERT INTO {table_name} (name, dateTime, location, price, attire, membership, duration, private, faculty, description, eventType, hostID) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        val = (event_data["name"], event_data["dateTime"], event_data["location"], event_data["price"], event_data["attire"], event_data["membership"], event_data["duration"], event_data["private"], event_data["faculty"], event_data["description"], event_data["eventType"], event_data["hostID"])
+        sql = f"INSERT INTO {table_name} (name, dateTime, location, price, attire, membership, duration, private, faculty, description, eventType, hostName) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        val = (event_data["name"], event_data["dateTime"], event_data["location"], event_data["price"], event_data["attire"], event_data["membership"], event_data["duration"], event_data["private"], event_data["faculty"], event_data["description"], event_data["eventType"], event_data["hostName"])
 
         cur.execute(sql, val)
         conn.commit()
@@ -63,11 +63,11 @@ def insert_event_db(conn:mysql.connector.connect, table_name:str, event_data:dic
         raise e
     return
 
-def delete_event_from_db(conn:mysql.connector.connect, table_name:str, hostID:str):
+def delete_event_from_db(conn:mysql.connector.connect, table_name:str, host_name:str):
     cur = conn.cursor()
     try:
         sql = f"DELETE FROM {table_name} WHERE eventID = %s;"
-        val = (hostID,)
+        val = (host_name,)
         cur.execute(sql, val)
         conn.commit()
         cur.close()
@@ -89,8 +89,8 @@ def get_all_events_from_host_db(conn:mysql.connector.connect, table_name:str, ho
     """
     cur = conn.cursor()
     try:
-        sql = f'SELECT * FROM {table_name} WHERE hostName = %s'
-        val = (host_name)
+        sql = f'SELECT * FROM {table_name} WHERE hostName = %s;'
+        val = (host_name,)
         cur.execute(sql, val)
 
     except Exception as e:
@@ -102,7 +102,7 @@ def get_all_events_from_host_db(conn:mysql.connector.connect, table_name:str, ho
     return results
 
 # =============================================================================
-# Database Functions for the Host Table
+# Database Functions for the User Table
 # =============================================================================
 
 def insert_host_into_db(conn:mysql.connector.connect, table_name:str, host_name:str, username:str, hashed_password:str):
@@ -197,6 +197,30 @@ def get_host(conn:mysql.connector.connect, table_name:str, username:str)->List:
     sql = f"SELECT * FROM {table_name}  WHERE username = %s;"
     val = (username,)
     cur.execute(sql, val)
+
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+def get_all_hosts_from_db(conn:mysql.connector.connect, table_name:str)->List:
+    """
+    Gets all the hosts in the database.
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+    Returns:
+        list: Every host in the database
+    """
+    cur = conn.cursor()
+    try:
+        sql = f'SELECT * FROM {table_name} WHERE isHost = %d;'
+        val = (1,)
+        cur.execute(sql, val)
+
+    except Exception as e:
+        conn.rollback()
+        raise e
 
     results = cur.fetchall()
     cur.close()

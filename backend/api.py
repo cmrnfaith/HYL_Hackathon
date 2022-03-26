@@ -26,7 +26,7 @@ def get_db_connection():
 @login_manager.user_loader
 def load_user(user_id):
     db_conn = get_db_connection()
-    user_info = get_host(db_conn, "host", user_id)
+    user_info = get_host(db_conn, "user", user_id)
 
     if len(user_info) == 1:
         return User(user_info[0][1], user_info[0][2], True)
@@ -45,7 +45,7 @@ def get_all_events():
     db_conn = get_db_connection()
 
     result = {"result": []}
-    data = get_all_events_db(db_conn, "events")
+    data = get_all_events_db(db_conn, "events2")
 
     for event in data:
         print(f"The time from event data is {event[3]}")
@@ -63,7 +63,7 @@ def get_all_events():
                 "faculty": event[9],
                 "description": event[10],
                 "eventType": event[11],
-                "hostID": event[12],
+                "hostName": event[12],
             }
         )
 
@@ -77,10 +77,9 @@ def get_event(id: int):
     db_conn = get_db_connection()
 
     result = {"result": []}
-    data = get_event_db(db_conn, "events", id)
+    data = get_event_db(db_conn, "events2", id)
 
     for event in data:
-        print(f"The time from event data is {event[3]}")
         result["result"].append(
             {
                 "eventID": event[0],
@@ -95,7 +94,7 @@ def get_event(id: int):
                 "faculty": event[9],
                 "description": event[10],
                 "eventType": event[11],
-                "hostID": event[12],
+                "hostName": event[12],
             }
         )
 
@@ -112,31 +111,33 @@ def create_event():
     if request.method == "POST":
         data = request.json
         try:
-            insert_event_db(db_conn, "events", data)
+            insert_event_db(db_conn, "events2", data)
         except Exception as e:
             return Response(status=409)
+
         return Response(status=200)
 
     elif request.method == "DELETE":
         data = request.json
         try:
-            delete_event_from_db(db_conn, "events", data["eventID"])
+            delete_event_from_db(db_conn, "events2", data["eventID"])
         except Exception as e:
             return Response(status=409)
+
         return Response(status=200)
     
     else:
         return Response(status=400)
 
 """
-Gets all the events.
+Gets all the events from a specific host
 """
 @app.route("/events/<string:host_name>", methods=["GET"])
 def get_all_host_events(host_name:str):
     db_conn = get_db_connection()
 
     result = {"result": []}
-    data = get_all_events_from_host_db(db_conn, "events", host_name)
+    data = get_all_events_from_host_db(db_conn, "events2", host_name)
 
     for event in data:
         result["result"].append(
@@ -153,7 +154,7 @@ def get_all_host_events(host_name:str):
                 "faculty": event[9],
                 "description": event[10],
                 "eventType": event[11],
-                "hostID": event[12],
+                "hostName": event[12],
             }
         )
 
@@ -161,10 +162,10 @@ def get_all_host_events(host_name:str):
 
 
 # ========================================================
-# Host APIs
+# User APIs
 # ========================================================
-@app.route("/host", methods=["POST", "DELETE"])
-def create_host():
+@app.route("/user", methods=["POST", "DELETE"])
+def create_user():
     db_conn = get_db_connection()
 
     if request.method == "POST":
@@ -173,18 +174,19 @@ def create_host():
         hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
 
         try:
-            insert_host_into_db(db_conn,"host", data["host_name"], data["username"], hashed_password)
+            insert_user_into_db(db_conn,"user", data["username"], hashed_password, data["email"],data["firstName"],data["lastName"] \
+                                data["dateOfBirth"], data["country"], data["studentID"], data["isHost"])
         except Exception as e:
             return Response(status=409)
 
     elif request.method == "DELETE":
         data = request.json
 
-        delete_host_from_db(db_conn, "host", data["username"])
+        delete_user_from_db(db_conn, "user", data["username"])
 
     return Response(status=200)
 
-@app.route("/host", methods=["PUT"])
+@app.route("/user", methods=["PUT"])
 def modify_host():
     db_conn = get_db_connection()
 
@@ -193,7 +195,7 @@ def modify_host():
 
         hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
 
-        update_host_in_db(db_conn, "host", data["host_name"], data["username"], hashed_password)
+        update_host_in_db(db_conn, "user", data["username"], data["username"], hashed_password)
 
         return Response(status=200)
 
@@ -211,21 +213,27 @@ def login():
 
         hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
 
-        data = get_host(db_conn, "host", data["username"])
+        data = get_host(db_conn, "user", data["username"])
 
         if len(data) == 1:
             data = data[0]
 
-            if hashed_password == data[3]:
-                loaded_user = load_user(data[2])  # Loading the current user
+            if hashed_password == data[1]:
+                #loaded_user = load_user(data[2])  # Loading the current user
                 #login_user(loaded_user, remember=True, force=True)  # Logging in the user with flask_login to keep track of which user is active
                 result = {"result": []}
 
                 result["result"].append(
                     {   
-                        "hostID": data[0],
-                        "hostName": data[1],
-                        "username": data[2],
+                        "username": data[0],
+                        "hashedPassword": data[1],
+                        "email": data[2],
+                        "firstName": data[3],
+                        "lastName": data[4],
+                        "dateOfBirth": data[5],
+                        "country": data[6],
+                        "studentID": data[7],
+                        "isHost": data[8]
                     }
                 )
                 return result
@@ -234,3 +242,4 @@ def login():
 
         else:
             return Response(status=401)  # Code for invalid login
+
