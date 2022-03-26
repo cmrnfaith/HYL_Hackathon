@@ -28,6 +28,10 @@ const Header = ({ loginStatus }) => {
       <div className={click ? "nav-options active" : "nav-options"}>
         <div className={click ? "" : "header-middle"}>
           <div className="header-link" onClick={closeMobileMenu}>
+            <Link to="/events">Events</Link>
+          </div>
+
+          <div className="header-link" onClick={closeMobileMenu}>
             <Link to="/example">Example</Link>
           </div>
 

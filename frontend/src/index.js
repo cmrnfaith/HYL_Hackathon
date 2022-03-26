@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Homepage from "./Home/Homepage";
 import ScrollToTop from "./utilities/ScrollToTop";
 import PrivateRoute from "./OtherComponents/PrivateRoute";
+import Events from "./Events/Events";
 import Example from "./Example/Example";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -31,7 +32,7 @@ const App = () => {
       <Switch className="content">
         {/* Normal Navagation Routes */}
         <Route exact path="/" component={Homepage} />
-
+        <Route exact path="/events" component={Events} />
         <Route exact path="/example" component={Example} />
         <Route exact path="/example2" component={Example} />
 
