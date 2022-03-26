@@ -51,7 +51,7 @@ This is the website development branch for our project. This project will use py
 
 #### Screenshot Example #2
 
-![Screenshot #2](docs/Strategies.png?raw=true "Screenshot of the Strategies")
+![Screenshot #2](docs/example1.png?raw=true "Example 1")
 
-### Link to the application running: [Production Version](https://www.google.com)
+### Link to the application running: [Production Version](https://u-hub.netlify.app/)
 
