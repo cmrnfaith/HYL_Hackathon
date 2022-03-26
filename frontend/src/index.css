@@ -291,7 +291,29 @@ button:hover {
 }
 
 .event-container .date {
-  font-size: 2rem;
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 1vh 1vw;
+}
+.event-container .type {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 1vh 1vw;
+}
+.event-container .faculty {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
+}
+.event-container .location {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
+}
+.event-container .private {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
 }
 
 .event-container .title:after {
