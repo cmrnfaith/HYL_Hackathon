@@ -62,7 +62,7 @@ const App = () => {
   }
   return (
     <BrowserRouter>
-      <Header className="header" loginStatus={loginStatus} />
+      <Header className="header" loginStatus={loginStatus} user={user} />
       {/* Used to ensure each page loads at the top */}
       <ScrollToTop />
 
