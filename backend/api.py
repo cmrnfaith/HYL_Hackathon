@@ -70,6 +70,40 @@ def get_all_events():
     return result
 
 """
+Gets a specific events.
+"""
+@app.route("/event/<int:id>", methods=["GET"])
+def get_event(eventID: int):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_event_db(db_conn, "events", eventID)
+
+    for event in data:
+        print(f"The time from event data is {event[3]}")
+        result["result"].append(
+            {
+                "eventID": event[0],
+                "name": event[1],
+                "date": event[2],
+                "location": event[3],
+                "price": event[4],
+                "attire": event[5],
+                "membership": event[6],
+                "duration": event[7],
+                "private": event[8],
+                "faculty": event[9],
+                "description": event[10],
+                "eventType": event[11],
+                "hostID": event[12],
+            }
+        )
+
+    return result
+
+
+
+"""
 Inserts or Deletes an event
 """
 @app.route("/events", methods=["POST", "DELETE"])
