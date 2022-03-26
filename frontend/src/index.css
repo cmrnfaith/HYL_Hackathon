@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Quicksand:wght@300;400;500;600;700&family=Titillium+Web:ital,wght@0,200;0,300;0,600;1,200&family=Zen+Antique&display=swap");
 
+body {
+  margin: 0px;
+}
+
 :root {
   /* colors */
   --body-color: rgb(42, 46, 57);
@@ -40,6 +44,19 @@
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+a div {
+  text-decoration: none;
+}
+
+p {
+  font-size: 2em;
+}
+
+.content {
+  margin: 0;
+  margin-bottom: 60px;
 }
 
 :root::-webkit-scrollbar {
