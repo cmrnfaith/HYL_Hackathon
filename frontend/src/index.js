@@ -8,7 +8,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Homepage from "./Home/Homepage";
 import ScrollToTop from "./utilities/ScrollToTop";
 import PrivateRoute from "./OtherComponents/PrivateRoute";
-import Events from "./Events/Events";
+import EventPage from "./Events/EventPage";
 import CreateEvent from "./CreateEvent/CreateEvent";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -69,7 +69,7 @@ const App = () => {
         {/* Normal Navagation Routes */}
 
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/events" component={Events} />
+        <Route exact path="/events" component={EventPage} />
 
         <Route path="/signup" component={SignUp} />
         <Route
@@ -77,7 +77,7 @@ const App = () => {
           component={withProps(Login, { updateLoginStatus, updateLocalUser })}
         />
         <Route exact path="/createevent" component={CreateEvent} />
-        <Route exact path="/example2" component={Events} />
+        <Route exact path="/example2" component={EventPage} />
 
         <PrivateRoute
           redirect_url="/login"
