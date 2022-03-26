@@ -132,3 +132,26 @@ def delete_host_from_db(conn:mysql.connector.connect, table_name:str, username:s
     conn.commit()
     cur.close()
     return
+
+def get_host(conn:mysql.connector.connect, table_name:str, username:str)->Tuple:
+    """
+    Gets a host from the Host table.
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        username: Username of the host being inserted
+    
+    Returns:
+        tuple: The user's information
+    """ 
+
+    cur = conn.cursor()
+
+    sql = f"SELECT * FROM {table_name}  WHERE username = %s;"
+    val = (username)
+    cur.execute(sql, val)
+
+    results = cur.fetchall()
+    cur.close()
+    return results
