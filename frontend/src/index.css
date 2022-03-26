@@ -230,7 +230,7 @@ button:hover {
 
 .events-container {
   padding-top: var(--padding-top-for-navbar);
-  /* width: var(--inner-width); */
+  width: var(--inner-width);
   padding: 2rem 2rem;
   border-radius: 5px;
   position: relative;
@@ -238,6 +238,24 @@ button:hover {
 
 /* ================== */
 /* === Event List === */
+
+.event-list-container {
+  display: block;
+  /* justify-content: flex-start; */
+}
+.event-list-items {
+  /* width: var(--inner-width); */
+  /* align-items: center; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.event-list-items > div {
+  flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
+  /*demo*/
+  box-shadow: 0 0 0 1px black;
+  margin-bottom: 10px;
+}
 
 .event-list-container .title {
   font-size: 2rem;
@@ -255,6 +273,16 @@ button:hover {
   left: 50%;
   height: 3px;
   width: 200%;
+}
+
+/* ============= */
+/* === Event === */
+
+.event-container {
+  max-width: 25vw;
+  min-width: 20rem;
+  margin: 3vh 2vw;
+  padding: 1vh 1vw;
 }
 
 /* =========================== */
