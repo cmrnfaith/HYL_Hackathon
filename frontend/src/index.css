@@ -107,7 +107,7 @@ button:hover {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .create-event-container {
@@ -116,19 +116,24 @@ button:hover {
   padding: 2rem 2rem;
   border-radius: 5px;
   position: relative;
-  border: 1px solid blue;
 }
 
 .create-event-container .title {
   font-size: 2rem;
   font-weight: 500;
+  position: relative;
+  margin-bottom: 3rem;
 }
 
 .create-event-container .title:after {
+  transform: translateX(-50%);
   content: "";
-  color: red;
-  height: 1px;
-  width: 20px;
+  background: red;
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 200%;
 }
 
 .create-event-container .create-event-form {
@@ -141,20 +146,14 @@ button:hover {
 }
 
 .create-event-container .input-box {
-  width: 50%;
+  width: 30%;
   margin-bottom: 2rem;
   position: relative;
 }
 
-.create-event-container .details {
+.create-event-container .input-label {
   font-weight: 600;
   font-size: 1.3rem;
-}
-
-.create-event-container .slider-title {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
 }
 
 .create-event-container .form-subtitle {
@@ -164,12 +163,8 @@ button:hover {
   color: #00000099;
 }
 
-.create-event-container .slider-input {
-  padding: 0;
-}
-
 .create-event-container input,
-.create-event-container select {
+.create-event-container textarea {
   margin-top: 5px;
   width: 100%;
   height: 3rem;
@@ -182,7 +177,17 @@ button:hover {
   transition: all 0.4s ease;
 }
 
-.create-event-container input:focus {
+.create-event-container textarea {
+  height: 10rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.create-event-container input:focus,
+.create-event-container textarea:focus {
   border-color: #341e0f;
 }
 

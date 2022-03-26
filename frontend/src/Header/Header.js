@@ -32,7 +32,7 @@ const Header = ({ loginStatus }) => {
           </div>
 
           <div className="header-link" onClick={closeMobileMenu}>
-            <Link to="/example">Example</Link>
+            <Link to="/createevent">Create Event</Link>
           </div>
 
           <div className="header-link" onClick={closeMobileMenu}>
