@@ -1,7 +1,7 @@
 const Example = () => {
   return (
     <div className="example-page-container">
-      <h1>Example Page</h1>
+      <h1>Create an Event</h1>
     </div>
   );
 };
