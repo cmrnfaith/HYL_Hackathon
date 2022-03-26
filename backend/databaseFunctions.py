@@ -104,7 +104,7 @@ def delete_host_from_db(conn:mysql.connector.connect, table_name:str, username:s
     cur = conn.cursor()
 
     sql = f"DELETE FROM {table_name} WHERE username = %s;"
-    val = (username)
+    val = (username,)
     cur.execute(sql, val)
 
     print(f"executing into {table_name}: {(username)}")
