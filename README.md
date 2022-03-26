@@ -1,8 +1,6 @@
 # Team Excessive Alpha HYL_Hackathon
 # [(React) Application](https://github.com/cmrnfaith/HYL_Hackathon)
 
-![Workflow](https://github.com/cmrnfaith/HYL_Hackathon/actions/workflows/main.yml/badge.svg)
-
 
 ![GitHub](https://img.shields.io/github/license/cmrnfaith/HYL_Hackathon?style=plastic)
 
