@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import { useHistory } from "react-router";
 
 const Event = ({ event }) => {
+  const history = useHistory();
+  function viewEvent() {
+    var url = "/event/" + event.eventID;
+    history.push(url);
+  }
   return (
-    <div className="event-container">
+    <div className="event-container" onClick={viewEvent}>
       <div className="title">{event.name}</div>
       <div className="date">
         Event Date: {new Date(event.date).toLocaleDateString()}
