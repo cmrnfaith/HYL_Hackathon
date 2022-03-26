@@ -142,7 +142,7 @@ def logout():
     logout_user()
     return Response(status=200)
 
-@app.route("/host/login", methods=["POST"])
+@app.route("/login", methods=["POST"])
 def login():
     db_conn = get_db_connection()
 
