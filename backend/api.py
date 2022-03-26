@@ -73,11 +73,11 @@ def get_all_events():
 Gets a specific events.
 """
 @app.route("/event/<int:id>", methods=["GET"])
-def get_event(eventID: int):
+def get_event(id: int):
     db_conn = get_db_connection()
 
     result = {"result": []}
-    data = get_event_db(db_conn, "events", eventID)
+    data = get_event_db(db_conn, "events", id)
 
     for event in data:
         print(f"The time from event data is {event[3]}")
