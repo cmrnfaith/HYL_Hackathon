@@ -36,7 +36,7 @@ body {
   https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/*/
   position: relative;
   min-height: 100vh;
-  padding-bottom: 18rem;
+  padding-bottom: 22rem;
 
   /* fonts */
   /* font-family: "quicksand"; */
@@ -405,6 +405,12 @@ button:hover {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 2rem;
+}
+
+.login-container .new-user {
+  font-size: 1.2rem;
+  font-weight: 500;
+  /* margin-bottom: 2rem; */
 }
 
 .login-container .invalid-credentials {
