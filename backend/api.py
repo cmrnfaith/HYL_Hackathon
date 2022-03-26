@@ -61,26 +61,25 @@ def get_all_events():
 """
 Inserts an event
 """
-@app.route("/events", methods=["POST"])
+@app.route("/events", methods=["POST", "DELETE"])
 def create_event():
     if request.method == "POST":
         data = request.json
-        
-    try:
-        db_conn = get_db_connection()
-        insert_event_db(db_conn, "events", data)
-        
-    except Exception as e:
-        return Response(status=409)
-    
-    return Response(status=200)
+        try:
+            db_conn = get_db_connection()
+            insert_event_db(db_conn, "events", data)
+            
+        except Exception as e:
+            return Response(status=409)
 
+        return Response(status=200)
+
+    if request.method == "DELETE":
+        
 
 # Update event
 # Delete event
 # Get event
-
-
 # search for specific event (will be based on a query)
 
 
