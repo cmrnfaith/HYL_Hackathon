@@ -123,21 +123,34 @@ button:hover {
 
 .create-event-container {
   margin-top: 3rem;
-  background-color: white;
+  margin-bottom: 3rem;
   height: 50%;
-  width: 30%;
+  width: 60%;
   border-radius: 5px;
   position: relative;
+  display: flex;
+  justify-content: space-around;
 }
 
-.create-event-container .title {
+.create-event-container .create-tags {
+  margin-left: 3rem;
+  background-color: white;
+  margin: 20px 0 12px 0;
+  width: 25%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-event-container .create-tags .title {
   font-size: 2rem;
   font-weight: 500;
   position: relative;
   margin-bottom: 3rem;
 }
 
-.create-event-container .title:after {
+.create-event-container .create-tags .title:after {
   transform: translateX(-50%);
   content: "";
   background: var(--ucalgary-yellow);
@@ -148,36 +161,69 @@ button:hover {
   width: 200%;
 }
 
+.create-event-container .create-tags .input-box {
+  width: 90%;
+  margin-bottom: 0.5rem;
+  position: relative;
+  border: 1px solid #13131344;
+  border-radius: 5px;
+}
+
+.create-event-container .create-tags .input-label {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-left: 3px;
+}
+
+.create-event-container .create-tags input,
+.create-event-container .create-tags select {
+  outline: none;
+  border-radius: 5px;
+}
+
 .create-event-container .create-event-form {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   margin: 20px 0 12px 0;
+  background-color: white;
+  border-radius: 5px;
+  width: 68%;
 }
 
-.create-event-container .input-box {
+.create-event-container .create-event-form .title {
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.create-event-container .create-event-form .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-yellow);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 200%;
+}
+
+.create-event-container .create-event-form .input-box {
   width: 90%;
   margin-bottom: 2rem;
   position: relative;
 }
 
-.create-event-container .input-label {
+.create-event-container .create-event-form .input-label {
   font-weight: 600;
   font-size: 1.3rem;
 }
 
-.create-event-container .form-subtitle {
-  margin-top: 2px;
-  margin-bottom: 0;
-  font-size: 1.1rem;
-  color: #00000099;
-}
-
-.create-event-container input,
-.create-event-container textarea,
-.create-event-container select {
+.create-event-container .create-event-form input,
+.create-event-container .create-event-form textarea,
+.create-event-container .create-event-form select {
   margin-top: 5px;
   width: 100%;
   height: 3rem;
@@ -196,23 +242,28 @@ button:hover {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.create-event-container textarea {
+.create-event-container .create-event-form textarea {
   height: 10rem;
+  width: 102%;
   padding-left: 4px;
 }
 
-.create-event-container input:focus,
-.create-event-container textarea:focus {
+.create-event-container .create-event-form select {
+  width: 103%;
+}
+
+.create-event-container .create-event-form input:focus,
+.create-event-container .create-event-form textarea:focus {
   border-color: #341e0f;
 }
 
-.create-event-container .button {
+.create-event-container .create-event-form .button {
   margin-top: 1rem;
   height: 100%;
   width: 50%;
 }
 
-.create-event-container .button input {
+.create-event-container .create-event-form .button input {
   outline: none;
   border: none;
   cursor: pointer;
@@ -221,9 +272,10 @@ button:hover {
   font-weight: 500;
   color: white;
   background: var(--ucalgary-red);
+  margin-bottom: 2rem;
 }
 
-.create-event-container .button input:hover {
+.create-event-container .create-event-form .button input:hover {
   color: var(--ucalgary-yellow);
 }
 
