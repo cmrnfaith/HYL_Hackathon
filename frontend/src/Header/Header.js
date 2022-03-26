@@ -1,5 +1,5 @@
 //=============React Elements=============//
-import { AiOutlineStock } from "react-icons/ai";
+import { MdDeviceHub } from "react-icons/md";
 import { AiOutlineDown } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -16,12 +16,12 @@ const Header = ({ loginStatus }) => {
   return (
     <div className="header-container">
       <Link to="/" id="header-icon-logo" onClick={closeMobileMenu}>
-        <AiOutlineStock />
+        <MdDeviceHub />
       </Link>
 
       <div className="header-icon">
         <Link to="/" onClick={closeMobileMenu}>
-          Team APES
+          UHUB
         </Link>
       </div>
 
