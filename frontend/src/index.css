@@ -7,16 +7,15 @@ body {
 :root {
   /* colors */
   --body-color: rgb(42, 46, 57);
-  --background-color-new: linear-gradient(
-    90deg,
-    rgb(107, 94, 71),
-    rgb(71, 91, 107)
-  );
+  --background-color-new: white;
   --white: white;
+  --ucalgary-red: #cf0722;
+  --ucalgary-yellow: #ffcd00;
+  --ucalgary-header: white;
 
   /* text colors */
   --primary-heading-color: #c7a25e;
-  --text-color: white;
+  --text-color: black;
 
   /* sizes */
   --inner-width: 70%;
@@ -129,18 +128,18 @@ button:hover {
 }
 
 .footer-heading a {
-  color: white;
+  color: inherit;
   text-decoration: none;
   margin-bottom: 0.5vh;
   transition: color 0.1s ease-in-out;
 }
 
 .footer-heading a:hover {
-  color: gray;
+  color: inherit;
 }
 
 .footer-heading h2 {
-  color: darkgray;
+  color: var(--ucalgary-yellow);
   font-size: 2vmax;
 
   margin-bottom: 2vh;
@@ -155,7 +154,7 @@ button:hover {
 }
 
 #footer-logo {
-  color: white;
+  color: var(--ucalgary-red);
   font-size: 2.5rem;
 }
 
@@ -214,19 +213,19 @@ button:hover {
 .header-container {
   position: absolute;
   top: 0;
+  background: var(--ucalgary-red);
   z-index: 1;
   width: 100%;
   display: flex;
   padding: 0 10px;
   align-items: center;
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-  backdrop-filter: blur(1.5px);
   font-size: 1.4rem;
 }
 
 .header-icon a {
   text-decoration: none;
-  color: inherit;
+  color: var(--ucalgary-yellow);
   flex-grow: 1;
   font-size: 2.2rem;
   font-weight: 600;
@@ -238,7 +237,7 @@ button:hover {
 #header-icon-logo {
   align-self: flex-end;
   text-decoration: none;
-  color: inherit;
+  color: var(--ucalgary-yellow);
   margin: auto 0.9vmax;
   margin-top: 0.9rem;
   font-size: 4rem;
@@ -252,7 +251,7 @@ button:hover {
 
 .header-link a {
   text-decoration: none;
-  color: inherit;
+  color: var(--ucalgary-header);
   margin: 0 5px;
 }
 
@@ -326,7 +325,7 @@ button:hover {
 
 /* Change color of dropdown links on hover */
 .header-dropdown-item:hover {
-  color: white;
+  color: inherit;
   background-color: #ddbe86;
 }
 
@@ -372,7 +371,7 @@ button:hover {
 }
 
 .option :hover {
-  color: white;
+  color: inherit;
 }
 .signin-up {
   display: flex;
@@ -384,14 +383,14 @@ button:hover {
   align-self: center;
 }
 .sign-in :hover {
-  color: white;
+  color: inherit;
 }
 .signup-btn {
   padding: 10px 10px;
   height: 2.4rem;
   border-radius: 3px;
   background: rgb(222, 9, 241);
-  color: white;
+  color: inherit;
   cursor: pointer;
   align-items: center;
 }
