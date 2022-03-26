@@ -133,7 +133,7 @@ def delete_host_from_db(conn:mysql.connector.connect, table_name:str, username:s
     cur.close()
     return
 
-def get_host(conn:mysql.connector.connect, table_name:str, username:str)->Tuple:
+def get_host(conn:mysql.connector.connect, table_name:str, username:str)->List:
     """
     Gets a host from the Host table.
 
@@ -149,7 +149,7 @@ def get_host(conn:mysql.connector.connect, table_name:str, username:str)->Tuple:
     cur = conn.cursor()
 
     sql = f"SELECT * FROM {table_name}  WHERE username = %s;"
-    val = (username)
+    val = (username,)
     cur.execute(sql, val)
 
     results = cur.fetchall()

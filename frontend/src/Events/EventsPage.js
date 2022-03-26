@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import EventList from "./EventList";
 
-const EventPage = () => {
+const EventsPage = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
     var url = "/events";
@@ -36,4 +36,4 @@ const EventPage = () => {
   );
 };
 
-export default EventPage;
+export default EventsPage;

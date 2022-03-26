@@ -14,6 +14,7 @@ body {
   --ucalgary-red-hover: #7e0212;
   --ucalgary-yellow: #ffcd00;
   --ucalgary-yellow-light: #fff8dd;
+  --ucalgary-border: #e0bc7b;
 
   --ucalgary-header: white;
 
@@ -262,7 +263,7 @@ button:hover {
 .event-list-items > div {
   flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
 
-  box-shadow: 0 0 0 2px var(--ucalgary-yellow);
+  box-shadow: 0 0 0 2px var(--ucalgary-border);
   margin-bottom: 10px;
 }
 
@@ -291,8 +292,13 @@ button:hover {
   max-width: 25vw;
   min-width: 20rem;
   margin: 3vh 2vw;
-  padding: 1vh 1vw;
+  padding: 2vh 1vw;
   border-radius: 8px;
+}
+
+.event-container:hover {
+  cursor: pointer;
+  animation: card-hover 0.2s ease-in-out forwards;
 }
 
 .event-container .title {
@@ -300,7 +306,29 @@ button:hover {
 }
 
 .event-container .date {
-  font-size: 2rem;
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 1vh 1vw;
+}
+.event-container .type {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 1vh 1vw;
+}
+.event-container .faculty {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
+}
+.event-container .location {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
+}
+.event-container .private {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
 }
 
 .event-container .title:after {
@@ -312,6 +340,14 @@ button:hover {
   left: 50%;
   height: 3px;
   width: 100%;
+}
+
+@keyframes card-hover {
+  0% {
+  }
+  100% {
+    transform: translateY(-5%);
+  }
 }
 
 /* =========================== */
@@ -521,12 +557,15 @@ button:hover {
 
 .footer-heading h2 {
   color: var(--ucalgary-yellow);
-  font-size: 2vmax;
+  font-size: 2.2rem;
 
   margin-bottom: 2vh;
 }
 
 .footer-3 {
+  margin: auto 5vw;
+}
+.footer-2 {
   margin: auto 5vw;
 }
 
@@ -822,7 +861,7 @@ button:hover {
     position: absolute;
     top: 0;
     padding-top: 0;
-    margin-top: 4.8vh;
+    margin-top: 61px;
     left: -100%;
     opacity: 0;
     transition: all 0s ease;

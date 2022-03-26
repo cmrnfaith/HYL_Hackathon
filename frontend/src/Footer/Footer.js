@@ -8,7 +8,10 @@ const FooterPage = () => {
       <div className="footer">
         <div className="footer-heading footer-1">
           <h2 id="footer-logo">uHUB</h2>
-          <p>Bringing Students Together, All in One Place... Est. 1969</p>
+          <p>
+            Bringing Students Together
+            <br /> All in One Place
+          </p>
         </div>
 
         <div className="footer-links">
