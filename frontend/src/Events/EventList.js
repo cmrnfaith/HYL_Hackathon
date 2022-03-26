@@ -1,7 +1,7 @@
 const EventList = ({ events }) => {
   return (
     <div className="event-list-container">
-      <h1 className="title">Events</h1>;
+      <h1 className="title">Events</h1>
       <table>
         <thead>
           <tr>
@@ -23,7 +23,7 @@ const EventList = ({ events }) => {
             <tr key={event.eventID}>
               <td>{event.name}</td>
               <td>{event.attire}</td>
-              <td>{new Date(event.date)}</td>
+              <td>{new Date(event.date).toLocaleString()}</td>
               <td>{event.description}</td>
               <td>{event.duration}</td>
               <td>{event.eventType}</td>

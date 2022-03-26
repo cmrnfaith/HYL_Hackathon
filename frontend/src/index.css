@@ -236,14 +236,17 @@ button:hover {
   position: relative;
 }
 
-.events-container .title {
+/* ================== */
+/* === Event List === */
+
+.event-list-container .title {
   font-size: 2rem;
   font-weight: 500;
   position: relative;
   margin-bottom: 3rem;
 }
 
-.events-container .title:after {
+.event-list-container .title:after {
   transform: translateX(-50%);
   content: "";
   background: var(--ucalgary-yellow);

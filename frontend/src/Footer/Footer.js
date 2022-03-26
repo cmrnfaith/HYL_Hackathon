@@ -7,7 +7,7 @@ const FooterPage = () => {
     <div className="footer-container">
       <div className="footer">
         <div className="footer-heading footer-1">
-          <h2 id="footer-logo">UHUB</h2>
+          <h2 id="footer-logo">uHUB</h2>
           <p>Bringing Students Together, All in One Place</p>
         </div>
 

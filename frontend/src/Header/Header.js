@@ -21,7 +21,7 @@ const Header = ({ loginStatus }) => {
 
       <div className="header-icon">
         <Link to="/" onClick={closeMobileMenu}>
-          UHUB
+          uHUB
         </Link>
       </div>
 
