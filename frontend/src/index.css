@@ -8,10 +8,18 @@
     rgb(107, 94, 71),
     rgb(71, 91, 107)
   );
+  --white: white;
 
   /* text colors */
   --primary-heading-color: #c7a25e;
   --text-color: white;
+
+  /* sizes */
+  --inner-width: 70%;
+  --padding-top-for-navbar: 5rem;
+
+  /* font */
+  font-size: 12px;
 }
 
 #root {
@@ -33,6 +41,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================= */
+/* === Default Button Styles === */
+
+button {
+  cursor: pointer;
+  outline: 0;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  background-color: "";
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  font-size: 1rem;
+  border-radius: 0.25rem;
+  transition: all 0.15s ease-in-out;
+  color: var(--text-color);
+}
+
+button:hover {
+  font-weight: 200;
+
+  background-color: var(--white);
+}
+
+/* ==================== */
+/* === Example Page === */
 
 .example-page-container {
   padding-top: var(--padding-top-for-navbar);
