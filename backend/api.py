@@ -10,7 +10,7 @@ from flask_login import current_user, login_user, login_required
 
 import mysql.connector
 
-from databaseFunctions import *
+from databaseFunctions import get_all_events_DB
 
 MYSQL_HOST = '10.0.0.101'
 MYSQL_USER = 'root'
@@ -30,15 +30,16 @@ def get_all_events():
     db_conn = get_db_connection()
 
     result = {"result": []}
-    data = get_all_events(db_conn, "events")
+    data = get_all_events_DB(db_conn, "events")
 
     for event in data:
+        print(f"The time from event data is {event[3]}")
         result["result"].append(
             {
                 "eventID": event[0],
                 "name": event[1],
                 "date": event[2],
-                "time": event[3],
+                "time": str(event[3]),
                 "location": event[4],
                 "price": event[5],
                 "attire": event[6],
