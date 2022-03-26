@@ -19,7 +19,7 @@ const Logout = ({ loginStatus, updateLoginStatus, updateLocalUser }) => {
         host: false,
       });
 
-      fetch("/api/logout/", {
+      fetch("/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

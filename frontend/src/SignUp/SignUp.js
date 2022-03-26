@@ -48,7 +48,7 @@ const SignUp = () => {
       password,
       confirmPassword,
     });
-    var url = "/host";
+    var url = "/user";
 
     fetch(url, {
       method: "POST",
