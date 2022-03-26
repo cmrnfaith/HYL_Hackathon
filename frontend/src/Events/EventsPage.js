@@ -30,6 +30,7 @@ const EventsPage = () => {
   return (
     <div className="events-page-container">
       <div className="events-container">
+        <h1 className="title">Latest Events</h1>
         <EventList events={events} />
       </div>
     </div>

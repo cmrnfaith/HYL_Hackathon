@@ -8,7 +8,7 @@ import { ReactComponent as CloseMenu } from "../assets/x.svg";
 import { ReactComponent as MenuIcon } from "../assets/menu.svg";
 
 //TODO: implement this component
-const Header = ({ loginStatus }) => {
+const Header = ({ loginStatus, user }) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -30,13 +30,13 @@ const Header = ({ loginStatus }) => {
           <div className="header-link" onClick={closeMobileMenu}>
             <Link to="/events">Events</Link>
           </div>
-
+          {user.host && (
+            <div className="header-link" onClick={closeMobileMenu}>
+              <Link to="/createevent">Create Event</Link>
+            </div>
+          )}
           <div className="header-link" onClick={closeMobileMenu}>
-            <Link to="/createevent">Create Event</Link>
-          </div>
-
-          <div className="header-link" onClick={closeMobileMenu}>
-            <Link to="/example2">Example 2</Link>
+            <Link to="/hosts">Hosts</Link>
           </div>
           {!click ? (
             <div className="header-dropdown">

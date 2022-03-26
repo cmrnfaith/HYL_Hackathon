@@ -235,7 +235,7 @@ button:hover {
   padding-top: var(--padding-top-for-navbar);
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
 }
 
@@ -244,7 +244,24 @@ button:hover {
   width: var(--inner-width);
   padding: 2rem 2rem;
   border-radius: 5px;
+}
+
+.events-container .title {
+  font-size: 2rem;
+  font-weight: 500;
   position: relative;
+  margin-bottom: 3rem;
+}
+
+.events-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-yellow);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 200%;
 }
 
 /* ================== */
@@ -252,18 +269,17 @@ button:hover {
 
 .event-list-container {
   display: block;
-
-  /* justify-content: flex-start; */
 }
 .event-list-items {
   /* width: var(--inner-width); */
   /* align-items: center; */
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .event-list-items > div {
+  justify-content: start;
   flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
   border: 1px solid var(--ucalgary-border);
   box-shadow: 2px 2px 2px var(--ucalgary-shadow);
