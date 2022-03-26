@@ -27,6 +27,13 @@ body {
 }
 
 #root {
+  /* these styles allow the footer to stick to the bottom of the page. 
+  The padding bottom of 18rem is the same height as the footer 
+  https://www.freecodecamp.org/news/how-to-keep-your-footer-where-it-belongs-59c6aa05c59c/*/
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 18rem;
+
   /* fonts */
   /* font-family: "quicksand"; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -89,16 +96,185 @@ button:hover {
 }
 
 /* ==================== */
-/* === Example Page === */
+/* === Create Event === */
 
-.example-page-container {
+.create-event-page-container {
+  background: var(--background-color-new);
   padding-top: var(--padding-top-for-navbar);
-  padding: 10px;
+  min-height: 100vh;
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  background: var(--background-color-new);
+}
+
+.create-event-container {
+  padding-top: var(--padding-top-for-navbar);
+  width: var(--inner-width);
+  padding: 2rem 2rem;
+  border-radius: 5px;
+  position: relative;
+  border: 1px solid blue;
+}
+
+.create-event-container .title {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.create-event-container .title:after {
+  content: "";
+  color: red;
+  height: 1px;
+  width: 20px;
+}
+
+.create-event-container .create-event-form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.create-event-container .input-box {
+  width: 50%;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.create-event-container .details {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.create-event-container .slider-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.create-event-container .form-subtitle {
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  color: #00000099;
+}
+
+.create-event-container .slider-input {
+  padding: 0;
+}
+
+.create-event-container input,
+.create-event-container select {
+  margin-top: 5px;
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 1.3rem;
+  border-bottom-width: 2px;
+  transition: all 0.4s ease;
+}
+
+.create-event-container input:focus {
+  border-color: #341e0f;
+}
+
+.create-event-container .button {
+  margin-top: 1rem;
+  height: 100%;
+  width: 100%;
+}
+
+.create-event-container .button input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  background: var(--button-color);
+}
+
+/* ======================= */
+/* === Create Transfer === */
+
+.create-transfer-container {
+  width: 100%;
+  background-color: white;
+  padding: 2rem 2rem;
+  border-radius: 5px;
+}
+
+.create-transfer-container .title {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.create-transfer-container .subtitle {
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.create-transfer-container .strategy-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+
+.create-transfer-container .input-box {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.create-transfer-container .details {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.create-transfer-container input,
+.create-transfer-container select {
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 1.3rem;
+  border-bottom-width: 2px;
+  transition: all 0.4s ease;
+}
+
+.create-transfer-container select {
+  margin-bottom: 20px;
+}
+
+.create-transfer-container input:focus {
+  border-color: #341e0f;
+}
+
+.create-transfer-container .button {
+  margin: 3rem 0;
+  height: 100%;
+  width: 100%;
+}
+
+.create-transfer-container .button input {
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  background: var(--button-color);
 }
 
 /* =================== */
