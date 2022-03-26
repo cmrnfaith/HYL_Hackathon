@@ -76,7 +76,7 @@ def delete_event_from_db(conn:mysql.connector.connect, table_name:str, hostID:st
         raise e
     return
 
-def get_all_events_db(conn:mysql.connector.connect, table_name:str, host_name:str)->List:
+def get_all_events_from_host_db(conn:mysql.connector.connect, table_name:str, host_name:str)->List:
     """
     Gets all the events from a host in the database.
 
