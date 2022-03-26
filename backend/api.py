@@ -74,8 +74,12 @@ def create_event():
 
         return Response(status=200)
 
-    if request.method == "DELETE":
-        
+    elif request.method == "DELETE":
+        data = request.json
+        try:
+            delete_event_from_db(db_conn, "event", data["hostID"])
+        except Exception as e:
+            return Response(status=409)
 
 # Update event
 # Delete event
