@@ -109,8 +109,8 @@ def create_host():
     return Response(status=200)
 
 @app.route("/host", methods=["PUT"])
-@login_required
-def modify_user():
+# @login_required
+def modify_host():
     db_conn = get_db_connection()
 
     if request.method == "PUT":
