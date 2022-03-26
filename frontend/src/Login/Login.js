@@ -17,7 +17,7 @@ const Login = ({ updateLoginStatus, updateLocalUser }) => {
   };
 
   const submitLoginRequest = (username, password) => {
-    fetch("/api/user/login/", {
+    fetch("/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
