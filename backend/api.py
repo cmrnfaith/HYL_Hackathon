@@ -60,6 +60,20 @@ def get_all_events():
     return result
 
 # Create event
+@app.route("/events", methods=["POST"])
+def create_event():
+    if request.method == "POST":
+        data = request.json
+        
+    try:
+        db_conn = get_db_connection()
+        insert_event_DB(db_conn, "events", data)
+    except Exception as e:
+        return Response(status=409)
+    
+    return Response(status=200)
+
+
 # Update event
 # Delete event
 # Get event

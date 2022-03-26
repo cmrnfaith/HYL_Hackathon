@@ -32,7 +32,7 @@ const Header = ({ loginStatus }) => {
           </div>
 
           <div className="header-link" onClick={closeMobileMenu}>
-            <Link to="/example">Example</Link>
+            <Link to="/createevent">Create Event</Link>
           </div>
 
           <div className="header-link" onClick={closeMobileMenu}>
@@ -59,20 +59,6 @@ const Header = ({ loginStatus }) => {
                 >
                   FAQ
                 </Link>
-                <Link
-                  to="/tutorial"
-                  className="header-dropdown-item"
-                  onClick={closeMobileMenu}
-                >
-                  Tutorial
-                </Link>
-                <Link
-                  to="/contact"
-                  className="header-dropdown-item"
-                  onClick={closeMobileMenu}
-                >
-                  Contact
-                </Link>
               </div>
             </div>
           ) : (
@@ -85,16 +71,6 @@ const Header = ({ loginStatus }) => {
               <div className="header-link" onClick={closeMobileMenu}>
                 <Link to="/faq" onClick={closeMobileMenu}>
                   FAQ
-                </Link>
-              </div>
-              <div className="header-link" onClick={closeMobileMenu}>
-                <Link to="/tutorial" onClick={closeMobileMenu}>
-                  Tutorial
-                </Link>
-              </div>
-              <div className="header-link" onClick={closeMobileMenu}>
-                <Link to="/contact" onClick={closeMobileMenu}>
-                  Contact
                 </Link>
               </div>
             </>
