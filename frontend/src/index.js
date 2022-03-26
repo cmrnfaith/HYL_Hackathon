@@ -28,7 +28,6 @@ export const defaultUser = [
     last_name: "",
     email: "",
     host: false,
-    host_name: "",
   },
 ];
 

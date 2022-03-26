@@ -59,7 +59,7 @@ const Login = ({ updateLoginStatus, updateLocalUser }) => {
         <form onSubmit={onSubmit}>
           <input
             type="text"
-            placeholder="Username"
+            placeholder="Username or Host Name"
             onChange={(e) => setUsername(e.target.value)}
             required
           />

@@ -17,6 +17,7 @@ const EventOverview = (props) => {
         if (res.status === 200) {
           var response = await res.json();
           console.log(response);
+          setEvent(response.result[0]);
         } else if (res.status === 401) {
         } else {
           console.log("error fetching event");
