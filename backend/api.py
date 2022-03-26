@@ -66,7 +66,7 @@ def create_event():
         
     try:
         db_conn = get_db_connection()
-        insert_event_db(db_conn, "events", data)
+        insert_event_DB(db_conn, "events", data)
     except Exception as e:
         return Response(status=409)
     
