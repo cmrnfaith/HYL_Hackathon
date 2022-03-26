@@ -83,8 +83,9 @@ def update_host_in_db(conn:mysql.connector.connect, table_name:str, host_name:st
 
     cur = conn.cursor()
 
-    cur.execute("UPDATE public.\"%s\" SET \"Password\" = %s, SET \"hostNAame\" = %s WHERE \"Username\" = %s;",
-    vars=(table_name, hashed_password, host_name, username))
+    sql = f"UPDATE {table_name} SET hostname = %s, username = %s hashedPassword = %s, WHERE Username = %s;"
+    val = (host_name, username, hashed_password)
+    cur.execute(sql, val)
 
     print(f"executing into {table_name}: {(host_name, username, hashed_password)}")
     conn.commit()
@@ -102,7 +103,9 @@ def delete_host_from_db(conn:mysql.connector.connect, table_name:str, username:s
 
     cur = conn.cursor()
 
-    cur.execute("DELETE FROM public.\"%s\" WHERE \"Username\" = %s", vars=(table_name, username))
+    sql = f"DELETE FROM {table_name} WHERE username = %s"
+    val = (username)
+    cur.execute(sql, val)
 
     print(f"executing into {table_name}: {(username)}")
     conn.commit()
