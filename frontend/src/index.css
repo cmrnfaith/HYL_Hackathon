@@ -7,16 +7,16 @@ body {
 :root {
   /* colors */
   --body-color: rgb(42, 46, 57);
-  --background-color-new: linear-gradient(
-    90deg,
-    rgb(107, 94, 71),
-    rgb(71, 91, 107)
-  );
+  --background-color-new: white;
   --white: white;
+  --ucalgary-red: #cf0722;
+  --ucalgary-red-hover: #7e0212;
+  --ucalgary-yellow: #ffcd00;
+  --ucalgary-header: white;
 
   /* text colors */
   --primary-heading-color: #c7a25e;
-  --text-color: white;
+  --text-color: black;
 
   /* sizes */
   --inner-width: 70%;
@@ -129,18 +129,18 @@ button:hover {
 }
 
 .footer-heading a {
-  color: white;
+  color: inherit;
   text-decoration: none;
   margin-bottom: 0.5vh;
   transition: color 0.1s ease-in-out;
 }
 
 .footer-heading a:hover {
-  color: gray;
+  color: inherit;
 }
 
 .footer-heading h2 {
-  color: darkgray;
+  color: var(--ucalgary-yellow);
   font-size: 2vmax;
 
   margin-bottom: 2vh;
@@ -155,7 +155,7 @@ button:hover {
 }
 
 #footer-logo {
-  color: white;
+  color: var(--ucalgary-red);
   font-size: 2.5rem;
 }
 
@@ -214,33 +214,33 @@ button:hover {
 .header-container {
   position: absolute;
   top: 0;
+  background: var(--ucalgary-red);
   z-index: 1;
   width: 100%;
   display: flex;
   padding: 0 10px;
   align-items: center;
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
-  backdrop-filter: blur(1.5px);
   font-size: 1.4rem;
 }
 
 .header-icon a {
   text-decoration: none;
-  color: inherit;
+  color: var(--ucalgary-yellow);
   flex-grow: 1;
   font-size: 2.2rem;
   font-weight: 600;
   display: block;
-  margin-top: 0.9vh;
+  /* margin-top: 0.9vh; */
   margin-left: 0.9vmax;
 }
 
 #header-icon-logo {
   align-self: flex-end;
   text-decoration: none;
-  color: inherit;
+  color: var(--ucalgary-yellow);
   margin: auto 0.9vmax;
-  margin-top: 0.9rem;
+  /* margin-top: 0.9rem; */
   font-size: 4rem;
 }
 
@@ -252,8 +252,11 @@ button:hover {
 
 .header-link a {
   text-decoration: none;
-  color: inherit;
+
   margin: 0 5px;
+  color: var(--ucalgary-header);
+  font-size: 2rem;
+  font-weight: 420;
 }
 
 .header-link {
@@ -269,7 +272,7 @@ button:hover {
 }
 
 .header-link:hover {
-  background-color: #e7c47f22;
+  background-color: var(--ucalgary-red-hover);
 }
 
 .header-right {
@@ -286,24 +289,28 @@ button:hover {
   padding: 0.4rem;
   border-radius: 8px;
   transition: all 0.1s ease-in-out;
+  color: var(--ucalgary-header);
+  font-size: 2rem;
+  font-weight: 420;
 }
 
 .header-dropdown a {
   text-decoration: none;
-  color: inherit;
   margin: 0 0px;
+  color: var(--ucalgary-header);
+  font-size: 2rem;
+  font-weight: 420;
 }
 
 /* Dropdown Content (Hidden by Default) */
 .header-dropdown-content {
   display: none;
   position: absolute;
-  background: rgba(255, 255, 255, 1);
+  transform: translateX(-12%);
+  background: var(--ucalgary-red);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(60px);
-  border: 1px solid rgba(255, 255, 255, 0.46);
+
+  /* border: 1px solid rgba(255, 255, 255, 0.46); */
   /* min-width: 100px; */
   /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
   z-index: 1;
@@ -320,14 +327,16 @@ button:hover {
 }
 
 .header-dropdown-content a {
-  color: black;
+  color: var(--ucalgary-header);
+  font-size: 2rem;
+  font-weight: 420;
   border-radius: 2px;
 }
 
 /* Change color of dropdown links on hover */
 .header-dropdown-item:hover {
-  color: white;
-  background-color: #ddbe86;
+  color: inherit;
+  background-color: var(--ucalgary-red-hover);
 }
 
 /* Show the dropdown menu on hover */
@@ -372,7 +381,7 @@ button:hover {
 }
 
 .option :hover {
-  color: white;
+  color: inherit;
 }
 .signin-up {
   display: flex;
@@ -384,14 +393,14 @@ button:hover {
   align-self: center;
 }
 .sign-in :hover {
-  color: white;
+  color: inherit;
 }
 .signup-btn {
   padding: 10px 10px;
   height: 2.4rem;
   border-radius: 3px;
   background: rgb(222, 9, 241);
-  color: white;
+  color: inherit;
   cursor: pointer;
   align-items: center;
 }
@@ -402,7 +411,7 @@ button:hover {
   /*Mobile View */
 
   .header-container {
-    background: var(--background-color-new);
+    background: var(--ucalgary-red);
   }
   .header {
     padding: 0px 10px;
@@ -442,7 +451,7 @@ button:hover {
     grid-gap: 0px;
   }
   .nav-options.active {
-    background: var(--background-color-new);
+    background: var(--ucalgary-red);
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
