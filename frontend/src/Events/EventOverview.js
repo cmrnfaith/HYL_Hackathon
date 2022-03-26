@@ -29,35 +29,67 @@ const EventOverview = (props) => {
   }, []);
 
   return (
-    <div className="event-overview-container">
+    <div className="event-overview-page-container">
       {event && (
-        <>
+        <div className="event-overview-container">
           <div className="title">{event.name}</div>
-          <div className="date">
-            Event Date: {new Date(event.date).toLocaleDateString()}
+          <div className="content">
+            <table>
+              <tr>
+                <th>Event Date:</th>
+                <td>{new Date(event.date).toLocaleDateString()}</td>
+              </tr>
+              <tr>
+                <th>Event Time:</th>
+                <td>{new Date(event.date).toLocaleTimeString()}</td>
+              </tr>
+              <tr>
+                <th>Duration:</th>
+                <td>{event.duration}</td>
+              </tr>
+              <tr>
+                <th>Event Location:</th>
+                <td>{event.location}</td>
+              </tr>
+
+              {event.faculty === "N/A" ? (
+                ""
+              ) : (
+                <tr>
+                  <th>Faculty:</th>
+                  <td>{event.faculty}</td>
+                </tr>
+              )}
+
+              {event.eventType === "" ? (
+                ""
+              ) : (
+                <tr>
+                  <th>Event Type:</th>
+                  <td>{event.eventType}</td>
+                </tr>
+              )}
+
+              <tr>
+                <th>Price:</th>
+                <td>{event.price}</td>
+              </tr>
+              <tr>
+                <th>Permissions:</th>
+                <td>{event.private === 0 ? "Public" : "Private"}</td>
+              </tr>
+              <tr>
+                <th>Membership:</th>
+                <td>{event.membership}</td>
+              </tr>
+              <tr>
+                <th>Attire:</th>
+                <td>{event.attire}</td>
+              </tr>
+            </table>
+            <div className="text">{event.description}</div>
           </div>
-          <div className="faculty">
-            {event.faculty === "N/A" ? "" : event.faculty}
-          </div>
-          <div className="location">Event Location: {event.location}</div>
-          <div className="type">
-            {event.eventType ? "Category: " + event.eventType : ""}
-          </div>
-          <div className="private">
-            {event.private === 0 ? "Public" : "Private"}
-          </div>
-          <div className="time">
-            {new Date(event.date).toLocaleTimeString()}
-          </div>{" "}
-          */}
-          <div className="duration">{event.duration}</div>
-          <div className="text">{event.description}</div>
-          <div className="attire">{event.attire}</div>
-          <div className="membership">{event.membership}</div>
-          <div className="price">
-            {event.price === 0 ? "Free" : "$" + event.price.toFixed(2)}
-          </div>
-        </>
+        </div>
       )}
     </div>
   );

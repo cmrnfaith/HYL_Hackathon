@@ -372,6 +372,68 @@ button:hover {
   }
 }
 
+/* ====================== */
+/* === Event Overview === */
+
+.event-overview-page-container {
+  background: var(--background-light);
+  padding-top: var(--padding-top-for-navbar);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.event-overview-container {
+  min-width: 40vw;
+  max-width: 70vw;
+  background-color: white;
+  padding: 4rem 10rem;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.event-overview-container .title {
+  font-size: 3vmax;
+}
+
+.event-overview-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-red);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
+}
+.event-overview-container table {
+  margin: 1.3vmax 0;
+}
+
+.event-overview-container th {
+  /* align: center; */
+  flex-direction: column;
+  font-size: 1.5vmax;
+  padding: 1vh 1vw;
+  color: var(--ucalgary-yellow);
+}
+
+.event-overview-container tr {
+  /* align: center; */
+  font-size: 1.3vmax;
+  font-weight: 450;
+  /* padding: 1vh 1vw; */
+}
+.event-overview-container .content {
+  display: flex;
+  /* align-items: center; */
+}
+.event-overview-container .text {
+  font-size: 1.4rem;
+  padding: 1vh 1vw;
+  margin: 4vmax 5vmax;
+}
+
 /* =========================== */
 /* === Login Window Styles === */
 
@@ -389,7 +451,7 @@ button:hover {
 .login-container {
   max-width: 600px;
   width: 100%;
-  background-color: white;
+  background-color: var(--white);
   padding: 4rem 10rem;
   border-radius: 10px;
   text-align: center;
