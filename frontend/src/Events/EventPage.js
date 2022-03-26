@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Event from "./Event";
+import EventList from "./EventList";
 
 const EventPage = () => {
   const [events, setEvents] = useState([]);
@@ -30,10 +30,7 @@ const EventPage = () => {
   return (
     <div className="events-page-container">
       <div className="events-container">
-        <h1 className="title">Events</h1>
-        {events.map((event) => (
-          <Event key={Math.random()} />
-        ))}
+        <EventList events={events}>
       </div>
     </div>
   );
