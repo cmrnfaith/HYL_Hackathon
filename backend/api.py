@@ -21,14 +21,6 @@ MYSQL_PORT = 3306
 def get_db_connection():
     return mysql.connector.connect(host=MYSQL_HOST, user=MYSQL_USER, port=MYSQL_PORT, password=MYSQL_PASSWORD, database=MYSQL_DB)
 
-
-
-cursor = myDb.cursor()
-# cursor.execute(sql)
-# df = pd.DataFrame(cursor.fetchall())
-cursor.close()
-
-
 # ========================================================
 # Event APIs
 # ========================================================
@@ -43,7 +35,7 @@ def get_all_events():
     for event in data:
         result["result"].append(
             {
-                "": event[0],
+                "eventID": event[0],
                 "": event[1],
                 "": event[2],
                 "": event[3],
