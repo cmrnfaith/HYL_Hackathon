@@ -174,7 +174,12 @@ def create_user():
         hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
 
         try:
-            insert_user_into_db(db_conn,"user", data["username"], hashed_password, data["email"],data["firstName"], data["lastName"], \
+            if data["isHost"] is True:
+                data["isHost"] = 1
+            else:
+                data["isHost"] = 0
+
+            insert_user_into_db(db_conn,"user", data["username"], hashed_password, data["email"], data["firstName"], data["lastName"], \
                                 data["dateOfBirth"], data["country"], data["studentID"], data["isHost"])
         except Exception as e:
             return Response(status=409)
