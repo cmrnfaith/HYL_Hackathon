@@ -16,6 +16,7 @@ import NotFound from "./NotFound/NotFound";
 import Login from "./Login/Login";
 import Logout from "./Logout/Logout";
 import SignUp from "./SignUp/SignUp";
+import EventOverview from "./Events/EventOverview";
 
 export const defaultUser = [
   {
@@ -78,6 +79,8 @@ const App = () => {
         />
         <Route exact path="/createevent" component={CreateEvent} />
         <Route exact path="/example2" component={EventsPage} />
+
+        <Route exact path="/event/:id" component={EventOverview} />
 
         <PrivateRoute
           redirect_url="/login"

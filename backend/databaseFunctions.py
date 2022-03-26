@@ -27,6 +27,28 @@ def get_all_events_db(conn:mysql.connector.connect, table_name:str)->List:
     cur.close()
     return results
 
+def get_event_db(conn:mysql.connector.connect, table_name:str, eventID:int)->List:
+    """
+    Gets a specific events from the database.
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        eventID (int): The event to find
+    Returns:
+        dict: Every event in the database
+    """
+    cur = conn.cursor()
+    try:
+        cur.execute(f'SELECT * FROM {table_name}')
+    except Exception as e:
+        conn.rollback()
+        raise e
+
+    results = cur.fetchall()
+    cur.close()
+    return results
+
 def insert_event_db(conn:mysql.connector.connect, table_name:str, event_data:dict):
     cur = conn.cursor()
     try:
