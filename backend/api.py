@@ -1,15 +1,15 @@
-import json
-from datetime import datetime as dt
 import hashlib
-
 import numpy as np
-from flask.wrappers import Response
-from flask_login.utils import logout_user
-from main import app, login_manager
-from flask import request, send_from_directory, session
-from flask_login import current_user, login_user, login_required
-
 import mysql.connector
+
+from main import app, login_manager
+
+from datetime import datetime as dt
+from flask.wrappers import Response
+from flask import request
+
+from flask_login.utils import logout_user
+from flask_login import current_user, login_user, login_required
 
 from user import User
 from databaseFunctions import *
