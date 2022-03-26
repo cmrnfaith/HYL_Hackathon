@@ -11,7 +11,7 @@ from flask_login import current_user, login_user, login_required
 
 import mysql.connector
 
-from databaseFunctions import get_all_events_db, insert_host_into_db, delete_host_from_db, update_host_in_db
+from databaseFunctions import *
 
 MYSQL_HOST = '10.0.0.101'
 MYSQL_USER = 'root'
@@ -67,7 +67,8 @@ def create_event():
         
     try:
         db_conn = get_db_connection()
-        insert_event_DB(db_conn, "events", data)
+        insert_event_db(db_conn, "events", data)
+        
     except Exception as e:
         return Response(status=409)
     
