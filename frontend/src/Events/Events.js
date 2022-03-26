@@ -29,8 +29,9 @@ const Events = () => {
     <div className="events-page-container">
       <div className="events-container">
         <h1 className="title">Events</h1>
-        {events.map((event) =>
-        )}
+        {events.map((event) => (
+          <div key={Math.random()}></div>
+        ))}
       </div>
     </div>
   );
