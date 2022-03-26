@@ -101,6 +101,19 @@ button:hover {
   background: var(--background-color-new);
 }
 
+/* =================== */
+/* === Events Page === */
+
+.events-page-container {
+  padding-top: var(--padding-top-for-navbar);
+  padding: 10px;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--background-color-new);
+}
+
 /* ===================== */
 /* === Footer Styles === */
 
