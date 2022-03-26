@@ -25,6 +25,9 @@ def get_db_connection():
 # Event APIs
 # ========================================================
 
+"""
+Gets all the events.
+"""
 @app.route("/events", methods=["GET"])
 def get_all_events():
     db_conn = get_db_connection()
@@ -59,15 +62,16 @@ def get_all_events():
 # Update event
 # Delete event
 # Get event
-# Get all events
 
 
 # search for specific event (will be based on a query)
 
 
 # ========================================================
-# User APIs
+# Host APIs
 # ========================================================
+
+
 
 # create user
 # login
