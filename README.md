@@ -80,7 +80,7 @@ This is the website development branch for our project. This project will use py
 
 ## Demo
 
-![Demo Video](https://youtube.com/demo)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/xlZLV_C0-64/0.jpg)](https://www.youtube.com/watch?v=xlZLV_C0-64)
 
 ## Installation
 
