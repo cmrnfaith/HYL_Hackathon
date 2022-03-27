@@ -443,19 +443,19 @@ def get_all_user_events(username:str):
     for event in data1:
         result["result"].append(
             {
-                "eventID": event[0],
-                "name": event[1],
-                "date": event[2],
-                "location": event[3],
-                "price": event[4],
-                "attire": event[5],
-                "membership": event[6],
-                "duration": event[7],
-                "private": event[8],
-                "faculty": event[9],
-                "description": event[10],
-                "eventType": event[11],
-                "hostName": event[12],
+                "eventID": event[2],
+                "name": event[3],
+                "date": event[4],
+                "location": event[5],
+                "price": event[6],
+                "attire": event[7],
+                "membership": event[8],
+                "duration": event[9],
+                "private": event[10],
+                "faculty": event[11],
+                "description": event[12],
+                "eventType": event[13],
+                "hostName": event[14],
                 "liked": True
             }
         )
