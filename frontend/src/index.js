@@ -83,7 +83,6 @@ const App = () => {
 
         <Route path="/feed" component={withProps(Feed, { user })} />
 
-        <Route exact path="/createevent" component={CreateEvent} />
         <Route exact path="/hosts" component={HostsPage} />
 
         <Route exact path="/event/:id" component={EventOverview} />
@@ -104,7 +103,14 @@ const App = () => {
           redirect_url="/login"
           loginStatus={loginStatus}
           path="/myevents"
-          component={withProps(MyEvents, {})}
+          component={withProps(MyEvents, { user })}
+        />
+
+        <PrivateRoute
+          redirect_url="/login"
+          loginStatus={loginStatus}
+          path="/createevent"
+          component={withProps(CreateEvent, { user })}
         />
 
         <Route path="*" exact={true} component={NotFound} />

@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
-import EventList from "./EventList";
+import Event from "./Event";
 
-const MyEvents = () => {
+const MyEvents = ({ user }) => {
   const [events, setEvents] = useState([]);
+
   useEffect(() => {
-    var url = "/events";
+    console.log(user);
+
+    var url = "/events/" + user.username;
     fetch(url, {
       method: "GET",
       headers: {
@@ -27,11 +30,16 @@ const MyEvents = () => {
         // Handle error
       });
   }, []);
+
   return (
     <div className="events-page-container">
       <div className="events-container">
-        <h1 className="title">Latest Events</h1>
-        <EventList events={events} />
+        <h1 className="title">My Events</h1>
+        <div className="event-list-items">
+          {events.map((event) => (
+            <Event key={event.eventID} event={event} />
+          ))}
+        </div>
       </div>
     </div>
   );
