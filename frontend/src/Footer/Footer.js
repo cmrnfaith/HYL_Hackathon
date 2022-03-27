@@ -35,10 +35,10 @@ const FooterPage = () => {
           &copy; {new Date().getFullYear()} UHUB. Calgary, Canada. All Rights
           Reserved
         </div>
-        <Link className="footer-bottom-policy" to="/about">
+        <Link className="footer-bottom-policy" to="/APE">
           Privacy Policy
         </Link>
-        <Link className="footer-bottom-terms" to="/about">
+        <Link className="footer-bottom-terms" to="/APE">
           Terms And Conditions
         </Link>
       </div>
