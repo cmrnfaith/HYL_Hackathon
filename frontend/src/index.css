@@ -625,35 +625,35 @@ button:hover {
   cursor: pointer;
   animation: card-hover 0.2s ease-in-out forwards;
 }
+.event-container .content {
+}
+.event-container table {
+  margin: 1.3vmax 0;
+  min-width: 30vw;
+}
+
+.event-container th {
+  /* align: center; */
+  flex-direction: column;
+  font-size: 1vmax;
+  color: var(--ucalgary-red);
+}
+
+.event-container tr {
+  text-align: left;
+}
+
+.event-container td {
+  /* align: center; */
+  font-size: 0.9vmax;
+  /* padding: 1vh 3vw; */
+  /* padding-right: 4rem; */
+  font-weight: 450;
+  /* padding: 1vh 1vw; */
+}
 
 .event-container .title {
-  font-size: 2rem;
-}
-
-.event-container .date {
-  /* align: center; */
-  font-size: 1.6rem;
-  padding: 1vh 1vw;
-}
-.event-container .type {
-  /* align: center; */
-  font-size: 1.6rem;
-  padding: 1vh 1vw;
-}
-.event-container .faculty {
-  /* align: center; */
-  font-size: 1.6rem;
-  padding: 0 1vw;
-}
-.event-container .location {
-  /* align: center; */
-  font-size: 1.6rem;
-  padding: 0 1vw;
-}
-.event-container .private {
-  /* align: center; */
-  font-size: 1.6rem;
-  padding: 0 1vw;
+  font-size: 1.9rem;
 }
 
 .event-container .title:after {
@@ -665,6 +665,19 @@ button:hover {
   left: 50%;
   height: 3px;
   width: 100%;
+}
+
+.event-container .like-button {
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+  font-size: 4rem;
+  color: red;
+  background-color: var(--white);
+}
+
+.event-container .like-button AiFillHeart {
+  color: red;
 }
 
 @keyframes card-hover {

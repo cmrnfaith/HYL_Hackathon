@@ -53,7 +53,7 @@ const Header = ({ loginStatus, user }) => {
           )}
           {loginStatus && user.isHost ? (
             <div className="header-link" onClick={closeMobileMenu}>
-              <Link to="/my_events">My Events</Link>
+              <Link to="/myevents">My Events</Link>
             </div>
           ) : (
             <div></div>
