@@ -1,4 +1,4 @@
-# Team APE Consulting HYL_Hackathon
+# HYL_Hackathon 2022
 
 # [u-Hub](https://github.com/cmrnfaith/HYL_Hackathon)
 
