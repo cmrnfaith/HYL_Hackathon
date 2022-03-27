@@ -1,31 +1,37 @@
 # Team Excessive Alpha HYL_Hackathon
 
-## Inspiration 
+## Inspiration
+
 Interested in finding social and academic events but have no idea where to find them? Tired of looking through countless emails, D2L, club websites and poster to find events? Wanting to see, like, interact and look forspecific university events all in one place? These were the questions we wanted to address and the inspiration for our web application uHub.
 
 ## What it does
+
 uHub is a web application that allows users to find different events seamlessly from various clubs and the university all in one place. uHub allows hosts to create, delete and showcase events on our site for university Students, while also tracking what events they currently have created. University students are able to view the website to browse and search for various events by different key filters such as by event type or name. If they find an event they like they can also add it to their calendar. Furthermore, students can also create an account and login in to follow specific hosts as well as like different events to get a tailored events feed.
 
-|Technologies | That We Used |
-| ------------- | --------------- |
-| STACK		| TECHNOLOGY USED |
-| Front-End	| React,Javascript, CSS, HTML |
-| Back-End	| Python, Flask |
-| Database	| mySQL |
-| APIs		| REST |
+| Technologies | That We Used                |
+| ------------ | --------------------------- |
+| STACK        | TECHNOLOGY USED             |
+| Front-End    | React,Javascript, CSS, HTML |
+| Back-End     | Python, Flask               |
+| Database     | mySQL                       |
+| APIs         | REST                        |
 
 ## How we built it
 
 ## Challenges we ran into
-A few challenges we ran into it 
+
+A few challenges we ran into it
 
 ## Accomplishments that we're proud of
+
 Developing an intricate web application that utilizes a database, user-friendly frontend and backend in under 24 hours.
 
 ## What we learned
+
 We learned how to utilize various API such as an API for calendar integration as well as manage our time effectively to create a web application that improves students' lives will be usable.
 
 ## What's next for uHub
+
 Adding the ability for users to get recommendations based on their interests and previous liked events. Also the ability for hosts of events to provide announcements to users that are signed up.
 
 # [(React) Application](https://github.com/cmrnfaith/HYL_Hackathon)
@@ -74,12 +80,26 @@ This is the website development branch for our project. This project will use py
 
 ### Demonstration
 
-#### Screenshot Example #1
+#### Event List
 
 ![Screenshot #1](docs/Example2.png?raw=true "Example 1")
 
-#### Screenshot Example #2
+#### Create an Event
 
 ![Screenshot #2](docs/Example3.png?raw=true "Example 2")
+
+### Link to the application running: [Production Version](https://
+
+u-hub.netlify.app/)
+
+#### Event Page
+
+![Screenshot #2](docs/Example4.png?raw=true "Example 2")
+
+### Link to the application running: [Production Version](https://u-hub.netlify.app/)
+
+#### Host's Events
+
+![Screenshot #2](docs/Example5.png?raw=true "Example 2")
 
 ### Link to the application running: [Production Version](https://u-hub.netlify.app/)
