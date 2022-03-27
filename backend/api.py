@@ -357,3 +357,49 @@ def add_event_to_calender(username:str, eventID:int):
     # call function to add to google calender
     
     return Response(status=400)
+# ========================================================================
+# Signup API
+# ========================================================================
+"""
+Inserts an entry of a student liking an event
+"""
+@app.route("/user/events", methods=["POST", "DELETE"])
+def insert_user_signedUp_for_event():
+    db_conn = get_db_connection()
+
+    if request.method == "POST":
+        data = request.json
+        try:
+            insert_user_signedUp_for_event_into_db(db_conn, "userSignsupEvents", data["username"], data["eventID"])
+        except Exception as e:
+            return Response(status=409)
+
+        return Response(status=200)
+
+    elif request.method == "DELETE":
+        data = request.json
+        try:
+            delete_user_attending_event_from_db(db_conn, "userSignsupEvents", data["username"], data["eventID"])
+        except Exception as e:
+            return Response(status=409)
+
+        return Response(status=200)
+    
+    else:
+        return Response(status=400)
+
+
+"""
+Get all the events a user has signed up for
+"""
+@app.route("/user/<string:username>/events", methods=["GET"])
+def get_all_user_events(username:str):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_user_events_db(db_conn, "userSignsupEvents", username)
+
+    for follow in data:
+        result["result"].append({"eventID": follow[1]})
+    
+    return result

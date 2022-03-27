@@ -312,7 +312,7 @@ def delete_user_follow_from_db(conn:mysql.connector.connect, table_name:str, use
 
 
 # =============================================================================
-# Database Functions for the Follows Table
+# Database Functions for the Likes Table
 # =============================================================================
 
 def insert_user_likes_event_into_db(conn:mysql.connector.connect, table_name:str, username:str, eventID:int):
@@ -366,6 +366,74 @@ def get_user_likes_db(conn:mysql.connector.connect, table_name:str, username:str
     return results
 
 def delete_user_likes_event_from_db(conn:mysql.connector.connect, table_name:str, username:str, eventID:int):
+    cur = conn.cursor()
+    try:
+        sql = f"DELETE FROM {table_name} WHERE username = %s AND eventID = %s;"
+        val = (username, eventID)
+        cur.execute(sql, val)
+        conn.commit()
+        cur.close()
+    except Exception as e:
+        conn.rollback()
+        raise e
+    return
+
+
+# =============================================================================
+# Database Functions for the signedup Table
+# =============================================================================
+
+def insert_user_signedUp_for_event_into_db(conn:mysql.connector.connect, table_name:str, username:str, eventID:int):
+    """
+    Inserts a liked event by a user
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        username: Username of the user being inserted
+        eventID: ID of the vent being signedup for
+    
+    """
+
+    cur = conn.cursor()
+
+    try:
+        sql = f"INSERT INTO {table_name} (username, eventID) VALUES (%s, %s)"
+        val = (username, eventID)
+        cur.execute(sql, val)
+        # print(f"executing into {table_name}: {(username, hashed_password)}")
+        conn.commit()
+
+    except mysql.connector.DataError as e:
+        conn.rollback()
+        raise Exception(f"Username value at {username} and {eventID} for table {table_name} already exists.")
+    
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+def get_user_events_db(conn:mysql.connector.connect, table_name:str, username:str):
+    """
+    Gets all the user liked events.
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        username: Username of the host being used to gather all their likes
+    
+    """
+
+    cur = conn.cursor()
+
+    sql = f"SELECT * FROM {table_name}  WHERE username = %s;"
+    val = (username,)
+    cur.execute(sql, val)
+
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+def delete_user_attending_event_from_db(conn:mysql.connector.connect, table_name:str, username:str, eventID:int):
     cur = conn.cursor()
     try:
         sql = f"DELETE FROM {table_name} WHERE username = %s AND eventID = %s;"
