@@ -23,8 +23,6 @@ const MyEvents = ({ user }) => {
     })
       .then(async (res) => {
         if (res.status === 200) {
-          var response = await res.json();
-          console.log(response);
           getEvents();
         } else if (res.status === 401) {
           console.log("error fetching events");
@@ -66,7 +64,7 @@ const MyEvents = ({ user }) => {
 
   useEffect(() => {
     getEvents();
-  }, [events]);
+  }, []);
 
   return (
     <div className="events-page-container">
