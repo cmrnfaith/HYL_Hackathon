@@ -8,6 +8,7 @@ const SignUp = () => {
   const [lastName, setLastName] = useState("");
   const [isHost, setHost] = useState(false);
   const [email, setEmail] = useState("");
+  const [studentID, setStudentID] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [country, setCountry] = useState("");
   const [username, setUsername] = useState("");
@@ -47,6 +48,7 @@ const SignUp = () => {
       dateOfBirth,
       password,
       confirmPassword,
+      studentID,
     });
     var url = "/user";
 
@@ -54,20 +56,20 @@ const SignUp = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "applcation/json",
+        Accept: "application/json",
       },
       credentials: "include",
       body: JSON.stringify({
         firstName,
         lastName,
         username,
-        password,
-        country,
         isHost,
-        dateOfBirth,
-        firstName,
-        lastName,
         email,
+        country,
+        dateOfBirth,
+        password,
+        confirmPassword,
+        studentID,
       }),
     })
       .then(async (res) => {
@@ -91,7 +93,11 @@ const SignUp = () => {
         <form className="user-details" onSubmit={onSubmit}>
           <div className="host-box">
             <span className="details">Will you be hosting events?</span>
-            <input type="checkbox" onChange={(e) => setHost(!isHost)} />
+            <input
+              type="checkbox"
+              onChange={(e) => setHost(!isHost)}
+              value={isHost}
+            />
           </div>
           {!isHost && (
             <div className="input-box">
