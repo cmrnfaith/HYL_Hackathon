@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-const CreateEvent = () => {
+const CreateEvent = ({ user }) => {
   const history = useHistory();
   const [eventName, setEventName] = useState("");
   const [eventDescription, setEventDescription] = useState("");
@@ -80,6 +80,7 @@ const CreateEvent = () => {
 
   const submitEvent = () => {
     var dateTimeTogether = eventDate + " " + eventTime + ":00";
+    var hostName = user.username;
 
     console.log({
       eventName,
@@ -118,12 +119,12 @@ const CreateEvent = () => {
         faculty: eventFaculty,
         description: eventDescription,
         eventType: eventType,
-        hostName: "testHost",
+        hostName: hostName,
       }),
     })
       .then(async (res) => {
         if (res.status === 200) {
-          history.push("/events");
+          history.push("/myevents");
         } else if (res.status === 401) {
           console.log("Error in submitting strategy");
         } else {
@@ -210,23 +211,53 @@ const CreateEvent = () => {
               required
             >
               <option value="">Choose an Event Type</option>
-              <option value="Sports - Dinos Mens Volleyball">Sports - Dinos Mens Volleyball</option>
-              <option value="Sports - Dinos Womens Volleyball">Sports - Dinos Womens Volleyball</option>
-              <option value="Sports - Dinos Football">Sports - Dinos Football</option>
-              <option value="Sports - Dinos Mens Soccer">Sports - Dinos Mens Soccer</option>
-              <option value="Sports - Dinos Womens Soccer">Sports - Dinos Womens Soccer</option>
-              <option value="Sports - Dinos Mens Hockey">Sports - Dinos Mens Hockey</option>
-              <option value="Sports - Dinos Womens Hockey">Sports - Dinos Womens Hockey</option>
-              <option value="Sports - Dinos Womens Field Hockey">Sports - Dinos Womens Field Hockey</option>
-              <option value="Sports - Dinos Swimming">Sports - Dinos Swimming</option>
+              <option value="Sports - Dinos Mens Volleyball">
+                Sports - Dinos Mens Volleyball
+              </option>
+              <option value="Sports - Dinos Womens Volleyball">
+                Sports - Dinos Womens Volleyball
+              </option>
+              <option value="Sports - Dinos Football">
+                Sports - Dinos Football
+              </option>
+              <option value="Sports - Dinos Mens Soccer">
+                Sports - Dinos Mens Soccer
+              </option>
+              <option value="Sports - Dinos Womens Soccer">
+                Sports - Dinos Womens Soccer
+              </option>
+              <option value="Sports - Dinos Mens Hockey">
+                Sports - Dinos Mens Hockey
+              </option>
+              <option value="Sports - Dinos Womens Hockey">
+                Sports - Dinos Womens Hockey
+              </option>
+              <option value="Sports - Dinos Womens Field Hockey">
+                Sports - Dinos Womens Field Hockey
+              </option>
+              <option value="Sports - Dinos Swimming">
+                Sports - Dinos Swimming
+              </option>
               <option value="Sports - Dinos Golf">Sports - Dinos Golf</option>
-              <option value="Sports - Dinos Mens Basketball">Sports - Dinos Mens Basketball</option>
-              <option value="Sports - Dinos Womens Basketball">Sports - Dinos Womens Basketball</option>
-              <option value="University - Student Union">University - Student Union</option>
-              <option value="University - Student Admissions">University - Student Admissions</option>
-              <option value="University - Community Engagement">University - Community Engagement</option>
+              <option value="Sports - Dinos Mens Basketball">
+                Sports - Dinos Mens Basketball
+              </option>
+              <option value="Sports - Dinos Womens Basketball">
+                Sports - Dinos Womens Basketball
+              </option>
+              <option value="University - Student Union">
+                University - Student Union
+              </option>
+              <option value="University - Student Admissions">
+                University - Student Admissions
+              </option>
+              <option value="University - Community Engagement">
+                University - Community Engagement
+              </option>
               <option value="University - Alumni">University - Alumni</option>
-              <option value="University - Exhibition">University - Exhibition</option>
+              <option value="University - Exhibition">
+                University - Exhibition
+              </option>
               <option value="Club">Club</option>
               <option value="Students Union">Students Union</option>
               <option value="Third Party">Third Party</option>
