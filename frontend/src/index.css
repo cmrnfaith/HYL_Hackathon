@@ -365,6 +365,7 @@ button:hover {
 }
 
 .create-event-container .create-tags {
+  box-shadow: 2px 2px 2px var(--ucalgary-shadow);
   margin-right: 2rem;
 
   background-color: white;
@@ -413,6 +414,7 @@ button:hover {
 }
 
 .create-event-container .create-event-form {
+  box-shadow: 2px 2px 2px var(--ucalgary-shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -895,10 +897,12 @@ button:hover {
   justify-content: end;
   left: 5%;
 }
-@media (max-width 1300px) {
+
+@media (max-width: 1300px) {
   .host-container .follow-button-red {
-    transform: translateX(-30%);
+    /* transform: translateX(-30%); */
     /* margin-right: 1rem; */
+    left: 60%;
   }
   .host-container .follow-button {
     left: 60%;
@@ -1767,7 +1771,7 @@ button:hover {
 }
 
 .about-statement {
-  font-size: 7vmax;
+  font-size: 4vmax;
   width: 80%;
   text-align: center;
   margin-bottom: 3rem;
@@ -1776,7 +1780,7 @@ button:hover {
 
 .about-statement-2 {
   position: relative;
-  font-size: 3vmax;
+  font-size: 2vmax;
   width: 60%;
   text-align: center;
 }
@@ -1811,22 +1815,6 @@ button:hover {
   flex-wrap: wrap;
 }
 
-@media (max-width: 1400px) {
-  .about-bios {
-    flex-direction: column;
-    flex: 100%;
-    /* width: 80%; */
-  }
-  .about-person {
-    min-width: 75vw;
-  }
-  .about-person img {
-    width: 75vw;
-    min-height: 75vw;
-    border-radius: 5px;
-  }
-}
-
 .about-team {
   padding-top: 20vh;
 }
@@ -1855,4 +1843,20 @@ button:hover {
 .about-person p {
   font-size: 1.3rem;
   line-height: 2rem;
+}
+
+@media (max-width: 1400px) {
+  .about-bios {
+    flex-direction: column;
+    flex: 100%;
+    /* width: 80%; */
+  }
+  .about-person {
+    min-width: 75vw;
+  }
+  .about-person img {
+    width: 75vw;
+    height: 75vw;
+    border-radius: 5px;
+  }
 }
