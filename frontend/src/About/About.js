@@ -19,9 +19,6 @@ const About = () => {
           </h1>
         </div>
 
-        <h1 className="about-titles">Mission</h1>
-        <p className="about-mission"></p>
-
         <h1 className="about-titles about-team">Our team</h1>
         <div className="about-bios">
           <div className="about-person">
@@ -42,16 +39,16 @@ const About = () => {
             <img src={AidanImage} alt="the team"></img>
             <h2>Aidan Johnson</h2>
             <p>
-                Aidan Johnson is currently in his final year of Electrical and
-                Computer engineering at the University of Calgary. He recently
-                completed an internship with a start-up company called FUS
-                Instruments in partnership with the NeuroFUS laboratory leading
-                the development of their Focused ultrasound therapy software
-                platform. Aidan is passionate about software development and has
-                previous experience with software application development,
-                embedded systems and hardware design. During his spare time, you
-                can find Aidan in the outdoors, hiking, backpacking and taking
-                scenic pictures.
+              Aidan Johnson is currently in his final year of Electrical and
+              Computer engineering at the University of Calgary. He recently
+              completed an internship with a start-up company called FUS
+              Instruments in partnership with the NeuroFUS laboratory leading
+              the development of their Focused ultrasound therapy software
+              platform. Aidan is passionate about software development and has
+              previous experience with software application development,
+              embedded systems and hardware design. During his spare time, you
+              can find Aidan in the outdoors, hiking, backpacking and taking
+              scenic pictures.
             </p>
           </div>
         </div>
@@ -73,10 +70,12 @@ const About = () => {
             <img src={DylanImage} alt="the team"></img>
             <h2>Dylan Rae</h2>
             <p>
-                Dylan is a student at the University of Calgary in his final year of the dual degree 
-                program studying electrical engineering and finance. He is interested in fields such 
-                as software development, machine learning, and FinTech. He is passionate about how we 
-                can bridge engineering and business to solve some of the world's most important problems. 
+              Dylan is a student at the University of Calgary in his final year
+              of the dual degree program studying electrical engineering and
+              finance. He is interested in fields such as software development,
+              machine learning, and FinTech. He is passionate about how we can
+              bridge engineering and business to solve some of the world's most
+              important problems.
             </p>
           </div>
         </div>
