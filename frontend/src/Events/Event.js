@@ -5,6 +5,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 
 const Event = ({ event }) => {
   const history = useHistory();
+
   function viewEvent() {
     var url = "/event/" + event.eventID;
     history.push(url);
