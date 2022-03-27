@@ -1,15 +1,11 @@
 import { useState, useEffect } from "react";
-import { useHistory } from "react-router";
 
 const MyEvents = ({ user }) => {
   const [events, setEvents] = useState([]);
 
-  const history = useHistory();
-
-  function viewEvent(event) {
-    var url = "/event/" + event.eventID;
-    history.push(url);
-  }
+  const deleteEvent = (event) => {
+    console.log(event);
+  };
 
   useEffect(() => {
     console.log(user);
@@ -41,10 +37,12 @@ const MyEvents = ({ user }) => {
   return (
     <div className="events-page-container">
       <div className="events-container">
-        <h1 className="title">My Events</h1>
+        <h1 className="title">
+          My Events: <span>{user.username}</span>
+        </h1>
         <div className="event-list-items">
           {events.map((event) => (
-            <div className="event-container" onClick={viewEvent(event)}>
+            <div className="event-container">
               <div className="title">{event.name}</div>
               <div className="date">
                 Event Date: {new Date(event.date).toLocaleDateString()}
@@ -61,14 +59,14 @@ const MyEvents = ({ user }) => {
                 {event.private === 0 ? "Public" : "Private"}
               </div>
 
-              {/* <div className="time">{new Date(event.date).toLocaleTimeString()}</div> */}
-              {/* <div className="duration">{event.duration}</div> */}
-              {/* <div className="text">{event.description}</div> */}
-              {/* <div className="attire">{event.attire}</div> */}
-              {/* <div className="membership">{event.membership}</div> */}
-              {/* <div className="price">
-             {event.price === 0 ? "Free" : "$" + event.price.toFixed(2)}
-           </div> */}
+              <button
+                className="delete-event-button"
+                onClick={() => {
+                  deleteEvent(event);
+                }}
+              >
+                Delete
+              </button>
             </div>
           ))}
         </div>

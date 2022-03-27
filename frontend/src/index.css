@@ -611,6 +611,7 @@ button:hover {
 /* === Event === */
 
 .event-container {
+  position: relative;
   background: var(--white);
   max-width: 25vw;
   min-width: 20rem;
@@ -1110,6 +1111,20 @@ button:hover {
 .login-container .button input:hover {
   background-color: var(--ucalgary-red-hover);
   color: var(--ucalgary-yellow);
+}
+
+/* ======================== */
+/* === My Events (Host) === */
+.delete-event-button {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  color: white;
+  background-color: var(--ucalgary-red);
+}
+
+.delete-event-button:hover {
+  background-color: var(--ucalgary-red-hover);
 }
 
 /* =========================== */
