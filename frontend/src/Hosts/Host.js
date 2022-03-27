@@ -20,7 +20,7 @@ const Host = ({ user, host, update_hosts }) => {
       var Method = "POST";
     }
     setFollowed(!followed);
-    update_hosts();
+
     fetch(url, {
       method: Method,
       headers: {
@@ -32,8 +32,7 @@ const Host = ({ user, host, update_hosts }) => {
     })
       .then(async (res) => {
         if (res.status === 200) {
-          var response = await res.json();
-          console.log(response);
+          update_hosts();
         } else if (res.status === 401) {
         } else {
           console.log("error fetching event");

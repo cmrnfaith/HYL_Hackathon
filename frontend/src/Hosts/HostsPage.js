@@ -4,6 +4,32 @@ import HostList from "./HostList";
 const HostsPage = ({ user }) => {
   const [hosts, setHosts] = useState([]);
 
+  function update_hosts_follows() {
+    var username = user.username;
+    var url = "/user/" + username + "/follows";
+    fetch(url, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "applcation/json",
+      },
+      credentials: "include",
+    })
+      .then(async (res) => {
+        if (res.status === 200) {
+          var response = await res.json();
+          console.log(response);
+          setHosts(response.result);
+        } else if (res.status === 401) {
+        } else {
+          console.log("error fetching events");
+        }
+      })
+      .catch((error) => {
+        // Handle error
+      });
+  }
+
   function update_hosts() {
     var url = "/hosts";
     fetch(url, {
@@ -29,13 +55,22 @@ const HostsPage = ({ user }) => {
       });
   }
   useEffect(() => {
-    update_hosts();
+    if (user.username === "") {
+      update_hosts();
+    } else {
+      update_hosts_follows();
+    }
   }, []);
+
   return (
     <div className="hosts-page-container">
       <div className="hosts-container">
         <h1 className="title">All Hosts</h1>
-        <HostList hosts={hosts} user={user} update_hosts={update_hosts} />
+        <HostList
+          hosts={hosts}
+          user={user}
+          update_hosts={update_hosts_follows}
+        />
       </div>
     </div>
   );
