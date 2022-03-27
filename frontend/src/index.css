@@ -563,10 +563,16 @@ button:hover {
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
-  background: var(--button-color);
+  cursor: pointer;
+  background-color: var(--ucalgary-red);
 
   padding: 0;
   width: 20%;
+}
+
+.login-container .button input:hover {
+  background-color: var(--ucalgary-red-hover);
+  color: var(--ucalgary-yellow);
 }
 
 /* =========================== */
@@ -611,12 +617,22 @@ button:hover {
 }
 
 .sign-up-container .host-box {
-  width: calc(100%);
+  width: 100%;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .sign-up-container .host-box input {
-  margin-right: 0;
+  position: absolute;
+  bottom: -6px;
+  left: 30%;
+  width: 3%;
+  height: 2rem;
+}
+
+.sign-up-container .details-host-box {
+  font-weight: 600;
+  font-size: 1.3rem;
 }
 
 .sign-up-container .details {
@@ -656,7 +672,12 @@ button:hover {
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
-  background: var(--button-color);
+  background: var(--ucalgary-red);
+}
+
+.sign-up-container .button input:hover {
+  background-color: var(--ucalgary-red-hover);
+  color: var(--ucalgary-yellow);
 }
 
 /* ===================== */
