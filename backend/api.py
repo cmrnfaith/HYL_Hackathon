@@ -436,7 +436,7 @@ def get_all_user_events(username:str):
                 "faculty": event[9],
                 "description": event[10],
                 "eventType": event[11],
-                "hostName": event[16],
+                "hostName": event[12],
                 "liked": False
             }
         )
@@ -455,7 +455,7 @@ def get_all_user_events(username:str):
                 "faculty": event[9],
                 "description": event[10],
                 "eventType": event[11],
-                "hostName": event[16],
+                "hostName": event[12],
                 "liked": True
             }
         )
