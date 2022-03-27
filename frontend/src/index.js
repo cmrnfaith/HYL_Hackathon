@@ -18,6 +18,7 @@ import Logout from "./Logout/Logout";
 import SignUp from "./SignUp/SignUp";
 import EventOverview from "./Events/EventOverview";
 import HostsPage from "./Hosts/HostsPage";
+import HostOverview from "./Hosts/HostOverview";
 
 export const defaultUser = [
   {
@@ -81,6 +82,7 @@ const App = () => {
         <Route exact path="/hosts" component={HostsPage} />
 
         <Route exact path="/event/:id" component={EventOverview} />
+        <Route exact path="/host/:name" component={HostOverview} />
 
         <PrivateRoute
           redirect_url="/login"

@@ -31,7 +31,7 @@ const EventOverview = (props) => {
       .catch((error) => {
         // Handle error
       });
-  }, []);
+  }, [eventID]);
 
   return (
     <div className="event-overview-page-container">

@@ -681,9 +681,10 @@ button:hover {
 .event-overview-page-container {
   background: var(--background-light);
   padding-top: var(--padding-top-for-navbar);
-  min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
   justify-content: center;
 }
 
@@ -691,14 +692,17 @@ button:hover {
   position: relative;
   min-width: 40vw;
   max-width: 70vw;
+  min-height: 77vh;
+  max-height: 90vh;
   background-color: white;
-  padding: 4rem 10rem 0rem;
+  padding: 3vh 4vw;
+  margin: 6vh auto;
   border-radius: 10px;
   text-align: left;
 }
 
 .event-overview-container .title {
-  font-size: 3vmax;
+  font-size: 2.7vmax;
   font-weight: bold;
 }
 
@@ -720,14 +724,14 @@ button:hover {
 .event-overview-container th {
   /* align: center; */
   flex-direction: column;
-  font-size: 1.5vmax;
+  font-size: 1.3vmax;
   padding: 1vh 2vw;
   color: var(--ucalgary-red);
 }
 
 .event-overview-container tr {
   /* align: center; */
-  font-size: 1.2vmax;
+  font-size: 1.1vmax;
   padding: 1vh 3vw;
 
   font-weight: 450;
@@ -751,7 +755,7 @@ button:hover {
 .event-overview-container .text {
   font-size: 1.4rem;
   padding: 1vh 1vw;
-  margin: 0vmax 5vmax;
+  margin: 0vmax 3vmax;
 }
 
 .event-overview-container .description {
@@ -760,7 +764,7 @@ button:hover {
 
 .event-overview-container .button-add-to-calender {
   position: absolute;
-  top: 3rem;
+  bottom: 3rem;
   right: 3rem;
   font-size: 2rem;
   color: white;
