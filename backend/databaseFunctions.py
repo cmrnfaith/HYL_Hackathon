@@ -296,6 +296,27 @@ def get_user_follows_db(conn:mysql.connector.connect, table_name:str, username:s
     cur.close()
     return results
 
+def get_user_non_follow_db(conn:mysql.connector.connect, table_name:str, username:str):
+    """
+    Gets all the hosts not followed by the user.
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        username: Username of the host being used to gather all their likes
+    
+    """
+
+    cur = conn.cursor()
+
+    sql = f"SELECT * FROM user as u WHERE u.isHost = 1 AND u.username NOT IN (SELECT u1.username FROM userFollowsHosts as u1 WHERE u1.username = %s);"
+    val = (username,)
+    cur.execute(sql, val)
+
+    results = cur.fetchall()
+    cur.close()
+    return results
+
 
 def get_user_liked_events_from_followed_host_db(conn:mysql.connector.connect, username:str):
     """
@@ -309,7 +330,7 @@ def get_user_liked_events_from_followed_host_db(conn:mysql.connector.connect, us
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM events AS e, userLikesEvents AS l, userFollowsHosts AS f, user AS u WHERE u.username = %s AND e.eventID = l.eventID AND l.username = f.username AND u.username = f.username;"
+    sql = "SELECT * FROM events2 AS e, userLikesEvents AS l, userFollowsHosts AS f, user AS u WHERE u.username = %s AND e.eventID = l.eventID AND l.username = f.username AND u.username = f.username;"
     val = (username,)
     cur.execute(sql, val)
 

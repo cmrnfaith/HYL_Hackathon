@@ -319,6 +319,36 @@ def get_all_user_follows(username:str):
     
     return result
 
+"""
+Get all the events a user does and does not like
+"""
+@app.route("/user/<string:username>/follows", methods=["GET"])
+def get_all_user_follows_1(username:str):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_user_non_follow_db(db_conn, "userFollowsHosts", username)
+    print(data)
+    data1 = get_user_follows_db(db_conn, "userFollowsHosts", username)
+    print(data1)
+
+    for event in data:
+        result["result"].append(
+            {
+                "hostName": event[0],
+                "follow": False
+            }
+        )
+    for event in data1:
+        result["result"].append(
+            {
+                "hostName": event[1],
+                "follow": True
+            }
+        )
+    
+    return result
+
 # ========================================================================
 # Likes API
 # ========================================================================
@@ -374,6 +404,7 @@ def get_all_liked_events_from_follows(username:str):
                 "description": event[10],
                 "eventType": event[11],
                 "hostName": event[16],
+                "liked": True
             }
         )
     
