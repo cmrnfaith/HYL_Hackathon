@@ -161,6 +161,25 @@ def get_all_host_events(host_name:str):
 
     return result
 
+"""
+Gets all hosts
+"""
+@app.route("/hosts", methods=["GET"])
+def get_all_host():
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_all_hosts_from_db(db_conn, "user")
+
+    for host in data:
+        result["result"].append(
+            {
+                "hostName": host[0]
+            }
+        )
+
+    return result
+
 
 # ========================================================
 # User APIs
