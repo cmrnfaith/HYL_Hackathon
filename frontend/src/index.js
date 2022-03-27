@@ -19,6 +19,7 @@ import SignUp from "./SignUp/SignUp";
 import EventOverview from "./Events/EventOverview";
 import HostsPage from "./Hosts/HostsPage";
 import HostOverview from "./Hosts/HostOverview";
+import Feed from "./Feed/Feed";
 
 export const defaultUser = [
   {
@@ -78,6 +79,9 @@ const App = () => {
           path="/login"
           component={withProps(Login, { updateLoginStatus, updateLocalUser })}
         />
+
+        <Route path="/feed" component={withProps(Feed, { user })} />
+
         <Route exact path="/createevent" component={CreateEvent} />
         <Route exact path="/hosts" component={HostsPage} />
 
