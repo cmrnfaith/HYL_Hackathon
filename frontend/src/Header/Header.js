@@ -30,51 +30,19 @@ const Header = ({ loginStatus, user }) => {
           <div className="header-link" onClick={closeMobileMenu}>
             <Link to="/events">Events</Link>
           </div>
-          {user.isHost && (
+          {user.isHost ? (
             <div className="header-link" onClick={closeMobileMenu}>
               <Link to="/createevent">Create Event</Link>
             </div>
+          ) : (
+            <div></div>
           )}
           <div className="header-link" onClick={closeMobileMenu}>
             <Link to="/hosts">Hosts</Link>
           </div>
-          {!click ? (
-            <div className="header-dropdown">
-              <div className="header-dropdown-container">
-                More
-                <AiOutlineDown fontSize={18} className="header-down" />
-              </div>
-              <div className="header-dropdown-content">
-                <Link
-                  to="/about"
-                  className="header-dropdown-item"
-                  onClick={closeMobileMenu}
-                >
-                  About
-                </Link>
-                <Link
-                  to="/faq"
-                  className="header-dropdown-item"
-                  onClick={closeMobileMenu}
-                >
-                  FAQ
-                </Link>
-              </div>
-            </div>
-          ) : (
-            <>
-              <div className="header-link" onClick={closeMobileMenu}>
-                <Link to="/about" onClick={closeMobileMenu}>
-                  About
-                </Link>
-              </div>
-              <div className="header-link" onClick={closeMobileMenu}>
-                <Link to="/faq" onClick={closeMobileMenu}>
-                  FAQ
-                </Link>
-              </div>
-            </>
-          )}
+          <div className="header-link" onClick={closeMobileMenu}>
+            <Link to="/feed">Feed</Link>
+          </div>
         </div>
 
         {/* If else statement showing different items based on login status */}

@@ -17,6 +17,7 @@ import Login from "./Login/Login";
 import Logout from "./Logout/Logout";
 import SignUp from "./SignUp/SignUp";
 import EventOverview from "./Events/EventOverview";
+import HostsPage from "./Hosts/HostsPage";
 
 export const defaultUser = [
   {
@@ -77,7 +78,7 @@ const App = () => {
           component={withProps(Login, { updateLoginStatus, updateLocalUser })}
         />
         <Route exact path="/createevent" component={CreateEvent} />
-        <Route exact path="/example2" component={EventsPage} />
+        <Route exact path="/hosts" component={HostsPage} />
 
         <Route exact path="/event/:id" component={EventOverview} />
 

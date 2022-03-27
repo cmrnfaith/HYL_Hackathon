@@ -229,9 +229,8 @@ def get_all_hosts_from_db(conn:mysql.connector.connect, table_name:str)->List:
     """
     cur = conn.cursor()
     try:
-        sql = f'SELECT * FROM {table_name} WHERE isHost = %d;'
-        val = (1,)
-        cur.execute(sql, val)
+        sql = f'SELECT * FROM {table_name} WHERE isHost = 1;'
+        cur.execute(sql)
 
     except Exception as e:
         conn.rollback()
@@ -290,6 +289,27 @@ def get_user_follows_db(conn:mysql.connector.connect, table_name:str, username:s
     cur = conn.cursor()
 
     sql = f"SELECT * FROM {table_name}  WHERE username = %s;"
+    val = (username,)
+    cur.execute(sql, val)
+
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+
+def get_user_liked_events_from_followed_host_db(conn:mysql.connector.connect, username:str):
+    """
+    Gets all the hosts a user follows
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        username: Username of the host being inserted
+    
+    """
+
+    cur = conn.cursor()
+
+    sql = "SELECT * FROM events AS e, userLikesEvents AS l, userFollowsHosts AS f, user AS u WHERE u.username = %s AND e.eventID = l.eventID AND l.username = f.username;"
     val = (username,)
     cur.execute(sql, val)
 
