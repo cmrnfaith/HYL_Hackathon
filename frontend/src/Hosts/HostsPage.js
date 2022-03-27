@@ -3,6 +3,7 @@ import HostList from "./HostList";
 
 const HostsPage = ({ user }) => {
   const [hosts, setHosts] = useState([]);
+  const [filtered_host, setFiltered_host] = useState([]);
 
   function update_hosts_follows() {
     var username = user.username;
@@ -19,7 +20,8 @@ const HostsPage = ({ user }) => {
         if (res.status === 200) {
           var response = await res.json();
           console.log(response);
-          setHosts(response.result);
+          setHosts(response.result.filter((host) => !host.follow));
+          setFiltered_host(response.result.filter((host) => host.follow));
         } else if (res.status === 401) {
         } else {
           console.log("error fetching events");
@@ -65,9 +67,11 @@ const HostsPage = ({ user }) => {
   return (
     <div className="hosts-page-container">
       <div className="hosts-container">
-        <h1 className="subtitle">Followed Hosts</h1>
+        {filtered_host.length > 0 && (
+          <h1 className="subtitle">Followed Hosts</h1>
+        )}
         <HostList
-          hosts={hosts.filter((host) => host.follow)}
+          hosts={filtered_host}
           user={user}
           update_hosts={update_hosts_follows}
         />
