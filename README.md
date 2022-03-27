@@ -97,12 +97,12 @@ u-hub.netlify.app/)
 
 #### Event Page
 
-![Screenshot #2](docs/Example4.png?raw=true "Example 2")
+![Screenshot #3](docs/Example4.png?raw=true "Example 3")
 
 ### Link to the application running: [Production Version](https://u-hub.netlify.app/)
 
 #### Host's Events
 
-![Screenshot #2](docs/Example5.png?raw=true "Example 2")
+![Screenshot #4](docs/Example5.png?raw=true "Example 4")
 
 ### Link to the application running: [Production Version](https://u-hub.netlify.app/)
