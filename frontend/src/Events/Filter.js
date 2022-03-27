@@ -8,6 +8,39 @@ const Filter = ({ events, setEvents }) => {
   const [locationFilter, setLocationFilter] = useState([]);
   const [names, setNames] = useState([]);
   const [nameFilter, setNameFilter] = useState([]);
+  const [dates, setDates] = useState([
+    {
+      label: "Next week",
+      value: 7,
+    },
+    {
+      label: "Next Month",
+      value: 30,
+    },
+    {
+      label: "Next 3 Months",
+      value: 91,
+    },
+    {
+      label: "Next 6 Months",
+      value: 183,
+    },
+    {
+      label: "Next Year",
+      value: 365,
+    },
+    {
+      label: "All",
+      value: 10000,
+    },
+  ]);
+  const [dateFilter, setDateFilter] = useState(null);
+
+  Date.prototype.addDays = function (days) {
+    let date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+  };
 
   function removeDuplicates(arr) {
     return arr.filter((item, index) => arr.indexOf(item) === index);
@@ -47,12 +80,20 @@ const Filter = ({ events, setEvents }) => {
         return true;
       }
     });
-    setEvents(sortArray(temp_events3));
+    var temp_events4 = temp_events3.filter((itemA) => {
+      console.log(dateFilter);
+      if (dateFilter) {
+        return new Date(itemA.date) < new Date().addDays(dateFilter.value);
+      } else {
+        return true;
+      }
+    });
+    setEvents(sortArray(temp_events4));
   }
 
   useEffect(() => {
     filterEvents();
-  }, [categoryFilter, nameFilter, locationFilter]);
+  }, [categoryFilter, nameFilter, locationFilter, dateFilter]);
 
   useEffect(() => {
     var tempCategories = [];
@@ -118,6 +159,10 @@ const Filter = ({ events, setEvents }) => {
           isMulti
           onChange={(opt) => setCategoryFilter(opt)}
         />
+      </div>
+      <div className="item">
+        <label>Date</label>
+        <Select options={dates} onChange={(opt) => setDateFilter(opt)} />
       </div>
     </div>
   );

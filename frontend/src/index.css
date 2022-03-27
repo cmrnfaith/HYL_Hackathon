@@ -591,12 +591,14 @@ button:hover {
 
 .filter-dropdowns {
   display: flex;
+  justify-content: center;
+  margin: auto 0vw;
 }
 
 .filter-dropdowns .item {
   margin: auto 2vmax;
   min-width: 15vw;
-  max-width: 25vw;
+  max-width: 20vw;
   font-size: 1rem;
 }
 
