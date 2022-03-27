@@ -824,8 +824,8 @@ button:hover {
   }
 }
 
-/* ====================== */
-/* === Event Overview === */
+/* ===================== */
+/* === Host Overview === */
 
 .host-overview-page-container {
   background: var(--background-light);
@@ -905,6 +905,83 @@ button:hover {
   font-size: 2vmax;
   font-weight: 500;
   color: var(--ucalgary-red);
+}
+
+/* ================== */
+/* === Host Page === */
+
+.hosts-page-container {
+  background: var(--background-color-new);
+  padding-top: var(--padding-top-for-navbar);
+  min-height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.hosts-container {
+  padding-top: var(--padding-top-for-navbar);
+  width: var(--inner-width);
+  padding: 2rem 2rem;
+  border-radius: 5px;
+}
+
+.hosts-container .title {
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.hosts-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-yellow);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 200%;
+}
+
+/* ================== */
+/* === Event List === */
+
+.host-list-container {
+  display: block;
+}
+.host-list-items {
+  /* width: var(--inner-width); */
+  /* align-items: center; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.host-list-items > div {
+  justify-content: start;
+  flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
+  border: 1px solid var(--ucalgary-border);
+  box-shadow: 2px 2px 2px var(--ucalgary-shadow);
+  margin-bottom: 10px;
+}
+
+.host-list-container .title {
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.host-list-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-red);
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
 }
 
 /* =========================== */
