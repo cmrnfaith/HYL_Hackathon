@@ -1,10 +1,10 @@
 # Team Excessive Alpha HYL_Hackathon
 
 ## Inspiration 
-Interested in finding social and academic events but have no idea where to find them? Tired of looking through countless emails, D2L, club websites and poster to find events? Wanting to see, like, interact and look forspecific university events all in one place? These were the questions we wanted to address and the inspiration for our web application uHub.
+Interested in finding social and academic events but have no idea where to find them? Tired of looking through countless emails, D2L, club websites and poster to find events? Wanting to see, like, interact and look forspecific university events all in one place? These were the questions we wanted to address and the inspiration for our mobile and desktop application uHub.
 
 ## What it does
-uHub is a web application that allows users to find different events seamlessly from various clubs and the university all in one place. uHub allows hosts to create, delete and showcase events on our site for university Students, while also tracking what events they currently have created. University students are able to view the website to browse and search for various events by different key filters such as by event type or name. If they find an event they like they can also add it to their calendar. Furthermore, students can also create an account and login in to follow specific hosts as well as like different events to get a tailored events feed.
+uHub is a mobile and desktop application that allows users to find different events seamlessly from various clubs and the university all in one place. uHub allows hosts to create, delete and showcase events on our site for university Students, while also tracking what events they currently have created. University students are able to view the website to browse and search for various events by different key filters such as by event type or name. If they find an event they like they can also add it to their calendar. Furthermore, students can also create an account and login in to follow specific hosts as well as like different events to get a tailored events feed.
 
 |Technologies | That We Used |
 | ------------- | --------------- |
@@ -12,12 +12,15 @@ uHub is a web application that allows users to find different events seamlessly 
 | Front-End	| React,Javascript, CSS, HTML |
 | Back-End	| Python, Flask |
 | Database	| mySQL |
-| APIs		| REST |
+| APIs		| REST, Postman |
+| Version Control | GitHub |
 
 ## How we built it
+uHub is a web application that was built modularly and with a focus on scalablility as we aimed to design our website to handle thousands of events and users. We strived to produce a seamlessly experience for users by designing the front end from planning out the site's UI with wire frames and writing responsive APIs in the backend. Our frontend we created using React, while our backend was built using Python Flask and tested with Postman.
 
 ## Challenges we ran into
-A few challenges we ran into it 
+A few challenges we ran into were:
+    1. Getting the filtering of different events based on specified criteria
 
 ## Accomplishments that we're proud of
 Developing an intricate web application that utilizes a database, user-friendly frontend and backend in under 24 hours.
