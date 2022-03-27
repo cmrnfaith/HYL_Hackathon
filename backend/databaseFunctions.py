@@ -377,7 +377,28 @@ def get_user_likes_db(conn:mysql.connector.connect, table_name:str, username:str
 
     cur = conn.cursor()
 
-    sql = f"SELECT * FROM {table_name}  WHERE username = %s;"
+    sql = f"SELECT * FROM {table_name} as u, events as e  WHERE u.username = %s AND e.eventID = u.eventID;"
+    val = (username,)
+    cur.execute(sql, val)
+
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+def get_user_nonliked_events_db(conn:mysql.connector.connect, table_name:str, username:str):
+    """
+    Gets all the events not liked by the user.
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        username: Username of the host being used to gather all their likes
+    
+    """
+
+    cur = conn.cursor()
+
+    sql = f"SELECT * FROM events as e WHERE e.eventID NOT IN (SELECT u.eventID FROM userLikesEvents as u WHERE u.username = %s);"
     val = (username,)
     cur.execute(sql, val)
 

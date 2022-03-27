@@ -390,10 +390,77 @@ def get_all_user_likes(username:str):
     data = get_user_likes_db(db_conn, "userLikesEvents", username)
 
     for follow in data:
-        result["result"].append({"eventID": follow[1]})
+        result["result"].append({"eventID": follow[1], "liked":True})
     
     return result
 
+"""
+Get all the events a user does not like
+"""
+@app.route("/user/<string:username>/dislike", methods=["GET"])
+def get_all_user_events_not_liked(username:str):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_user_nonliked_events_db(db_conn, "userLikesEvents", username)
+
+    for follow in data:
+        result["result"].append({"eventID": follow[1], "liked":False})
+    
+    return result
+
+
+"""
+Get all the events a user does and does not like
+"""
+@app.route("/user/<string:username>", methods=["GET"])
+def get_all_user_events(username:str):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_user_nonliked_events_db(db_conn, "userLikesEvents", username)
+    data1 = get_user_likes_db(db_conn, "userLikesEvents", username)
+
+    for event in data:
+        result["result"].append(
+            {
+                "eventID": event[0],
+                "name": event[1],
+                "date": event[2],
+                "location": event[3],
+                "price": event[4],
+                "attire": event[5],
+                "membership": event[6],
+                "duration": event[7],
+                "private": event[8],
+                "faculty": event[9],
+                "description": event[10],
+                "eventType": event[11],
+                "hostName": event[16],
+                "liked": False
+            }
+        )
+    for event in data1:
+        result["result"].append(
+            {
+                "eventID": event[0],
+                "name": event[1],
+                "date": event[2],
+                "location": event[3],
+                "price": event[4],
+                "attire": event[5],
+                "membership": event[6],
+                "duration": event[7],
+                "private": event[8],
+                "faculty": event[9],
+                "description": event[10],
+                "eventType": event[11],
+                "hostName": event[16],
+                "liked": True
+            }
+        )
+    
+    return result
 # ========================================================
 # Calender APIs
 # ========================================================
@@ -448,7 +515,7 @@ def insert_user_signedUp_for_event():
 Get all the events a user has signed up for
 """
 @app.route("/user/<string:username>/events", methods=["GET"])
-def get_all_user_events(username:str):
+def get_all_user_attend_events(username:str):
     db_conn = get_db_connection()
 
     result = {"result": []}
