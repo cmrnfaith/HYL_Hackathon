@@ -296,3 +296,50 @@ def get_all_user_follows(username:str):
         result["result"].append({"hostName": follow[1]})
     
     return result
+
+# ========================================================================
+# Likes API
+# ========================================================================
+"""
+Inserts an entry of a student liking an event
+"""
+@app.route("/user/likes", methods=["POST", "DELETE"])
+def insert_user_likes_event():
+    db_conn = get_db_connection()
+
+    if request.method == "POST":
+        data = request.json
+        try:
+            insert_user_likes_event_into_db(db_conn, "userLikesEvents", data["username"], data["eventID"])
+        except Exception as e:
+            return Response(status=409)
+
+        return Response(status=200)
+
+    elif request.method == "DELETE":
+        data = request.json
+        try:
+            delete_user_likes_event_from_db(db_conn, "userLikesEvents", data["username"], data["eventID"])
+        except Exception as e:
+            return Response(status=409)
+
+        return Response(status=200)
+    
+    else:
+        return Response(status=400)
+
+
+"""
+Get all the events a user likes
+"""
+@app.route("/user/<string:username>/likes", methods=["GET"])
+def get_all_user_likes(username:str):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_user_likes_db(db_conn, "userLikesEvents", username)
+
+    for follow in data:
+        result["result"].append({"eventID": follow[1]})
+    
+    return result
