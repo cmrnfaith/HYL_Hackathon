@@ -17,8 +17,8 @@ const FooterPage = () => {
         <div className="footer-links">
           <div className="footer-heading footer-2">
             <h2>Get Connected</h2>
-            <Link to="/">Find Events</Link>
-            <Link to="/about">Create</Link>
+            <Link to="/events">Find Events</Link>
+            <Link to="/createevent">Create</Link>
           </div>
 
           <div className="footer-heading footer-3">
