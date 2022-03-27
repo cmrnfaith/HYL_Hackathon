@@ -286,17 +286,13 @@ def follow_host():
 Get all the hosts a user is following
 """
 @app.route("/user/<string:username>/follow", methods=["GET"])
-def follow_host(username:str):
+def get_all_user_follows(username:str):
     db_conn = get_db_connection()
 
     result = {"result": []}
     data = get_user_follows_db(db_conn, "userFollowsHosts", username)
 
     for follow in data:
-        result["result"].append(
-            {
-                "hostName": follow[1],
-            }
-        )
+        result["result"].append({"hostName": follow[1]})
     
     return result
