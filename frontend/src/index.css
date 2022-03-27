@@ -37,6 +37,7 @@ body {
   position: relative;
   min-height: 100vh;
   padding-bottom: 22rem;
+  overflow-x: hidden;
 
   /* fonts */
   /* font-family: "quicksand"; */
@@ -354,6 +355,25 @@ button:hover {
   left: 50%;
   height: 3px;
   width: 200%;
+}
+
+/* ============== */
+/* === Filter === */
+
+.filter-dropdowns {
+  display: flex;
+}
+
+.filter-dropdowns .item {
+  margin: auto 2vmax;
+  min-width: 15vw;
+  max-width: 25vw;
+  font-size: 1rem;
+}
+
+.filter-dropdowns .item label {
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 /* ============= */
