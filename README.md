@@ -102,7 +102,11 @@ This is the website development branch for our project. This project will use py
 
 ### Demonstration
 
-#### List of Events
+#### All Events
+
+![Screenshot #1](docs/Example1.png?raw=true "Example 1")
+
+#### Liked Events
 
 ![Screenshot #1](docs/Example2.png?raw=true "Example 1")
 
@@ -110,7 +114,6 @@ This is the website development branch for our project. This project will use py
 
 ![Screenshot #2](docs/Example3.png?raw=true "Example 2")
 
-u-hub.netlify.app/)
 
 #### Event Page
 
