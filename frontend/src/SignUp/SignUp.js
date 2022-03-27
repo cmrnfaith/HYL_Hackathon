@@ -8,7 +8,7 @@ const SignUp = () => {
   const [lastName, setLastName] = useState("");
   const [isHost, setHost] = useState(false);
   const [email, setEmail] = useState("");
-  const [studentID, setStudentID] = useState("");
+  const [studentID, setStudentID] = useState(null);
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [country, setCountry] = useState("");
   const [username, setUsername] = useState("");
