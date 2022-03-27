@@ -92,7 +92,9 @@ const SignUp = () => {
         <div className="title">Please enter in your information below</div>
         <form className="user-details" onSubmit={onSubmit}>
           <div className="host-box">
-            <span className="details">Will you be hosting events?</span>
+            <span className="details-host-box">
+              Will you be hosting events?
+            </span>
             <input
               type="checkbox"
               onChange={(e) => setHost(!isHost)}

@@ -246,7 +246,7 @@ def get_all_hosts_from_db(conn:mysql.connector.connect, table_name:str)->List:
 # Database Functions for the Follows Table
 # =============================================================================
 
-def insert_user_follows_db(conn:mysql.connector.connect, table_name:str, username:str, hostUsername:str):
+def insert_user_follows_db(conn:mysql.connector.connect, table_name:str, username:str, hostName:str):
     """
     Inserts a follow by a user for a host
 
@@ -254,7 +254,7 @@ def insert_user_follows_db(conn:mysql.connector.connect, table_name:str, usernam
         conn (mysql.connector.connection): A valid connection to the mySQL Database
         table_name (str): Table name in DB to check
         username: Username of the host being inserted
-        hostUsername: Username of the host being followed
+        hostName: Username of the host being followed
         isHost: Boolean representing if the user is a host or a student
     
     """
@@ -262,8 +262,8 @@ def insert_user_follows_db(conn:mysql.connector.connect, table_name:str, usernam
     cur = conn.cursor()
 
     try:
-        sql = f"INSERT INTO {table_name} (username, hostUsername) VALUES (%s, %s)"
-        val = (username, hostUsername)
+        sql = f"INSERT INTO {table_name} (username, hostName) VALUES (%s, %s)"
+        val = (username, hostName)
         cur.execute(sql, val)
         # print(f"executing into {table_name}: {(username, hashed_password)}")
         conn.commit()
