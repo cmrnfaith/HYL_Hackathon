@@ -44,15 +44,10 @@ A few accomplishments were are proud of are:
 We learned how to utilize various API such as an API for calendar integration as well as manage our time effectively to create a web application that improves students' lives will be usable.
 
 ## What's next for uHub
-
-<<<<<<< Updated upstream
-Adding the ability for users to get recommendations based on their interests and previous liked events. Also the ability for hosts of events to provide announcements to users that are signed up.
-=======
 -Adding the ability for users to get recommendations based on their interests and previous liked events.
 -The ability for users to get personalized announcements from liked events or followed hosts.
 -Google Maps API integration.
 -Calender View for Events
->>>>>>> Stashed changes
 
 # [(React) Application](https://github.com/cmrnfaith/HYL_Hackathon)
 
