@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:ics.py - http://git.io/lLljaA
+BEGIN:VEVENT
+LOCATION:Hockey Arena
+DTSTART:20220415T000000Z
+SUMMARY:Dinos Mens Hockey vs. WesternU
+UID:7f4ba2b0-a68d-459c-90ef-b83b95ce23eb@7f4b.org
+END:VEVENT
+END:VCALENDAR
