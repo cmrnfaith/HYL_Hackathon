@@ -139,6 +139,57 @@ const CreateEvent = ({ user }) => {
   return (
     <div className="create-event-page-container">
       <div className="create-event-container">
+        <div className="create-tags">
+          <h1 className="title">Add Tags</h1>
+
+          <div className="input-box">
+            <input
+              type="checkbox"
+              checked={eventPriceChecked}
+              onChange={handleEventPriceChecked}
+            />
+            <span className="input-label">Add a Price</span>
+          </div>
+
+          <div className="input-box">
+            <input
+              type="checkbox"
+              checked={eventFacultyChecked}
+              onChange={handleEventFacultyChecked}
+            />
+            <span className="input-label">Add a Faculty</span>
+          </div>
+
+          <div className="input-box">
+            <input
+              type="checkbox"
+              checked={eventAttireChecked}
+              onChange={handleEventAttireChecked}
+            />
+            <span className="input-label">Add an Attire</span>
+          </div>
+
+          <div className="input-box">
+            <input
+              type="checkbox"
+              checked={eventMembershipRequirementChecked}
+              onChange={handleEventMembershipRequirementChecked}
+            />
+            <span className="input-label">Add a Membership Requirement</span>
+          </div>
+
+          <div className="input-box">
+            <input
+              type="checkbox"
+              checked={eventPublicChecked}
+              onChange={handleEventPublicChecked}
+            />
+            <span className="input-label">
+              Make the Event Public or Private
+            </span>
+          </div>
+        </div>
+
         <form className="create-event-form" onSubmit={onSubmit}>
           <h1 className="title">Create an Event</h1>
 
@@ -185,8 +236,9 @@ const CreateEvent = ({ user }) => {
             <input
               value={eventDuration}
               min="0"
-              step="0.5"
+              step="0.25"
               type="number"
+              placeholder="Event Duration (e.g 2.5 Hours)"
               onChange={(e) => setEventDuration(e.target.value)}
               required
             />
@@ -196,7 +248,7 @@ const CreateEvent = ({ user }) => {
             <span className="input-label">Event Location</span>
             <input
               value={eventLocation}
-              placeholder="Nuthouse"
+              placeholder="Event Location (e.g Mac Hall)"
               type="text"
               onChange={(e) => setEventLocation(e.target.value)}
               required
@@ -356,57 +408,6 @@ const CreateEvent = ({ user }) => {
             <input type="submit" value="Create Event" />
           </div>
         </form>
-
-        <div className="create-tags">
-          <h1 className="title">Add Tags</h1>
-
-          <div className="input-box">
-            <input
-              type="checkbox"
-              checked={eventPriceChecked}
-              onChange={handleEventPriceChecked}
-            />
-            <span className="input-label">Add a Price</span>
-          </div>
-
-          <div className="input-box">
-            <input
-              type="checkbox"
-              checked={eventFacultyChecked}
-              onChange={handleEventFacultyChecked}
-            />
-            <span className="input-label">Add a Faculty</span>
-          </div>
-
-          <div className="input-box">
-            <input
-              type="checkbox"
-              checked={eventAttireChecked}
-              onChange={handleEventAttireChecked}
-            />
-            <span className="input-label">Add an Attire</span>
-          </div>
-
-          <div className="input-box">
-            <input
-              type="checkbox"
-              checked={eventMembershipRequirementChecked}
-              onChange={handleEventMembershipRequirementChecked}
-            />
-            <span className="input-label">Add a Membership Requirement</span>
-          </div>
-
-          <div className="input-box">
-            <input
-              type="checkbox"
-              checked={eventPublicChecked}
-              onChange={handleEventPublicChecked}
-            />
-            <span className="input-label">
-              Make the Event Public or Private
-            </span>
-          </div>
-        </div>
       </div>
     </div>
   );
