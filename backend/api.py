@@ -173,16 +173,16 @@ def create_user():
 
         hashed_password = hashlib.sha256(data["password"].encode()).hexdigest()
 
-        try:
-            if data["isHost"] is True:
-                data["isHost"] = 1
-            else:
-                data["isHost"] = 0
+        # try:
+        if data["isHost"] is True:
+            data["isHost"] = 1
+        else:
+            data["isHost"] = 0
 
-            insert_user_into_db(db_conn,"user", data["username"], hashed_password, data["email"], data["firstName"], data["lastName"], \
-                                data["dateOfBirth"], data["country"], data["studentID"], data["isHost"])
-        except Exception as e:
-            return Response(status=409)
+        insert_user_into_db(db_conn,"user", data["username"], hashed_password, data["email"], data["firstName"], data["lastName"], \
+                            data["dateOfBirth"], data["country"], data["studentID"], data["isHost"])
+        # except Exception as e:
+        #     return Response(status=409)
 
     elif request.method == "DELETE":
         data = request.json
@@ -248,3 +248,35 @@ def login():
         else:
             return Response(status=401)  # Code for invalid login
 
+
+# ========================================================================
+# Follow API
+# ========================================================================
+
+"""
+Inserts an entry of a student following a host
+"""
+@app.route("/user/follow", methods=["POST", "DELETE"])
+def follow_host():
+    db_conn = get_db_connection()
+
+    if request.method == "POST":
+        data = request.json
+        try:
+            insert_user_follow_db(db_conn, "events2", data)
+        except Exception as e:
+            return Response(status=409)
+
+        return Response(status=200)
+
+    elif request.method == "DELETE":
+        data = request.json
+        try:
+            delete_event_from_db(db_conn, "events2", data["eventID"])
+        except Exception as e:
+            return Response(status=409)
+
+        return Response(status=200)
+    
+    else:
+        return Response(status=400)

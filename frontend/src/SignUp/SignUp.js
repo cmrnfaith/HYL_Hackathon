@@ -4,11 +4,12 @@ import { useHistory } from "react-router";
 const SignUp = () => {
   const history = useHistory();
 
-  const [first_name, setFirstName] = useState("");
-  const [last_name, setLastName] = useState("");
-  const [is_host, setHost] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [isHost, setHost] = useState(false);
   const [email, setEmail] = useState("");
-  const [date_of_birth, setDateOfBirth] = useState("");
+  const [studentID, setStudentID] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
   const [country, setCountry] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -18,9 +19,9 @@ const SignUp = () => {
     e.preventDefault();
 
     if (confirmPassword !== password) {
-      let confirm_password = document.getElementById("confirm_password");
-      confirm_password.style.color = "red";
-      confirm_password.textContent = "Passwords Need to Match";
+      let confirmPassword = document.getElementById("confirmPassword");
+      confirmPassword.style.color = "red";
+      confirmPassword.textContent = "Passwords Need to Match";
       return;
     }
 
@@ -38,15 +39,16 @@ const SignUp = () => {
 
   const submitSignUpRequest = () => {
     console.log({
-      first_name,
-      last_name,
+      firstName,
+      lastName,
       username,
-      is_host,
+      isHost,
       email,
       country,
-      date_of_birth,
+      dateOfBirth,
       password,
       confirmPassword,
+      studentID,
     });
     var url = "/user";
 
@@ -54,18 +56,20 @@ const SignUp = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "applcation/json",
+        Accept: "application/json",
       },
       credentials: "include",
       body: JSON.stringify({
+        firstName,
+        lastName,
         username,
-        password,
-        country,
-        is_host,
-        date_of_birth,
-        first_name,
-        last_name,
+        isHost,
         email,
+        country,
+        dateOfBirth,
+        password,
+        confirmPassword,
+        studentID,
       }),
     })
       .then(async (res) => {
@@ -89,9 +93,13 @@ const SignUp = () => {
         <form className="user-details" onSubmit={onSubmit}>
           <div className="host-box">
             <span className="details">Will you be hosting events?</span>
-            <input type="checkbox" onChange={(e) => setHost(!is_host)} />
+            <input
+              type="checkbox"
+              onChange={(e) => setHost(!isHost)}
+              value={isHost}
+            />
           </div>
-          {!is_host && (
+          {!isHost && (
             <div className="input-box">
               <span className="details">First Name</span>
               <input
@@ -102,7 +110,7 @@ const SignUp = () => {
               />
             </div>
           )}
-          {!is_host && (
+          {!isHost && (
             <div className="input-box">
               <span className="details">Last Name</span>
               <input
@@ -113,7 +121,7 @@ const SignUp = () => {
               />
             </div>
           )}
-          {is_host && (
+          {isHost && (
             <div className="input-box">
               <span className="details">Host Name</span>
               <input
@@ -123,7 +131,7 @@ const SignUp = () => {
               />
             </div>
           )}
-          {!is_host && (
+          {!isHost && (
             <div className="input-box">
               <span className="details">Username</span>
               <input
@@ -143,7 +151,7 @@ const SignUp = () => {
               required
             />
           </div>
-          {!is_host && (
+          {!isHost && (
             <div className="input-box">
               <span className="details">Country</span>
               <select
@@ -466,7 +474,7 @@ const SignUp = () => {
               </select>
             </div>
           )}
-          {!is_host && (
+          {!isHost && (
             <div className="input-box">
               <span className="details">Date of Birth</span>
               <input
@@ -486,7 +494,7 @@ const SignUp = () => {
             />
           </div>
           <div className="input-box">
-            <span className="details" id="confirm_password">
+            <span className="details" id="confirmPassword">
               Confirm Password
             </span>
             <input
