@@ -23,7 +23,7 @@ uHub is a web application that was built modularly and with a focus on scalablil
 
 ## Challenges we ran into
 
-A few challenges we ran into were: 1. Getting the filtering of different events based on specified criteria
+A few challenges we ran into were: 1. Mobile application Compability 2. Python package management 3. Filtering of different events based on specified criteria 4. CSS styling and animations
 
 ## Accomplishments that we're proud of
 
