@@ -3,7 +3,7 @@ from ics.event import Event
 
 
 def generateIcs(data):
-    print(data)
+    data = data["result"][0]
     
     c = Calendar()
     e = Event()
