@@ -129,9 +129,9 @@ def insert_user_into_db(conn:mysql.connector.connect, table_name:str, username:s
 
     try:
         sql = f"INSERT INTO {table_name} (username, hashedPassword, email, firstName, lastName, dateOfBirth, \
-            country, studentID, isHost) VALUES (%s, %s, %s, %s, %s, %s, %s, %d, %d)"
+            country, studentID, isHost) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
         val = (username, hashed_password, email, firstName, lastName, dateOfBirth, country, \
-            studentID, isHost,)
+            studentID, isHost)
         cur.execute(sql, val)
         # print(f"executing into {table_name}: {(username, hashed_password)}")
         conn.commit()
