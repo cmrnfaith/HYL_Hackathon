@@ -377,7 +377,7 @@ def get_user_likes_db(conn:mysql.connector.connect, table_name:str, username:str
 
     cur = conn.cursor()
 
-    sql = f"SELECT * FROM {table_name} as u, events as e  WHERE u.username = %s AND e.eventID = u.eventID;"
+    sql = f"SELECT * FROM {table_name} as u, events2 as e  WHERE u.username = %s AND e.eventID = u.eventID;"
     val = (username,)
     cur.execute(sql, val)
 
@@ -398,7 +398,7 @@ def get_user_nonliked_events_db(conn:mysql.connector.connect, table_name:str, us
 
     cur = conn.cursor()
 
-    sql = f"SELECT * FROM events as e WHERE e.eventID NOT IN (SELECT u.eventID FROM userLikesEvents as u WHERE u.username = %s);"
+    sql = f"SELECT * FROM events2 as e WHERE e.eventID NOT IN (SELECT u.eventID FROM userLikesEvents as u WHERE u.username = %s);"
     val = (username,)
     cur.execute(sql, val)
 
