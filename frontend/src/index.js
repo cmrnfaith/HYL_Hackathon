@@ -21,6 +21,7 @@ import HostsPage from "./Hosts/HostsPage";
 import HostOverview from "./Hosts/HostOverview";
 import Feed from "./Feed/Feed";
 import MyEvents from "./Events/MyEvents";
+// import About from "./About/About";
 
 export const defaultUser = [
   {
@@ -74,6 +75,7 @@ const App = () => {
 
         <Route exact path="/" component={Homepage} />
         <Route exact path="/events" component={EventsPage} />
+        {/* <Route exact path="/about" component={About} /> */}
 
         <Route path="/signup" component={SignUp} />
         <Route
