@@ -309,7 +309,7 @@ def get_user_non_follow_db(conn:mysql.connector.connect, table_name:str, usernam
 
     cur = conn.cursor()
 
-    sql = f"SELECT * FROM user as u WHERE u.isHost = 1 AND u.username NOT IN (SELECT u1.hostname FROM userFollowsHosts as u1 WHERE u1.username = %s);"
+    sql = f"SELECT * FROM user as u WHERE u.isHost = 1 AND u.username NOT IN (SELECT u1.hostName FROM userFollowsHosts as u1 WHERE u1.username = %s);"
     val = (username,)
     cur.execute(sql, val)
 
