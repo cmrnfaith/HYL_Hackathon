@@ -611,20 +611,27 @@ button:hover {
 
 .filter-dropdowns {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin: auto 0vw;
+  flex-wrap: wrap;
 }
 
 .filter-dropdowns .item {
-  margin: auto 2vmax;
-  min-width: 14.5vw;
-  max-width: 22vw;
+  margin: 0 1rem;
+  min-width: 15vw;
   font-size: 1rem;
 }
 
 .filter-dropdowns .item label {
   font-size: 1.4rem;
   font-weight: 500;
+}
+
+@media (max-width: 1350px) {
+  .filter-dropdowns .item {
+    width: 100%;
+    margin: 1rem 0rem;
+  }
 }
 
 /* ============= */
