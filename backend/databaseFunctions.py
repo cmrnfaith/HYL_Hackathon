@@ -309,7 +309,7 @@ def get_user_liked_events_from_followed_host_db(conn:mysql.connector.connect, us
 
     cur = conn.cursor()
 
-    sql = "SELECT * FROM events AS e, userLikesEvents AS l, userFollowsHosts AS f, user AS u WHERE u.username = %s AND e.eventID = l.eventID AND l.username = f.username;"
+    sql = "SELECT * FROM events AS e, userLikesEvents AS l, userFollowsHosts AS f, user AS u WHERE u.username = %s AND e.eventID = l.eventID AND l.username = f.username AND u.username = f.username;"
     val = (username,)
     cur.execute(sql, val)
 
