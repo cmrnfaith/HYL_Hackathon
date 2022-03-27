@@ -41,9 +41,14 @@ A few accomplishments were are proud of are:
 
 ## What we learned
 
-We learned how to utilize various API such as an API for calendar integration as well as manage our time effectively to create a web application that improves students' lives will be usable.
+- How to utilize various API such as an API for calendar integration.
+- How to manage our time effectively and colllaborativiely work in a team.
+- How to use advanced filtering on React Components.
+- Better practices in designing for mobile Responsiveness.
+- Effective version control for a team project.
 
 ## What's next for uHub
+
 - Adding the ability for users to get recommendations based on their interests and previous liked events.
 - The ability for users to get personalized announcements from liked events or followed hosts.
 - Google Maps API integration.
