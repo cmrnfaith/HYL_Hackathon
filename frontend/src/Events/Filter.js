@@ -81,7 +81,7 @@ const Filter = ({ events, setEvents }) => {
       }
     });
     var temp_events4 = temp_events3.filter((itemA) => {
-      console.log(dateFilter);
+      // console.log(dateFilter);
       if (dateFilter) {
         return new Date(itemA.date) < new Date().addDays(dateFilter.value);
       } else {

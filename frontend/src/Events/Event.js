@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import { AiFillHeart } from "react-icons/ai";
 import { AiOutlineHeart } from "react-icons/ai";
 
-const Event = ({ event, user }) => {
+const Event = ({ event, user, update_likes }) => {
   const history = useHistory();
   const [liked, setLiked] = useState(event.liked);
   function viewEvent() {
@@ -22,7 +22,7 @@ const Event = ({ event, user }) => {
       var Method = "POST";
     }
     setLiked(!liked);
-
+    update_likes();
     fetch(url, {
       method: Method,
       headers: {
