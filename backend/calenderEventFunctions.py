@@ -1,11 +1,11 @@
-# from ics import Calender, Event
-
+from ics.icalendar import Calendar
+from ics.event import Event
 
 
 def generateIcs(data):
     print(data)
     
-    c = Calender()
+    c = Calendar()
     e = Event()
     e.name = data['name']
     e.begin = data['date']

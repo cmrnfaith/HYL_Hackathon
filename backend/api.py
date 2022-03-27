@@ -400,6 +400,7 @@ def add_event_to_calender(username:str, eventID:int):
     print(username)
     print(eventID)
     data = get_event(eventID)
+    print(data)
 
     generateIcs(data)
     
