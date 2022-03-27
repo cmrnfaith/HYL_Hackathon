@@ -527,6 +527,157 @@ button:hover {
   color: var(--ucalgary-red);
 }
 
+/* ============= */
+/* === Host === */
+
+.host-container {
+  background: var(--white);
+  max-width: 25vw;
+  min-width: 20rem;
+  margin: 3vh 2vw;
+  padding: 2vh 1vw;
+  border-radius: 8px;
+  border: 1px solid var(--ucalgary-border);
+  box-shadow: 2px 2px 2px var(--ucalgary-shadow);
+}
+
+.host-container:hover {
+  cursor: pointer;
+  animation: card-hover 0.2s ease-in-out forwards;
+}
+
+.host-container .title {
+  font-size: 2rem;
+}
+
+.host-container .date {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 1vh 1vw;
+}
+.host-container .type {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 1vh 1vw;
+}
+.host-container .faculty {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
+}
+.host-container .location {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
+}
+.host-container .private {
+  /* align: center; */
+  font-size: 1.6rem;
+  padding: 0 1vw;
+}
+
+.host-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-red);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
+}
+
+@keyframes card-hover {
+  0% {
+  }
+  100% {
+    transform: translateY(-5%);
+  }
+}
+
+/* ====================== */
+/* === Event Overview === */
+
+.host-overview-page-container {
+  background: var(--background-light);
+  padding-top: var(--padding-top-for-navbar);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.host-overview-container {
+  min-width: 40vw;
+  max-width: 70vw;
+  background-color: white;
+  padding: 4rem 10rem;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.host-overview-container .title {
+  font-size: 3vmax;
+  font-weight: bold;
+}
+
+.host-overview-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-red);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
+}
+.host-overview-container table {
+  margin: 1.3vmax 0;
+  min-width: 30vw;
+}
+
+.host-overview-container th {
+  /* align: center; */
+  flex-direction: column;
+  font-size: 1.5vmax;
+  padding: 1vh 2vw;
+  color: var(--ucalgary-red);
+}
+
+.host-overview-container tr {
+  /* align: center; */
+  font-size: 1.2vmax;
+  padding: 1vh 3vw;
+
+  font-weight: 450;
+  /* padding: 1vh 1vw; */
+}
+
+.host-overview-container td {
+  /* align: center; */
+  font-size: 1.2vmax;
+  /* padding: 1vh 3vw; */
+  width: 10vw;
+  /* padding-right: 4rem; */
+  font-weight: 450;
+  /* padding: 1vh 1vw; */
+}
+.host-overview-container .content {
+  display: flex;
+  /* align-items: center; */
+}
+.host-overview-container .text {
+  font-size: 1.4rem;
+  padding: 1vh 1vw;
+  margin: 0vmax 5vmax;
+}
+.host-overview-container .subtitle {
+  padding: 0vh 1vw;
+  margin: 2vmax 5vmax;
+  font-size: 2vmax;
+  font-weight: 500;
+  color: var(--ucalgary-red);
+}
+
 /* =========================== */
 /* === Login Window Styles === */
 
