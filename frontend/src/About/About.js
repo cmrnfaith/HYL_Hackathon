@@ -13,15 +13,13 @@ const About = () => {
         <div className="statements">
           <h1 className="about-statement">Connecting Everyone</h1>
           <h1 className="about-statement-2">
-            UHub makes it easy for users to connect with other students
-            and see all the different club and university events all in 
-            one place.
+            UHub makes it easy for users to connect with other students and see
+            all the different club and university events all in one place.
           </h1>
         </div>
 
         <h1 className="about-titles">Mission</h1>
-        <p className="about-mission">
-        </p>
+        <p className="about-mission"></p>
 
         <h1 className="about-titles about-team">Our team</h1>
         <div className="about-bios">
@@ -42,8 +40,7 @@ const About = () => {
           <div className="about-person">
             <img src={AidanImage} alt="the team"></img>
             <h2>Aidan Johnson</h2>
-            <p>
-            </p>
+            <p></p>
           </div>
         </div>
         <div className="about-bios">
@@ -61,11 +58,9 @@ const About = () => {
             </p>
           </div>
           <div className="about-person">
-            <img src={DylanImage} alt="the team"></img>
+            <img src={MicheleImage} alt="the team"></img>
             <h2>Dylan Rae</h2>
-            <p>
-
-            </p>
+            <p></p>
           </div>
         </div>
       </div>

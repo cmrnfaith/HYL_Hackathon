@@ -401,12 +401,13 @@ def get_all_user_likes(username:str):
 def add_event_to_calender(username:str, eventID:int):
     print(username)
     print(eventID)
-    data = get_event(eventID)
+    data = get_event(eventID)["result"][0]
+    print(data)
     generateIcs(data)
     try:
-        calendarPath = os.path.join(current_app.root_path, "calenders")
-        
-        return send_from_directory(calendarPath, filename=data['name'] + ".ics", as_attachment=True)
+        calendarPath = os.path.join(current_app.root_path, "calendars")
+        print(calendarPath)
+        return send_from_directory(directory=calendarPath, path=(data['name'] + ".ics"), as_attachment=True)
     except FileNotFoundError:
         return Response(status=409)
     
