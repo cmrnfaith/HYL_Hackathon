@@ -76,6 +76,13 @@ This is the website development branch for our project. This project will use py
 - [Usage](#Usage)
 - [Documentation](#Documentation)
 - [Questions](#Questions)
+- [Demonstration](#Demonstration)
+- [All Events](#All Events)
+- [Liked Events](#Liked Events)
+- [Create an Event](#Create an Event)
+- [Event Page](#Event Page)
+- [Host's Events](#Host's Events)
+- [Deployed App (No DB)](#Link to the application running:)
 
 ## Demo
 
