@@ -1,6 +1,8 @@
 from ics.icalendar import Calendar
 from ics.event import Event
 
+import datetime as dt
+
 
 def generateIcs(data):
     data = data["result"][0]
@@ -11,10 +13,10 @@ def generateIcs(data):
     e.name = data['name']
     e.begin = data['date']
     e.location = data['location']
+    e.duration = dt.timedelta(hours=int(data['duration']))
+    e.description = data['description']
     
-    print(e)
     c.events.add(e)
-    print(c)
 
     with open(f"calendars\{data['name']}" + ".ics", 'w') as f:
         f.write(str(c))
