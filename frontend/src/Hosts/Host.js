@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 
-const Host = ({ host }) => {
+const Host = ({ user, host, update_hosts }) => {
   const history = useHistory();
   const [followed, setFollowed] = useState(host.followed);
   function viewHost() {
@@ -10,7 +10,38 @@ const Host = ({ host }) => {
   }
 
   function followHost() {
+    console.log("submit like");
+    var username = user.username;
+    var hostName = host.hostName;
+    var url = "/user/follow";
+    if (followed) {
+      var Method = "DELETE";
+    } else {
+      var Method = "POST";
+    }
     setFollowed(!followed);
+    update_hosts();
+    fetch(url, {
+      method: Method,
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "applcation/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({ username, hostName }),
+    })
+      .then(async (res) => {
+        if (res.status === 200) {
+          var response = await res.json();
+          console.log(response);
+        } else if (res.status === 401) {
+        } else {
+          console.log("error fetching event");
+        }
+      })
+      .catch((error) => {
+        // Handle error
+      });
   }
   return (
     <div className="host-container">

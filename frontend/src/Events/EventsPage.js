@@ -5,7 +5,8 @@ const EventsPage = ({ user }) => {
   const [events, setEvents] = useState([]);
 
   function updateEventList() {
-    var url = "/events";
+    var username = user.username;
+    var url = "/user/" + username;
     fetch(url, {
       method: "GET",
       headers: {
@@ -54,7 +55,11 @@ const EventsPage = ({ user }) => {
       });
   }
   useEffect(() => {
-    updateEvents();
+    if (user.username === "") {
+      updateEvents();
+    } else {
+      updateEventList();
+    }
   }, []);
   return (
     <div className="events-page-container">

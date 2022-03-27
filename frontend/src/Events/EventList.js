@@ -13,7 +13,6 @@ const EventList = ({ events, user, updateEventList }) => {
 
   function update_events() {
     setLiked_events(filtered_events.filter((event) => event.liked));
-
     setFiltered_events(filtered_events.filter((event) => !event.liked));
   }
 

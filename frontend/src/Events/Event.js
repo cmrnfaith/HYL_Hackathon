@@ -22,7 +22,7 @@ const Event = ({ event, user, update_likes }) => {
       var Method = "POST";
     }
     setLiked(!liked);
-    update_likes();
+
     fetch(url, {
       method: Method,
       headers: {
@@ -34,8 +34,7 @@ const Event = ({ event, user, update_likes }) => {
     })
       .then(async (res) => {
         if (res.status === 200) {
-          var response = await res.json();
-          console.log(response);
+          update_likes();
         } else if (res.status === 401) {
         } else {
           console.log("error fetching event");

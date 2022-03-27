@@ -91,7 +91,13 @@ const App = () => {
 
         <Route exact path="/feed" component={withProps(Feed, { user })} />
 
-        <Route exact path="/hosts" component={HostsPage} />
+        <Route
+          exact
+          path="/hosts"
+          component={withProps(HostsPage, {
+            user,
+          })}
+        />
 
         <Route exact path="/event/:id" component={EventOverview} />
         <Route exact path="/host/:name" component={HostOverview} />
