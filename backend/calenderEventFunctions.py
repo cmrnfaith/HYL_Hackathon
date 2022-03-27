@@ -9,6 +9,7 @@ def generateIcs(data):
     e = Event()
     e.name = data['name']
     e.begin = data['date']
+    e.location = data['location']
     
     c.events.add(e)
     c.events
