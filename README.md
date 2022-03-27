@@ -1,4 +1,4 @@
-# Team Great Ape Consulting HYL_Hackathon
+# Team Excessive Alpha HYL_Hackathon
 
 ## Inspiration
 
@@ -23,11 +23,21 @@ uHub is a web application that was built modularly and with a focus on scalablil
 
 ## Challenges we ran into
 
-A few challenges we ran into were: 1. Mobile application Compability 2. Python package management 3. Filtering of different events based on specified criteria 4. CSS styling and animations
+A few challenges we ran into were:
+
+1. Mobile application Compability
+2. Python package management
+3. Filtering of different events based on specified criteria
+4. CSS styling and animations
 
 ## Accomplishments that we're proud of
 
-Developing an intricate web application that utilizes a database, user-friendly frontend and backend in under 24 hours.
+A few accomplishments were are proud of are:
+
+1. Designing an intricate mobile and web application that utilizes a database, user-friendly frontend and backend in under 24 hours
+2. Ascending to a new level of team colloboration
+3. mySQL Databse Design following a planned EERD
+4. Learning more about React, CSS and Flask in a short time frame
 
 ## What we learned
 
@@ -83,23 +93,19 @@ This is the website development branch for our project. This project will use py
 
 ### Demonstration
 
-#### Event List
+#### Screenshot Example #1
 
 ![Screenshot #1](docs/Example2.png?raw=true "Example 1")
 
-#### Create an Event
+#### Screenshot Example #2
 
 ![Screenshot #2](docs/Example3.png?raw=true "Example 2")
-
-### Link to the application running: [Production Version](https://
 
 u-hub.netlify.app/)
 
 #### Event Page
 
 ![Screenshot #3](docs/Example4.png?raw=true "Example 3")
-
-### Link to the application running: [Production Version](https://u-hub.netlify.app/)
 
 #### Host's Events
 
