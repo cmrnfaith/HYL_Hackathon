@@ -262,21 +262,21 @@ def follow_host():
 
     if request.method == "POST":
         data = request.json
-        try:
-            insert_user_follows_db(db_conn, "events2", data)
-        except Exception as e:
-            return Response(status=409)
+        # try:
+        insert_user_follows_db(db_conn, "userFollowsHosts", data["username"], data["hostName"])
+        # except Exception as e:
+        #     return Response(status=409)
 
         return Response(status=200)
 
-    elif request.method == "DELETE":
-        data = request.json
-        try:
-            delete_event_from_db(db_conn, "events2", data["eventID"])
-        except Exception as e:
-            return Response(status=409)
+    # elif request.method == "DELETE":
+    #     data = request.json
+    #     try:
+    #         delete_event_from_db(db_conn, "events2", data["eventID"])
+    #     except Exception as e:
+    #         return Response(status=409)
 
-        return Response(status=200)
+    #     return Response(status=200)
     
     else:
         return Response(status=400)
