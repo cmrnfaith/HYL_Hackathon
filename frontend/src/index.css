@@ -503,7 +503,7 @@ button:hover {
   padding: 0vh 1vw;
   margin: 2vmax 5vmax;
   font-size: 2vmax;
-  font-weight: bold;
+  font-weight: 500;
   color: var(--ucalgary-red);
 }
 
