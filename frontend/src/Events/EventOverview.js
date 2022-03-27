@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 const EventOverview = (props) => {
   const [event, setEvent] = useState(null);
   var eventID = props.match.params.id;
+
+  const onClick = () => {
+    alert("Your moms a HOE!");
+  };
+
   useEffect(() => {
     var url = "/event/" + eventID;
     fetch(url, {
@@ -36,19 +41,19 @@ const EventOverview = (props) => {
           <div className="content">
             <table>
               <tr>
-                <th>Event Date:</th>
+                <th>Event Date</th>
                 <td>{new Date(event.date).toLocaleDateString()}</td>
               </tr>
               <tr>
-                <th>Event Time:</th>
+                <th>Event Time</th>
                 <td>{new Date(event.date).toLocaleTimeString()}</td>
               </tr>
               <tr>
-                <th>Duration:</th>
+                <th>Duration</th>
                 <td>{event.duration}</td>
               </tr>
               <tr>
-                <th>Event Location:</th>
+                <th>Event Location</th>
                 <td>{event.location}</td>
               </tr>
 
@@ -56,7 +61,7 @@ const EventOverview = (props) => {
                 ""
               ) : (
                 <tr>
-                  <th>Faculty:</th>
+                  <th>Faculty</th>
                   <td>{event.faculty}</td>
                 </tr>
               )}
@@ -65,25 +70,25 @@ const EventOverview = (props) => {
                 ""
               ) : (
                 <tr>
-                  <th>Event Type:</th>
+                  <th>Event Type</th>
                   <td>{event.eventType}</td>
                 </tr>
               )}
 
               <tr>
-                <th>Price:</th>
+                <th>Price</th>
                 <td>{event.price}</td>
               </tr>
               <tr>
-                <th>Permissions:</th>
+                <th>Permissions</th>
                 <td>{event.private === 0 ? "Public" : "Private"}</td>
               </tr>
               <tr>
-                <th>Membership:</th>
+                <th>Membership</th>
                 <td>{event.membership}</td>
               </tr>
               <tr>
-                <th>Attire:</th>
+                <th>Attire</th>
                 <td>{event.attire}</td>
               </tr>
             </table>
@@ -91,6 +96,9 @@ const EventOverview = (props) => {
               <div className="subtitle">Description</div>
               <div className="text">{event.description}</div>
             </div>
+            <button className="button-add-to-calender" onClick={onClick}>
+              Add to Calender
+            </button>
           </div>
         </div>
       )}

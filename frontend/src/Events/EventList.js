@@ -6,7 +6,7 @@ const EventList = ({ events }) => {
 
   return (
     <div className="event-list-container">
-      <div className="filter">
+      <div className="event-filter">
         <Filter events={events} setEvents={setFiltered_events} />
       </div>
       <div className="event-list-items">

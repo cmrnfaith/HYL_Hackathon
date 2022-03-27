@@ -166,8 +166,8 @@ button:hover {
   font-size: 45px;
   margin: 0;
 
-  color: black;
-  text-shadow: 0 0 3px white, 0 0 5px var(--white);
+  color: white;
+  text-shadow: 0 0 14px black, 0 0 5px black;
 }
 
 .content-container-list {
@@ -176,8 +176,8 @@ button:hover {
   text-align: right;
   list-style: none;
 
-  color: var(--ucalgary-red);
-  text-shadow: 0 0 3px white, 0 0 5px var();
+  color: white;
+  text-shadow: 0 0 8px var(--ucalgary-red), 0 0 5px black;
 
   -webkit-animation-name: change;
   -webkit-animation-duration: 10s;
@@ -591,12 +591,14 @@ button:hover {
 
 .filter-dropdowns {
   display: flex;
+  justify-content: center;
+  margin: auto 0vw;
 }
 
 .filter-dropdowns .item {
   margin: auto 2vmax;
   min-width: 15vw;
-  max-width: 25vw;
+  max-width: 20vw;
   font-size: 1rem;
 }
 
@@ -684,11 +686,13 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+
 .event-overview-container {
+  position: relative;
   min-width: 40vw;
   max-width: 70vw;
   background-color: white;
-  padding: 4rem 10rem;
+  padding: 4rem 10rem 0rem;
   border-radius: 10px;
   text-align: left;
 }
@@ -743,11 +747,30 @@ button:hover {
   display: flex;
   /* align-items: center; */
 }
+
 .event-overview-container .text {
   font-size: 1.4rem;
   padding: 1vh 1vw;
   margin: 0vmax 5vmax;
 }
+
+.event-overview-container .description {
+  position: relative;
+}
+
+.event-overview-container .button-add-to-calender {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: 2rem;
+  color: white;
+  background-color: var(--ucalgary-red);
+}
+
+.event-overview-container .button-add-to-calender:hover {
+  background-color: var(--ucalgary-red-hover);
+}
+
 .event-overview-container .subtitle {
   padding: 0vh 1vw;
   margin: 2vmax 5vmax;
@@ -824,8 +847,8 @@ button:hover {
   }
 }
 
-/* ====================== */
-/* === Event Overview === */
+/* ===================== */
+/* === Host Overview === */
 
 .host-overview-page-container {
   background: var(--background-light);
@@ -905,6 +928,83 @@ button:hover {
   font-size: 2vmax;
   font-weight: 500;
   color: var(--ucalgary-red);
+}
+
+/* ================== */
+/* === Host Page === */
+
+.hosts-page-container {
+  background: var(--background-color-new);
+  padding-top: var(--padding-top-for-navbar);
+  min-height: 100vh;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.hosts-container {
+  padding-top: var(--padding-top-for-navbar);
+  width: var(--inner-width);
+  padding: 2rem 2rem;
+  border-radius: 5px;
+}
+
+.hosts-container .title {
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.hosts-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-yellow);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 200%;
+}
+
+/* ================== */
+/* === Event List === */
+
+.host-list-container {
+  display: block;
+}
+.host-list-items {
+  /* width: var(--inner-width); */
+  /* align-items: center; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.host-list-items > div {
+  justify-content: start;
+  flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
+  border: 1px solid var(--ucalgary-border);
+  box-shadow: 2px 2px 2px var(--ucalgary-shadow);
+  margin-bottom: 10px;
+}
+
+.host-list-container .title {
+  font-size: 2rem;
+  font-weight: 500;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.host-list-container .title:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-red);
+  position: absolute;
+  bottom: -50%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
 }
 
 /* =========================== */

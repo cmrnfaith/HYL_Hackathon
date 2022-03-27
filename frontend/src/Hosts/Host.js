@@ -21,4 +21,4 @@ const Host = ({ host }) => {
     </div>
   );
 };
-export default Event;
+export default Host;

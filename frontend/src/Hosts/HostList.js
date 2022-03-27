@@ -5,7 +5,7 @@ const HostList = ({ hosts }) => {
     <div className="host-list-container">
       <div className="host-list-items">
         {hosts.map((host) => (
-          <Host key={host.hostName} event={host} />
+          <Host key={host.hostName} host={host} />
         ))}
       </div>
     </div>
