@@ -296,6 +296,27 @@ def get_user_follows_db(conn:mysql.connector.connect, table_name:str, username:s
     cur.close()
     return results
 
+
+def get_user_liked_events_from_followed_host_db(conn:mysql.connector.connect, username:str):
+    """
+    Gets all the hosts a user follows
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        username: Username of the host being inserted
+    
+    """
+
+    cur = conn.cursor()
+
+    sql = "SELECT * FROM events AS e, userLikesEvents AS l, userFollowsHosts AS f, user AS u WHERE u.username = %s AND e.eventID = l.eventID AND l.username = f.username;"
+    val = (username,)
+    cur.execute(sql, val)
+
+    results = cur.fetchall()
+    cur.close()
+    return results
+
 def delete_user_follow_from_db(conn:mysql.connector.connect, table_name:str, username:str, hostName:str):
     cur = conn.cursor()
     try:

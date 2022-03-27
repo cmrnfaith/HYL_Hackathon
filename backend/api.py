@@ -349,6 +349,34 @@ def insert_user_likes_event():
         return Response(status=400)
 
 
+@app.route("/user/<string:username>/followedLikes", methods=["GET"])
+def get_all_liked_events_from_follows(username:str):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_user_liked_events_from_followed_host_db(db_conn, username)
+    print(data)
+    for event in data:
+        result["result"].append(
+            {
+                "eventID": event[0],
+                "name": event[1],
+                "date": event[2],
+                "location": event[3],
+                "price": event[4],
+                "attire": event[5],
+                "membership": event[6],
+                "duration": event[7],
+                "private": event[8],
+                "faculty": event[9],
+                "description": event[10],
+                "eventType": event[11],
+                "hostName": event[16],
+            }
+        )
+    
+    return result
+
 """
 Get all the events a user likes
 """
