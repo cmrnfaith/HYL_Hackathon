@@ -365,6 +365,7 @@ button:hover {
 }
 
 .create-event-container .create-tags {
+  box-shadow: 2px 2px 2px var(--ucalgary-shadow);
   margin-right: 2rem;
 
   background-color: white;
@@ -413,6 +414,7 @@ button:hover {
 }
 
 .create-event-container .create-event-form {
+  box-shadow: 2px 2px 2px var(--ucalgary-shadow);
   display: flex;
   flex-direction: column;
   align-items: center;
