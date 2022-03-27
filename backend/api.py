@@ -298,3 +298,5 @@ def follow_host(username:str):
                 "hostName": follow[1],
             }
         )
+    
+    return result
