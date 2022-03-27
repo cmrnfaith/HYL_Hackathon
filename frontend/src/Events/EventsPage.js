@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import EventList from "./EventList";
 
-const EventsPage = () => {
+const EventsPage = ({ user }) => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
     var url = "/events";
@@ -31,7 +31,7 @@ const EventsPage = () => {
     <div className="events-page-container">
       <div className="events-container">
         <h1 className="title">Latest Events</h1>
-        <EventList events={events} />
+        <EventList events={events} user={user} />
       </div>
     </div>
   );

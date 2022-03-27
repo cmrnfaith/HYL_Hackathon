@@ -626,6 +626,8 @@ button:hover {
   animation: card-hover 0.2s ease-in-out forwards;
 }
 .event-container .content {
+  flex-direction: column;
+  margin: 0;
 }
 .event-container table {
   margin: 1.3vmax 0;
@@ -668,15 +670,20 @@ button:hover {
 }
 
 .event-container .like-button {
-  position: absolute;
-  bottom: 3rem;
-  right: 3rem;
-  font-size: 4rem;
-  color: red;
-  background-color: var(--white);
+  position: relative;
+  /* z-index: 2; */
+  /* bottom: 1rem; */
+  justify-content: end;
+  left: 75%;
+  /* margin-top: auto; */
+  font-size: 5rem;
+  /* font-weight: 200; */
+  /* background: var(--white); */
 }
 
-.event-container .like-button AiFillHeart {
+.event-container .like-button svg {
+  stroke: red;
+  fill: red;
 }
 
 @keyframes card-hover {
