@@ -74,8 +74,11 @@ const App = () => {
         {/* Normal Navagation Routes */}
 
         <Route exact path="/" component={Homepage} />
-        <Route exact path="/events" component={EventsPage} />
-        {/* <Route exact path="/about" component={About} /> */}
+        <Route
+          exact
+          path="/events"
+          component={withProps(EventsPage, { user })}
+        />
 
         <Route path="/signup" component={SignUp} />
         <Route
@@ -83,7 +86,7 @@ const App = () => {
           component={withProps(Login, { updateLoginStatus, updateLocalUser })}
         />
 
-        <Route path="/feed" component={withProps(Feed, { user })} />
+        <Route exact path="/feed" component={withProps(Feed, { user })} />
 
         <Route exact path="/hosts" component={HostsPage} />
 

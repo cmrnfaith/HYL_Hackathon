@@ -1,7 +1,7 @@
 import Event from "./Event";
 import Filter from "./Filter";
 import { useState } from "react";
-const EventList = ({ events }) => {
+const EventList = ({ events, user }) => {
   const [filtered_events, setFiltered_events] = useState([]);
 
   return (
@@ -11,7 +11,7 @@ const EventList = ({ events }) => {
       </div>
       <div className="event-list-items">
         {filtered_events.map((event) => (
-          <Event key={event.eventID} event={event} />
+          <Event key={event.eventID} event={event} user={user} />
         ))}
       </div>
     </div>

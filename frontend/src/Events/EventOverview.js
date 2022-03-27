@@ -7,8 +7,7 @@ const EventOverview = (props) => {
   const onClick = () => {
     alert("Your moms a HOE!");
   };
-
-  useEffect(() => {
+  function getEvents() {
     var url = "/event/" + eventID;
     fetch(url, {
       method: "GET",
@@ -31,6 +30,10 @@ const EventOverview = (props) => {
       .catch((error) => {
         // Handle error
       });
+  }
+
+  useEffect(() => {
+    getEvents();
   }, [eventID]);
 
   return (

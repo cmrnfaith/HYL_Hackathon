@@ -2,12 +2,42 @@ import { useState, useEffect } from "react";
 
 const MyEvents = ({ user }) => {
   const [events, setEvents] = useState([]);
+  const [deleteBool, setDeleteBool] = useState();
 
   const deleteEvent = (event) => {
     console.log(event);
+
+    var eventID = event.eventID;
+
+    var url = "/events";
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "applcation/json",
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        eventID,
+      }),
+    })
+      .then(async (res) => {
+        if (res.status === 200) {
+          var response = await res.json();
+          console.log(response);
+          getEvents();
+        } else if (res.status === 401) {
+          console.log("error fetching events");
+        } else {
+          console.log("error fetching events");
+        }
+      })
+      .catch((error) => {
+        // Handle error
+      });
   };
 
-  useEffect(() => {
+  const getEvents = () => {
     console.log(user);
 
     var url = "/events/" + user.username;
@@ -32,7 +62,11 @@ const MyEvents = ({ user }) => {
       .catch((error) => {
         // Handle error
       });
-  }, []);
+  };
+
+  useEffect(() => {
+    getEvents();
+  }, [events]);
 
   return (
     <div className="events-page-container">
@@ -42,7 +76,7 @@ const MyEvents = ({ user }) => {
         </h1>
         <div className="event-list-items">
           {events.map((event) => (
-            <div className="event-container">
+            <div className="event-container" key={event.name}>
               <div className="title">{event.name}</div>
               <div className="date">
                 Event Date: {new Date(event.date).toLocaleDateString()}
