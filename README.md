@@ -20,17 +20,17 @@ uHub is a web application that was built modularly and with a focus on scalablil
 
 ## Challenges we ran into
 A few challenges we ran into were:
-    1. Mobile application Compability
-    2. Python package management
-    3. Filtering of different events based on specified criteria
-    4. CSS styling and animations
+1. Mobile application Compability
+2. Python package management
+3. Filtering of different events based on specified criteria
+4. CSS styling and animations
 
 ## Accomplishments that we're proud of
 A few accomplishments were are proud of are:
-    1. Designing an intricate mobile and web application that utilizes a database, user-friendly frontend and backend in under 24 hours
-    2. Ascending to a new level of team colloboration
-    3. mySQL Databse Design following a planned EERD
-    4. Learning more about React, CSS and Flask in a short time frame
+1. Designing an intricate mobile and web application that utilizes a database, user-friendly frontend and backend in under 24 hours
+2. Ascending to a new level of team colloboration
+3. mySQL Databse Design following a planned EERD
+4. Learning more about React, CSS and Flask in a short time frame
 
 ## What we learned
 We learned how to utilize various API such as an API for calendar integration as well as manage our time effectively to create a web application that improves students' lives will be usable.
