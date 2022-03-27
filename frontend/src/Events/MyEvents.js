@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
-import Event from "./Event";
 
 const MyEvents = ({ user }) => {
   const [events, setEvents] = useState([]);
+
+  const deleteEvent = (event) => {
+    console.log(event);
+  };
 
   useEffect(() => {
     console.log(user);
@@ -34,10 +37,37 @@ const MyEvents = ({ user }) => {
   return (
     <div className="events-page-container">
       <div className="events-container">
-        <h1 className="title">My Events</h1>
+        <h1 className="title">
+          My Events: <span>{user.username}</span>
+        </h1>
         <div className="event-list-items">
           {events.map((event) => (
-            <Event key={event.eventID} event={event} />
+            <div className="event-container">
+              <div className="title">{event.name}</div>
+              <div className="date">
+                Event Date: {new Date(event.date).toLocaleDateString()}
+              </div>
+
+              <div className="faculty">
+                {event.faculty === "N/A" ? "" : event.faculty}
+              </div>
+              <div className="location">Event Location: {event.location}</div>
+              <div className="type">
+                {event.eventType ? "Category: " + event.eventType : ""}
+              </div>
+              <div className="private">
+                {event.private === 0 ? "Public" : "Private"}
+              </div>
+
+              <button
+                className="delete-event-button"
+                onClick={() => {
+                  deleteEvent(event);
+                }}
+              >
+                Delete
+              </button>
+            </div>
           ))}
         </div>
       </div>

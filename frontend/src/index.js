@@ -21,6 +21,7 @@ import HostsPage from "./Hosts/HostsPage";
 import HostOverview from "./Hosts/HostOverview";
 import Feed from "./Feed/Feed";
 import MyEvents from "./Events/MyEvents";
+// import About from "./About/About";
 
 export const defaultUser = [
   {

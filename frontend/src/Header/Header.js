@@ -58,6 +58,9 @@ const Header = ({ loginStatus, user }) => {
           ) : (
             <div></div>
           )}
+          <div className="header-link" onClick={closeMobileMenu}>
+            <Link to="/about">About</Link>
+          </div>
         </div>
 
         {/* If else statement showing different items based on login status */}

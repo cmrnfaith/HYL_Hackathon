@@ -1,12 +1,14 @@
+from calendar import calendar
 import hashlib
 import numpy as np
 import mysql.connector
+import os.path
 
 from main import app, login_manager
 
 from datetime import datetime as dt
 from flask.wrappers import Response
-from flask import request
+from flask import request, send_from_directory, current_app
 
 from flask_login.utils import logout_user
 from flask_login import current_user, login_user, login_required
@@ -399,13 +401,15 @@ def get_all_user_likes(username:str):
 def add_event_to_calender(username:str, eventID:int):
     print(username)
     print(eventID)
-    data = get_event(eventID)
+    data = get_event(eventID)["result"][0]
     print(data)
-
     generateIcs(data)
-    
-    # return send_file(path, as_attachment=True)
-    return Response(status=200)
+    try:
+        calendarPath = os.path.join(current_app.root_path, "calendars")
+        print(calendarPath)
+        return send_from_directory(directory=calendarPath, path=(data['name'] + ".ics"), as_attachment=True)
+    except FileNotFoundError:
+        return Response(status=409)
     
     
 # ========================================================================
