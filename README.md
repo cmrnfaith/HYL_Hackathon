@@ -100,11 +100,11 @@ This is the website development branch for our project. This project will use py
 
 ### Demonstration
 
-#### Screenshot Example #1
+#### List of Events
 
 ![Screenshot #1](docs/Example2.png?raw=true "Example 1")
 
-#### Screenshot Example #2
+#### Create and Event
 
 ![Screenshot #2](docs/Example3.png?raw=true "Example 2")
 
