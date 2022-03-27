@@ -296,3 +296,16 @@ def get_user_follows_db(conn:mysql.connector.connect, table_name:str, username:s
     results = cur.fetchall()
     cur.close()
     return results
+
+def delete_user_follow_from_db(conn:mysql.connector.connect, table_name:str, username:str, hostName:str):
+    cur = conn.cursor()
+    try:
+        sql = f"DELETE FROM {table_name} WHERE username = %s AND hostName = %s;"
+        val = (username, hostName)
+        cur.execute(sql, val)
+        conn.commit()
+        cur.close()
+    except Exception as e:
+        conn.rollback()
+        raise e
+    return

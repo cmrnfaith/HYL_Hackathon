@@ -269,14 +269,14 @@ def follow_host():
 
         return Response(status=200)
 
-    # elif request.method == "DELETE":
-    #     data = request.json
-    #     try:
-    #         delete_event_from_db(db_conn, "events2", data["eventID"])
-    #     except Exception as e:
-    #         return Response(status=409)
+    elif request.method == "DELETE":
+        data = request.json
+        try:
+            delete_user_follow_from_db(db_conn, "userFollowsHosts", data["username"], data["hostName"])
+        except Exception as e:
+            return Response(status=409)
 
-    #     return Response(status=200)
+        return Response(status=200)
     
     else:
         return Response(status=400)
