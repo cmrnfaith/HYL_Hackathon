@@ -16,7 +16,7 @@ def generateIcs(data):
     
     c.events.add(e)
 
-    with open(f"calendars\{data['name']}" + ".ics", 'w') as f:
+    with open(f"{data['name']}" + ".ics", 'w') as f:
         f.write(str(c))
     
     return
