@@ -37,12 +37,27 @@ const Header = ({ loginStatus, user }) => {
           ) : (
             <div></div>
           )}
-          <div className="header-link" onClick={closeMobileMenu}>
-            <Link to="/hosts">Hosts</Link>
-          </div>
-          <div className="header-link" onClick={closeMobileMenu}>
-            <Link to="/feed">Feed</Link>
-          </div>
+          {!user.isHost ? (
+            <div className="header-link" onClick={closeMobileMenu}>
+              <Link to="/hosts">Hosts</Link>
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {loginStatus && !user.isHost ? (
+            <div className="header-link" onClick={closeMobileMenu}>
+              <Link to="/feed">Feed</Link>
+            </div>
+          ) : (
+            <div></div>
+          )}
+          {loginStatus && user.isHost ? (
+            <div className="header-link" onClick={closeMobileMenu}>
+              <Link to="/my_events">My Events</Link>
+            </div>
+          ) : (
+            <div></div>
+          )}
         </div>
 
         {/* If else statement showing different items based on login status */}
