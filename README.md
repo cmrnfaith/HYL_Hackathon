@@ -1,4 +1,4 @@
-# Team Great Ape Consulting HYL_Hackathon
+# Team Excessive Alpha HYL_Hackathon
 
 ## Inspiration 
 Interested in finding social and academic events but have no idea where to find them? Tired of looking through countless emails, D2L, club websites and poster to find events? Wanting to see, like, interact and look forspecific university events all in one place? These were the questions we wanted to address and the inspiration for our mobile and desktop application uHub.
