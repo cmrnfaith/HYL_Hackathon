@@ -5,8 +5,6 @@ import datetime as dt
 
 
 def generateIcs(data):
-    data = data["result"][0]
-    
     c = Calendar()
     e = Event()
 
