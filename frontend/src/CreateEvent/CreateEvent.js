@@ -309,6 +309,7 @@ const CreateEvent = ({ user }) => {
                 required
               >
                 <option value="">Choose an Attire</option>
+                <option value="Casual">Casual</option>
                 <option value="Formal">Formal</option>
                 <option value="Business Formal">Business Formal</option>
                 <option value="Costume">Costume</option>
