@@ -240,3 +240,59 @@ def get_all_hosts_from_db(conn:mysql.connector.connect, table_name:str)->List:
     results = cur.fetchall()
     cur.close()
     return results
+
+
+# =============================================================================
+# Database Functions for the Follows Table
+# =============================================================================
+
+def insert_user_follows_db(conn:mysql.connector.connect, table_name:str, username:str, hostUsername:str):
+    """
+    Inserts a follow by a user for a host
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        username: Username of the host being inserted
+        hostUsername: Username of the host being followed
+        isHost: Boolean representing if the user is a host or a student
+    
+    """
+
+    cur = conn.cursor()
+
+    try:
+        sql = f"INSERT INTO {table_name} (username, hostUsername) VALUES (%s, %s)"
+        val = (username, hostUsername)
+        cur.execute(sql, val)
+        # print(f"executing into {table_name}: {(username, hashed_password)}")
+        conn.commit()
+
+    except mysql.connector.DataError as e:
+        conn.rollback()
+        raise Exception(f"Username value at {username} for table {table_name} already exists.")
+    
+    results = cur.fetchall()
+    cur.close()
+    return results
+
+def get_user_follows_db(conn:mysql.connector.connect, table_name:str, username:str):
+    """
+    Gets all the hosts a user follows
+
+    Args:
+        conn (mysql.connector.connection): A valid connection to the mySQL Database
+        table_name (str): Table name in DB to check
+        username: Username of the host being inserted
+    
+    """
+
+    cur = conn.cursor()
+
+    sql = f"SELECT * FROM {table_name}  WHERE username = %s;"
+    val = (username,)
+    cur.execute(sql, val)
+
+    results = cur.fetchall()
+    cur.close()
+    return results

@@ -263,7 +263,7 @@ def follow_host():
     if request.method == "POST":
         data = request.json
         try:
-            insert_user_follow_db(db_conn, "events2", data)
+            insert_user_follows_db(db_conn, "events2", data)
         except Exception as e:
             return Response(status=409)
 
@@ -280,3 +280,19 @@ def follow_host():
     
     else:
         return Response(status=400)
+
+
+"""
+Get all the hosts a user is following
+"""
+@app.route("/user/<string:username>/follow", methods=["GET"])
+def get_all_user_follows(username:str):
+    db_conn = get_db_connection()
+
+    result = {"result": []}
+    data = get_user_follows_db(db_conn, "userFollowsHosts", username)
+
+    for follow in data:
+        result["result"].append({"hostName": follow[1]})
+    
+    return result

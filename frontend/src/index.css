@@ -446,6 +446,7 @@ button:hover {
 
 .event-overview-container .title {
   font-size: 3vmax;
+  font-weight: bold;
 }
 
 .event-overview-container .title:after {
@@ -460,19 +461,32 @@ button:hover {
 }
 .event-overview-container table {
   margin: 1.3vmax 0;
+  min-width: 30vw;
 }
 
 .event-overview-container th {
   /* align: center; */
   flex-direction: column;
   font-size: 1.5vmax;
-  padding: 1vh 1vw;
-  color: var(--ucalgary-yellow);
+  padding: 1vh 2vw;
+  color: var(--ucalgary-red);
 }
 
 .event-overview-container tr {
   /* align: center; */
-  font-size: 1.3vmax;
+  font-size: 1.2vmax;
+  padding: 1vh 3vw;
+
+  font-weight: 450;
+  /* padding: 1vh 1vw; */
+}
+
+.event-overview-container td {
+  /* align: center; */
+  font-size: 1.2vmax;
+  /* padding: 1vh 3vw; */
+  width: 10vw;
+  /* padding-right: 4rem; */
   font-weight: 450;
   /* padding: 1vh 1vw; */
 }
@@ -483,7 +497,14 @@ button:hover {
 .event-overview-container .text {
   font-size: 1.4rem;
   padding: 1vh 1vw;
-  margin: 4vmax 5vmax;
+  margin: 0vmax 5vmax;
+}
+.event-overview-container .subtitle {
+  padding: 0vh 1vw;
+  margin: 2vmax 5vmax;
+  font-size: 2vmax;
+  font-weight: bold;
+  color: var(--ucalgary-red);
 }
 
 /* =========================== */

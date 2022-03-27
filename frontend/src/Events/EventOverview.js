@@ -52,7 +52,7 @@ const EventOverview = (props) => {
                 <td>{event.location}</td>
               </tr>
 
-              {event.faculty === "N/A" ? (
+              {event.faculty === "" ? (
                 ""
               ) : (
                 <tr>
@@ -87,7 +87,10 @@ const EventOverview = (props) => {
                 <td>{event.attire}</td>
               </tr>
             </table>
-            <div className="text">{event.description}</div>
+            <div className="description">
+              <div className="subtitle">Description</div>
+              <div className="text">{event.description}</div>
+            </div>
           </div>
         </div>
       )}
