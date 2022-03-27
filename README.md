@@ -1,4 +1,5 @@
 # Team Excessive Alpha HYL_Hackathon
+
 # [(React) Application](https://github.com/cmrnfaith/HYL_Hackathon)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba98fcc3-3cc3-4e47-ab14-6cb12a983385/deploy-status)](https://app.netlify.com/sites/u-hub/deploys)
@@ -32,7 +33,7 @@ This is the website development branch for our project. This project will use py
 2. `python3 -m venv venv` ( or `python -m venv venv` on Windows)
 3. `source venv/bin/activate` ( or `venv\Scripts\activate` on Windows)
 4. `pip install -r requirements.txt`
-5. `flask run -p 4000` (or `python main.py`) to start back-end
+5. `flask run -p 5000` (or `python main.py`) to start back-end
 
 ### Setting up Front-end
 
@@ -47,11 +48,10 @@ This is the website development branch for our project. This project will use py
 
 #### Screenshot Example #1
 
-![Screenshot #1](docs/Example1.png?raw=true "Example 1")
+![Screenshot #1](docs/Example2.png?raw=true "Example 1")
 
 #### Screenshot Example #2
 
-![Screenshot #2](docs/example1.png?raw=true "Example 1")
+![Screenshot #2](docs/Example3.png?raw=true "Example 2")
 
 ### Link to the application running: [Production Version](https://u-hub.netlify.app/)
-

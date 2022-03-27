@@ -147,7 +147,7 @@ const CreateEvent = ({ user }) => {
             <input
               value={eventName}
               type="text"
-              placeholder="BSD"
+              placeholder="Event name (e.g Dinos Mens Hockey vs. WesternU)"
               onChange={(e) => setEventName(e.target.value)}
               required
             />
@@ -157,7 +157,7 @@ const CreateEvent = ({ user }) => {
             <span className="input-label">Event Description</span>
             <textarea
               value={eventDescription}
-              placeholder="BSD is gonna be lit"
+              placeholder="Event Description"
               onChange={(e) => setEventDescription(e.target.value)}
               required
             ></textarea>
