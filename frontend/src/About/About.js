@@ -3,8 +3,9 @@ import React from "react";
 
 //=============Images=============//
 import CameronImage from "../images/CamProfileImageSquare.jpeg";
-import AidanImage from "../images/AidanProfileImage.jpeg";
+import AidanImage from "../images/AidanProfileImage.jpg";
 import MicheleImage from "../images/MicheleProfileImageSquare.jpeg";
+import DylanImage from "../images/DylanProfileImageSquare.jpg";
 
 const About = () => {
   return (
@@ -40,7 +41,18 @@ const About = () => {
           <div className="about-person">
             <img src={AidanImage} alt="the team"></img>
             <h2>Aidan Johnson</h2>
-            <p></p>
+            <p>
+                Aidan Johnson is currently in his final year of Electrical and
+                Computer engineering at the University of Calgary. He recently
+                completed an internship with a start-up company called FUS
+                Instruments in partnership with the NeuroFUS laboratory leading
+                the development of their Focused ultrasound therapy software
+                platform. Aidan is passionate about software development and has
+                previous experience with software application development,
+                embedded systems and hardware design. During his spare time, you
+                can find Aidan in the outdoors, hiking, backpacking and taking
+                scenic pictures.
+            </p>
           </div>
         </div>
         <div className="about-bios">
@@ -58,9 +70,14 @@ const About = () => {
             </p>
           </div>
           <div className="about-person">
-            <img src={MicheleImage} alt="the team"></img>
+            <img src={DylanImage} alt="the team"></img>
             <h2>Dylan Rae</h2>
-            <p></p>
+            <p>
+                Dylan is a student at the University of Calgary in his final year of the dual degree 
+                program studying electrical engineering and finance. He is interested in fields such 
+                as software development, machine learning, and FinTech. He is passionate about how we 
+                can bridge engineering and business to solve some of the world's most important problems. 
+            </p>
           </div>
         </div>
       </div>

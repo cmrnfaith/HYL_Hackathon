@@ -21,7 +21,7 @@ import HostsPage from "./Hosts/HostsPage";
 import HostOverview from "./Hosts/HostOverview";
 import Feed from "./Feed/Feed";
 import MyEvents from "./Events/MyEvents";
-// import About from "./About/About";
+import About from "./About/About";
 
 export const defaultUser = [
   {
@@ -81,6 +81,7 @@ const App = () => {
         />
 
         <Route path="/signup" component={SignUp} />
+        <Route path="/about" component={About} />
         <Route
           path="/login"
           component={withProps(Login, { updateLoginStatus, updateLocalUser })}
