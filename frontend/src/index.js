@@ -21,6 +21,7 @@ import HostsPage from "./Hosts/HostsPage";
 import HostOverview from "./Hosts/HostOverview";
 import Feed from "./Feed/Feed";
 import MyEvents from "./Events/MyEvents";
+import APE from "./Footer/UofCApeData";
 import About from "./About/About";
 
 export const defaultUser = [
@@ -74,6 +75,7 @@ const App = () => {
         {/* Normal Navagation Routes */}
 
         <Route exact path="/" component={Homepage} />
+        <Route exact path="/ape" component={APE} />
         <Route
           exact
           path="/events"
