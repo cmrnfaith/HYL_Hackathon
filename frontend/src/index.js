@@ -20,6 +20,7 @@ import EventOverview from "./Events/EventOverview";
 import HostsPage from "./Hosts/HostsPage";
 import HostOverview from "./Hosts/HostOverview";
 import Feed from "./Feed/Feed";
+import MyEvents from "./Events/MyEvents";
 
 export const defaultUser = [
   {
@@ -98,6 +99,14 @@ const App = () => {
             updateLocalUser,
           })}
         />
+
+        <PrivateRoute
+          redirect_url="/login"
+          loginStatus={loginStatus}
+          path="/myevents"
+          component={withProps(MyEvents, {})}
+        />
+
         <Route path="*" exact={true} component={NotFound} />
       </Switch>
       <Footer className="footer" />
