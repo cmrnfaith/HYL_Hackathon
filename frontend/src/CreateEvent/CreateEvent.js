@@ -210,37 +210,25 @@ const CreateEvent = () => {
               required
             >
               <option value="">Choose an Event Type</option>
-              <option value="Sports">Sporting - Dinos Mens Volleyball</option>
-              <option value="Sports">Sporting - Dinos Womens Volleyball</option>
-              <option value="Sports">Sporting - Dinos Football</option>
-              <option value="Sports">Sporting - Dinos Mens Soccer</option>
-              <option value="Sports">Sporting - Dinos Womens Soccer</option>
-              <option value="Sports">Sporting - Dinos Mens Hockey</option>
-              <option value="Sports">Sporting - Dinos Womens Hockey</option>
-              <option value="Sports">
-                Sporting - Dinos Womens Field Hockey
-              </option>
-              <option value="Sports">Sporting - Dinos Swimming</option>
-              <option value="Sports">Sporting - Dinos Golf</option>
-              <option value="Sports">Sporting - Dinos Mens Basketball</option>
-              <option value="Sports">Sporting - Dinos Womens Basketball</option>
-              <option value="University">University - Student Union</option>
-              <option value="University">University - Student Union</option>
-              <option value="University">University - Student Union</option>
-              <option value="University">University - Student Union</option>
-              <option value="University">University - Student Union</option>
-              <option value="University">University - Student Union</option>
-              <option value="University">University - Student Union</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
-              <option value="Club">Club - Digitronics</option>
+              <option value="Sports - Dinos Mens Volleyball">Sports - Dinos Mens Volleyball</option>
+              <option value="Sports - Dinos Womens Volleyball">Sports - Dinos Womens Volleyball</option>
+              <option value="Sports - Dinos Football">Sports - Dinos Football</option>
+              <option value="Sports - Dinos Mens Soccer">Sports - Dinos Mens Soccer</option>
+              <option value="Sports - Dinos Womens Soccer">Sports - Dinos Womens Soccer</option>
+              <option value="Sports - Dinos Mens Hockey">Sports - Dinos Mens Hockey</option>
+              <option value="Sports - Dinos Womens Hockey">Sports - Dinos Womens Hockey</option>
+              <option value="Sports - Dinos Womens Field Hockey">Sports - Dinos Womens Field Hockey</option>
+              <option value="Sports - Dinos Swimming">Sports - Dinos Swimming</option>
+              <option value="Sports - Dinos Golf">Sports - Dinos Golf</option>
+              <option value="Sports - Dinos Mens Basketball">Sports - Dinos Mens Basketball</option>
+              <option value="Sports - Dinos Womens Basketball">Sports - Dinos Womens Basketball</option>
+              <option value="University - Student Union">University - Student Union</option>
+              <option value="University - Student Admissions">University - Student Admissions</option>
+              <option value="University - Community Engagement">University - Community Engagement</option>
+              <option value="University - Alumni">University - Alumni</option>
+              <option value="University - Exhibition">University - Exhibition</option>
+              <option value="Club">Club</option>
+              <option value="Students Union">Students Union</option>
               <option value="Third Party">Third Party</option>
               <option value="Other">Other</option>
             </select>
