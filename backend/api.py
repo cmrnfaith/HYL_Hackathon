@@ -13,6 +13,7 @@ from flask_login import current_user, login_user, login_required
 
 from user import User
 from databaseFunctions import *
+from googleCalenderFunctions import *
 
 MYSQL_HOST = '10.0.0.101'
 MYSQL_USER = 'root'
@@ -344,6 +345,18 @@ def get_all_user_likes(username:str):
     
     return result
 
+@app.route("/user/<string:username>/addToCalender/<int:eventID>", methods=["GET"])
+def add_event_to_calender(username:str, eventID:int):
+    print(username)
+    print(eventID)
+    # will need to get the event time
+    # then pass to google calender
+    add_event_to_google(username, eventID)
+    
+    
+    # call function to add to google calender
+    
+    return Response(status=400)
 # ========================================================================
 # Signup API
 # ========================================================================
