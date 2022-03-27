@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 
 const Host = ({ user, host, update_hosts }) => {
   const history = useHistory();
-  const [followed, setFollowed] = useState(host.followed);
+  const [followed, setFollowed] = useState(host.follow);
   function viewHost() {
     var url = "/host/" + host.hostName;
     history.push(url);
@@ -47,9 +47,15 @@ const Host = ({ user, host, update_hosts }) => {
       <div onClick={viewHost}>
         <div className="title">{host.hostName}</div>
       </div>
-      <div className="follow-button" onClick={followHost}>
-        <button>{followed ? "FOLLOWED" : "FOLLOW"}</button>
-      </div>
+      {followed ? (
+        <div className="follow-button-red" onClick={followHost}>
+          <button>FOLLOWED</button>
+        </div>
+      ) : (
+        <div className="follow-button" onClick={followHost}>
+          <button>FOLLOW</button>
+        </div>
+      )}
     </div>
   );
 };

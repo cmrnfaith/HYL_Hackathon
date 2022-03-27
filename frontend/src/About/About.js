@@ -14,7 +14,7 @@ const About = () => {
         <div className="statements">
           <h1 className="about-statement">Connecting Everyone</h1>
           <h1 className="about-statement-2">
-            UHub makes it easy for users to connect with other students and see
+            uHub makes it easy for users to connect with other students and see
             all the different club and university events all in one place.
           </h1>
         </div>

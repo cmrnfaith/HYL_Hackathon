@@ -65,9 +65,15 @@ const HostsPage = ({ user }) => {
   return (
     <div className="hosts-page-container">
       <div className="hosts-container">
-        <h1 className="title">All Hosts</h1>
+        <h1 className="subtitle">Followed Hosts</h1>
         <HostList
-          hosts={hosts}
+          hosts={hosts.filter((host) => host.follow)}
+          user={user}
+          update_hosts={update_hosts_follows}
+        />
+        <h1 className="subtitle">Other Hosts</h1>
+        <HostList
+          hosts={hosts.filter((host) => !host.follow)}
           user={user}
           update_hosts={update_hosts_follows}
         />

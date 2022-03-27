@@ -617,8 +617,8 @@ button:hover {
 
 .filter-dropdowns .item {
   margin: auto 2vmax;
-  min-width: 15vw;
-  max-width: 20vw;
+  min-width: 14.5vw;
+  max-width: 22vw;
   font-size: 1rem;
 }
 
@@ -847,7 +847,7 @@ button:hover {
 
 .host-container .follow-button {
   position: relative;
-
+  padding-top: 1rem;
   justify-content: end;
   left: 75%;
 }
@@ -862,6 +862,25 @@ button:hover {
   color: var(--ucalgary-blue);
   background: var(--white);
   border: 1px solid var(--ucalgary-blue);
+}
+
+.host-container .follow-button-red {
+  position: relative;
+  padding-top: 1rem;
+  justify-content: end;
+  left: 70%;
+}
+
+.host-container .follow-button-red button {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--ucalgary-red);
+}
+
+.host-container .follow-button-red button:hover {
+  color: var(--ucalgary-red);
+  background: var(--white);
+  border: 1px solid var(--ucalgary-red);
 }
 
 .host-container .title {
@@ -1021,6 +1040,24 @@ button:hover {
   width: var(--inner-width);
   padding: 2rem 2rem;
   border-radius: 5px;
+}
+
+.hosts-container .subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.hosts-container .subtitle:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-yellow);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
 }
 
 .hosts-container .title {
