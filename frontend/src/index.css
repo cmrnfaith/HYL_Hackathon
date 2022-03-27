@@ -1736,6 +1736,7 @@ button:hover {
 
 .about-container {
   width: var(--inner-width);
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -1748,7 +1749,7 @@ button:hover {
 }
 
 .about-statement {
-  font-size: 7rem;
+  font-size: 7vmax;
   width: 80%;
   text-align: center;
   margin-bottom: 3rem;
@@ -1757,7 +1758,7 @@ button:hover {
 
 .about-statement-2 {
   position: relative;
-  font-size: 3rem;
+  font-size: 3vmax;
   width: 60%;
   text-align: center;
 }
@@ -1790,6 +1791,22 @@ button:hover {
   justify-content: space-between;
   margin-bottom: 10rem;
   flex-wrap: wrap;
+}
+
+@media (max-width: 1400px) {
+  .about-bios {
+    flex-direction: column;
+    flex: 100%;
+    /* width: 80%; */
+  }
+  .about-person {
+    min-width: 75vw;
+  }
+  .about-person img {
+    width: 75vw;
+    min-height: 75vw;
+    border-radius: 5px;
+  }
 }
 
 .about-team {
