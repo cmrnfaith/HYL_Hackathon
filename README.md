@@ -36,7 +36,7 @@ A few accomplishments were are proud of are:
 
 1. Designing an intricate mobile and web application that utilizes a database, user-friendly frontend and backend in under 24 hours
 2. Ascending to a new level of team colloboration
-3. mySQL Databse Design following a planned EERD
+3. MySQL Databse Design following a planned EERD
 4. Learning more about React, CSS and Flask in a short time frame
 
 ## What we learned
