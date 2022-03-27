@@ -229,9 +229,8 @@ def get_all_hosts_from_db(conn:mysql.connector.connect, table_name:str)->List:
     """
     cur = conn.cursor()
     try:
-        sql = f'SELECT * FROM {table_name} WHERE isHost = %d;'
-        val = (1,)
-        cur.execute(sql, val)
+        sql = f'SELECT * FROM {table_name} WHERE isHost = 1;'
+        cur.execute(sql)
 
     except Exception as e:
         conn.rollback()
