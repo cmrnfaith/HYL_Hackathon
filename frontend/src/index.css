@@ -10,6 +10,7 @@ body {
   --background-color-new: #fff8dd;
   --background-light: #dfd9c8;
   --white: white;
+  --black: black;
   --ucalgary-red: #cf0722;
   --ucalgary-red-hover: #7e0212;
   --ucalgary-yellow: #ffcd00;
@@ -17,6 +18,7 @@ body {
   --ucalgary-border: #e0bc7b;
   --ucalgary-shadow: #858173;
   --ucalgary-header: white;
+  --ucalgary-blue: #74b0fc;
 
   /* text colors */
   --primary-heading-color: #c7a25e;
@@ -552,6 +554,23 @@ button:hover {
 .event-list-container {
   display: block;
 }
+.event-list-container .subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.event-list-container .subtitle:after {
+  transform: translateX(-50%);
+  content: "";
+  background: var(--ucalgary-yellow);
+  position: absolute;
+  bottom: -30%;
+  left: 50%;
+  height: 3px;
+  width: 100%;
+}
 .event-list-items {
   /* width: var(--inner-width); */
   /* align-items: center; */
@@ -818,8 +837,30 @@ button:hover {
 }
 
 .host-container:hover {
+  animation: host-hover 0.2s ease-in-out forwards;
+}
+
+.host-container div:hover {
   cursor: pointer;
-  animation: card-hover 0.2s ease-in-out forwards;
+}
+
+.host-container .follow-button {
+  position: relative;
+
+  justify-content: end;
+  left: 75%;
+}
+
+.host-container .follow-button button {
+  cursor: pointer;
+  color: var(--white);
+  background: var(--ucalgary-blue);
+}
+
+.host-container .follow-button button:hover {
+  color: var(--ucalgary-blue);
+  background: var(--white);
+  border: 1px solid var(--ucalgary-blue);
 }
 
 .host-container .title {
@@ -868,6 +909,14 @@ button:hover {
   }
   100% {
     transform: translateY(-5%);
+  }
+}
+
+@keyframes host-hover {
+  0% {
+  }
+  100% {
+    transform: translateY(-2%);
   }
 }
 

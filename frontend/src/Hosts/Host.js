@@ -1,23 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router";
 
 const Host = ({ host }) => {
   const history = useHistory();
+  const [followed, setFollowed] = useState(host.followed);
   function viewHost() {
     var url = "/host/" + host.hostName;
     history.push(url);
   }
+
+  function followHost() {
+    setFollowed(!followed);
+  }
   return (
-    <div className="host-container" onClick={viewHost}>
-      <div className="title">{host.hostName}</div>
-      {/* <div className="time">{new Date(event.date).toLocaleTimeString()}</div> */}
-      {/* <div className="duration">{event.duration}</div> */}
-      {/* <div className="text">{event.description}</div> */}
-      {/* <div className="attire">{event.attire}</div> */}
-      {/* <div className="membership">{event.membership}</div> */}
-      {/* <div className="price">
-        {event.price === 0 ? "Free" : "$" + event.price.toFixed(2)}
-      </div> */}
+    <div className="host-container">
+      <div onClick={viewHost}>
+        <div className="title">{host.hostName}</div>
+      </div>
+      <div className="follow-button" onClick={followHost}>
+        <button>{followed ? "FOLLOWED" : "FOLLOW"}</button>
+      </div>
     </div>
   );
 };
