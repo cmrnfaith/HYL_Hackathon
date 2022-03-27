@@ -1363,6 +1363,7 @@ button:hover {
   align-items: center;
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
   font-size: 1.4rem;
+  font-family: "quicksand";
 }
 
 .header-icon a {
