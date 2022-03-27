@@ -898,8 +898,9 @@ button:hover {
 
 @media (max-width: 1300px) {
   .host-container .follow-button-red {
-    transform: translateX(-30%);
+    /* transform: translateX(-30%); */
     /* margin-right: 1rem; */
+    left: 60%;
   }
   .host-container .follow-button {
     left: 60%;
