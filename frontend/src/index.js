@@ -18,6 +18,9 @@ import Logout from "./Logout/Logout";
 import SignUp from "./SignUp/SignUp";
 import EventOverview from "./Events/EventOverview";
 import HostsPage from "./Hosts/HostsPage";
+import HostOverview from "./Hosts/HostOverview";
+import Feed from "./Feed/Feed";
+import MyEvents from "./Events/MyEvents";
 
 export const defaultUser = [
   {
@@ -77,10 +80,14 @@ const App = () => {
           path="/login"
           component={withProps(Login, { updateLoginStatus, updateLocalUser })}
         />
+
+        <Route path="/feed" component={withProps(Feed, { user })} />
+
         <Route exact path="/createevent" component={CreateEvent} />
         <Route exact path="/hosts" component={HostsPage} />
 
         <Route exact path="/event/:id" component={EventOverview} />
+        <Route exact path="/host/:name" component={HostOverview} />
 
         <PrivateRoute
           redirect_url="/login"
@@ -92,6 +99,14 @@ const App = () => {
             updateLocalUser,
           })}
         />
+
+        <PrivateRoute
+          redirect_url="/login"
+          loginStatus={loginStatus}
+          path="/myevents"
+          component={withProps(MyEvents, {})}
+        />
+
         <Route path="*" exact={true} component={NotFound} />
       </Switch>
       <Footer className="footer" />

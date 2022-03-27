@@ -392,6 +392,9 @@ def get_all_user_likes(username:str):
     
     return result
 
+# ========================================================
+# Calender APIs
+# ========================================================
 @app.route("/user/<string:username>/addToCalender/<int:eventID>", methods=["GET"])
 def add_event_to_calender(username:str, eventID:int):
     print(username)

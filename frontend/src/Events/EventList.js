@@ -1,6 +1,6 @@
 import Event from "./Event";
 import Filter from "./Filter";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 const EventList = ({ events }) => {
   const [filtered_events, setFiltered_events] = useState([]);
 
