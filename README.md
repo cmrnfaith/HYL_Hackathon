@@ -1,5 +1,7 @@
 # Team APE Consulting HYL_Hackathon
 
+# [u-Hub](https://github.com/cmrnfaith/HYL_Hackathon)
+
 ## Inspiration
 
 Interested in finding social and academic events but have no idea where to find them? Tired of looking through countless emails, D2L, club websites and posters to find events? Wanting to see, like, interact and look for specific university events all in one place? These were the questions we wanted to address and the inspiration for our mobile and desktop application uHub.
@@ -54,7 +56,7 @@ A few accomplishments were are proud of are:
 - Google Maps API integration.
 - Calendar View for Events
 
-# [(React) Application](https://github.com/cmrnfaith/HYL_Hackathon)
+
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba98fcc3-3cc3-4e47-ab14-6cb12a983385/deploy-status)](https://app.netlify.com/sites/u-hub/deploys)
 
