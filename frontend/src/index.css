@@ -684,11 +684,13 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+
 .event-overview-container {
+  position: relative;
   min-width: 40vw;
   max-width: 70vw;
   background-color: white;
-  padding: 4rem 10rem;
+  padding: 4rem 10rem 0rem;
   border-radius: 10px;
   text-align: left;
 }
@@ -743,11 +745,30 @@ button:hover {
   display: flex;
   /* align-items: center; */
 }
+
 .event-overview-container .text {
   font-size: 1.4rem;
   padding: 1vh 1vw;
   margin: 0vmax 5vmax;
 }
+
+.event-overview-container .description {
+  position: relative;
+}
+
+.event-overview-container .button-add-to-calender {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  font-size: 2rem;
+  color: white;
+  background-color: var(--ucalgary-red);
+}
+
+.event-overview-container .button-add-to-calender:hover {
+  background-color: var(--ucalgary-red-hover);
+}
+
 .event-overview-container .subtitle {
   padding: 0vh 1vw;
   margin: 2vmax 5vmax;
