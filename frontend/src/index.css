@@ -166,8 +166,8 @@ button:hover {
   font-size: 45px;
   margin: 0;
 
-  color: black;
-  text-shadow: 0 0 3px white, 0 0 5px var(--white);
+  color: white;
+  text-shadow: 0 0 14px black, 0 0 5px black;
 }
 
 .content-container-list {
@@ -176,8 +176,8 @@ button:hover {
   text-align: right;
   list-style: none;
 
-  color: var(--ucalgary-red);
-  text-shadow: 0 0 3px white, 0 0 5px var();
+  color: white;
+  text-shadow: 0 0 8px var(--ucalgary-red), 0 0 5px black;
 
   -webkit-animation-name: change;
   -webkit-animation-duration: 10s;
