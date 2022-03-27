@@ -328,9 +328,7 @@ def get_all_user_follows_1(username:str):
 
     result = {"result": []}
     data = get_user_non_follow_db(db_conn, "userFollowsHosts", username)
-    print(data)
     data1 = get_user_follows_db(db_conn, "userFollowsHosts", username)
-    print(data1)
 
     for event in data:
         result["result"].append(
@@ -339,6 +337,7 @@ def get_all_user_follows_1(username:str):
                 "follow": False
             }
         )
+
     for event in data1:
         result["result"].append(
             {
