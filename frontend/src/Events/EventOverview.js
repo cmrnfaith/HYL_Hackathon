@@ -5,32 +5,32 @@ const EventOverview = (props) => {
   var eventID = props.match.params.id;
 
   const onClick = () => {
-    // window.open("http://10.0.0.126:5000/addToCalender/" + event.eventID);
+    window.open("http://127.0.0.1:5000/addToCalender/" + event.eventID);
     console.log(event.eventID);
-    var url = "/addToCalender/" + event.eventID;
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "text",
-        Accept: "text",
-      },
-      credentials: "include",
-    })
-      .then(async (res) => {
-        if (res.status === 200) {
-          console.log(res.status);
-          console.log(res);
-          var response = await res.json();
-          console.log(response);
-        } else if (res.status === 401) {
-          console.log("error fetching event");
-        } else {
-          console.log("error fetching event");
-        }
-      })
-      .catch((error) => {
-        // Handle error
-      });
+    // var url = "/addToCalender/" + event.eventID;
+    // fetch(url, {
+    //   method: "GET",
+    //   headers: {
+    //     "Content-Type": "text",
+    //     Accept: "text",
+    //   },
+    //   credentials: "include",
+    // })
+    //   .then(async (res) => {
+    //     if (res.status === 200) {
+    //       console.log(res.status);
+    //       console.log(res);
+    //       var response = await res.json();
+    //       console.log(response);
+    //     } else if (res.status === 401) {
+    //       console.log("error fetching event");
+    //     } else {
+    //       console.log("error fetching event");
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     // Handle error
+    //   });
   };
 
   function getEvents() {
