@@ -31,7 +31,7 @@ const SignUp = () => {
     setUsername("");
     setEmail("");
     setCountry("");
-    setHost(false);
+    // setHost(false);
     setDateOfBirth("");
     setPassword("");
     setConfirmPassword("");
