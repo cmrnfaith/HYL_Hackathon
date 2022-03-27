@@ -677,7 +677,6 @@ button:hover {
 }
 
 .event-container .like-button AiFillHeart {
-  color: red;
 }
 
 @keyframes card-hover {

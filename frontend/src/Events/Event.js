@@ -55,7 +55,7 @@ const Event = ({ event }) => {
           </tr>
         </table>
         <div className="like-button" onClick={submitLike}>
-          <AiFillHeart />
+          {event.liked ? <AiFillHeart /> : <AiOutlineHeart />}
         </div>
       </div>
       {/* <div className="time">{new Date(event.date).toLocaleTimeString()}</div> */}
