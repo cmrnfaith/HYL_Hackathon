@@ -1,5 +1,30 @@
 # Team Excessive Alpha HYL_Hackathon
 
+## Inspiration and what it does
+Interested in social and academic events? Interested in being able to see all the university and clubs events all in one place? uHub is a web application that allows users to find different events from various clubs and the university all in one place.
+
+|Technologies | That We Used |
+| ------------- | --------------- |
+| STACK		| TECHNOLOGY USED |
+| Front-End	| React,Javascript, CSS, HTML |
+| Back-End	| Python, Flask |
+| Database	| mySQL |
+| APIs		| REST |
+
+## How we built it
+
+## Challenges we ran into
+A few challenges we ran into it 
+
+## Accomplishments that we're proud of
+Developing an intricate web application that utilizes a database, user-friendly frontend and backend in under 24 hours.
+
+## What we learned
+We learned how to utilize various API such as an API for calendar integration as well as manage our time effectively to create a web application that improves students' lives will be usable.
+
+## What's next for uHub
+Adding the ability for users to get recommendations based on their interests and previous liked events. Also the ability for hosts of events to provide announcements to users that are signed up.
+
 # [(React) Application](https://github.com/cmrnfaith/HYL_Hackathon)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ba98fcc3-3cc3-4e47-ab14-6cb12a983385/deploy-status)](https://app.netlify.com/sites/u-hub/deploys)
