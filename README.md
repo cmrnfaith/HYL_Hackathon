@@ -1,7 +1,10 @@
 # Team Excessive Alpha HYL_Hackathon
 
-## Inspiration and what it does
-Interested in social and academic events? Interested in being able to see all the university and clubs events all in one place? uHub is a web application that allows users to find different events from various clubs and the university all in one place.
+## Inspiration 
+Interested in finding social and academic events but not knowing where to find them? Tired of looking through countless emails, D2L, club websites and in other emails to find events? Wanting to see, like, interact and look for a specific university event all in one place?
+
+## What it does
+uHub is a web application that allows users to find different events from various clubs and the university all in one place.
 
 |Technologies | That We Used |
 | ------------- | --------------- |
