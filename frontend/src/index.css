@@ -359,17 +359,15 @@ button:hover {
   margin-bottom: 3rem;
   height: 50%;
   width: 60%;
-  border-radius: 5px;
   position: relative;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .create-event-container .create-tags {
-  margin-left: 3rem;
+  margin-right: 2rem;
+
   background-color: white;
-  margin: 20px 0 12px 0;
-  width: 25%;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -419,10 +417,9 @@ button:hover {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 0 12px 0;
   background-color: white;
   border-radius: 5px;
-  width: 68%;
+  width: 700px;
 }
 
 .create-event-container .create-event-form .title {
@@ -510,6 +507,27 @@ button:hover {
 
 .create-event-container .create-event-form .button input:hover {
   color: var(--ucalgary-yellow);
+}
+
+@media (max-width: 1350px) {
+  .create-event-container {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .create-event-container .create-tags {
+    width: 700px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .create-event-container .create-event-form {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }
 
 /* =================== */
