@@ -1,14 +1,15 @@
-# from ics import Calender, Event
-
+from ics.icalendar import Calendar
+from ics.event import Event
 
 
 def generateIcs(data):
-    print(data)
+    data = data["result"][0]
     
-    c = Calender()
+    c = Calendar()
     e = Event()
     e.name = data['name']
     e.begin = data['date']
+    e.location = data['location']
     
     c.events.add(e)
     c.events
