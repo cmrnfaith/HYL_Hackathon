@@ -14,6 +14,8 @@ from flask_login import current_user, login_user, login_required
 from user import User
 from databaseFunctions import *
 from calenderEventFunctions import *
+from icalender import Calendar, Event
+
 
 MYSQL_HOST = '10.0.0.101'
 MYSQL_USER = 'root'
