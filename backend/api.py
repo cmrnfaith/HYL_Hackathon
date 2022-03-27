@@ -262,10 +262,10 @@ def follow_host():
 
     if request.method == "POST":
         data = request.json
-        # try:
-        insert_user_follows_db(db_conn, "userFollowsHosts", data["username"], data["hostName"])
-        # except Exception as e:
-        #     return Response(status=409)
+        try:
+            insert_user_follows_db(db_conn, "userFollowsHosts", data["username"], data["hostName"])
+        except Exception as e:
+            return Response(status=409)
 
         return Response(status=200)
 
