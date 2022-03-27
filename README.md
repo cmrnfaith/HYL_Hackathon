@@ -6,7 +6,7 @@ Interested in finding social and academic events but have no idea where to find 
 
 ## What it does
 
-uHub is a mobile and desktop application that allows users to find different events seamlessly from various clubs and the university all in one place. uHub allows hosts to create, delete and showcase events on our site for university Students, while also tracking what events they currently have created. University students are able to view the website to browse and search for various events by different key filters such as by event type or name. If they find an event they like they can also add it to their calendar. Furthermore, students can also create an account and login in to follow specific hosts as well as like different events to get a tailored events feed.
+uHub is an innovative mobile and desktop application that allows users to find different events seamlessly from various clubs and the university all in one place. uHub allows hosts to create, delete and showcase events on our site for university Students, while also tracking what events they currently have created. University students are able to view the website to browse and search for various events by different key filters such as by event type or name. If they find an event they like they can also add it to their calendar. Furthermore, students can also create an account and login in to follow specific hosts as well as like different events to get a tailored events feed.
 
 | Technologies    | That We Used                |
 | --------------- | --------------------------- |
