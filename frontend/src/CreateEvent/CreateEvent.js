@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 const CreateEvent = () => {
+  const history = useHistory();
   const [eventName, setEventName] = useState("");
   const [eventDescription, setEventDescription] = useState("");
   const [eventDate, setEventDate] = useState("");
@@ -116,14 +118,12 @@ const CreateEvent = () => {
         faculty: eventFaculty,
         description: eventDescription,
         eventType: eventType,
-        hostID: "1",
+        hostName: "testHost",
       }),
     })
       .then(async (res) => {
         if (res.status === 200) {
-          let new_id = await res.json();
-
-          console.log(new_id);
+          history.push("/events");
         } else if (res.status === 401) {
           console.log("Error in submitting strategy");
         } else {

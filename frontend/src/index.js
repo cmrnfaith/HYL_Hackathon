@@ -23,11 +23,11 @@ export const defaultUser = [
     username: "",
     password: "",
     country: "",
-    date_of_birth: "",
-    first_name: "",
-    last_name: "",
+    dateOfBirth: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    host: false,
+    isHost: false,
   },
 ];
 

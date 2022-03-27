@@ -30,7 +30,7 @@ const Header = ({ loginStatus, user }) => {
           <div className="header-link" onClick={closeMobileMenu}>
             <Link to="/events">Events</Link>
           </div>
-          {user.host && (
+          {user.isHost && (
             <div className="header-link" onClick={closeMobileMenu}>
               <Link to="/createevent">Create Event</Link>
             </div>
